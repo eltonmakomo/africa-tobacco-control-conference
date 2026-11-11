@@ -83,38 +83,45 @@ function Home() {
         <div className="h-1.5 bg-gradient-brand" />
       </section>
 
-      {/* About */}
-      <Section eyebrow="About the Conference" title={<>A continental platform for <span className="text-gradient-brand">collective action</span></>}>
-        <div className="grid gap-10 lg:grid-cols-2">
-          <p className="text-lg leading-relaxed text-foreground/80">
-            The 3rd Africa Conference on Tobacco Control and Development brings together policymakers, researchers, public health leaders, civil society, youth and development partners to accelerate tobacco control across the continent. The African Capacity Building Foundation convenes the Conference with the Ministry of Health of Kenya, the African Union Commission and the Africa Centres for Disease Control and Prevention.
-          </p>
-          <div className="overflow-hidden rounded-3xl bg-secondary"><img src={dialogue} alt="Policymakers in dialogue" loading="lazy" className="h-56 w-full object-cover" /><div className="p-8">
-            <p className="eyebrow text-primary">Theme & objectives</p>
-            <p className="mt-3 text-xl font-semibold leading-snug">{EVENT.theme}</p>
-            <p className="mt-4 text-foreground/75">
-              The theme positions tobacco control within Africa's broader movement towards health sovereignty. The Conference strengthens African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future.
+      {/* About — sticky scroll: the heading column pins while the cards and photos scroll past */}
+      <section id="about" className="scroll-mt-24 py-20 md:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 md:flex-row md:gap-10 lg:gap-14">
+          <div className="md:sticky md:top-24 md:w-[40%] md:self-start lg:top-28 lg:w-[38%]">
+            <p className="eyebrow text-primary">About the Conference</p>
+            <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">A continental platform for <span className="text-gradient-brand">collective action</span></h2>
+            <p className="mt-6 text-base leading-relaxed text-foreground/80 md:text-lg">
+              The 3rd Africa Conference on Tobacco Control and Development brings together policymakers, researchers, public health leaders, civil society, youth and development partners to accelerate tobacco control across the continent. The African Capacity Building Foundation convenes the Conference with the Ministry of Health of Kenya, the African Union Commission and the Africa Centres for Disease Control and Prevention.
             </p>
-            <Link to="/about" className="mt-6 inline-flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">Read more <ArrowRight className="size-4" /></Link>
-          </div></div>
-        </div>
-      </Section>
+            <Link to="/about" className="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition-all hover:gap-3">Read more <ArrowRight className="size-4" /></Link>
+          </div>
 
-      {/* Photo mosaic */}
-      <section className="px-5 pb-8">
-        <div className="mx-auto grid max-w-7xl auto-rows-[14rem] gap-4 md:grid-cols-4">
-          {[
-            [plenary, "High-level plenaries", "md:col-span-2 md:row-span-2"],
-            [youth, "Youth at the centre", "md:row-span-2"],
-            [dialogue, "Ministerial dialogue", ""],
-            [eposter, "African evidence", ""],
-          ].map(([src, label, cls]) => (
-            <figure key={label} className={`group relative overflow-hidden rounded-3xl ${cls}`}>
-              <img src={src} alt={label} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/10 to-transparent" />
-              <figcaption className="absolute bottom-5 left-5 font-semibold text-forest-foreground">{label}</figcaption>
-            </figure>
-          ))}
+          <div className="w-full space-y-4 md:w-[60%] lg:w-[62%]">
+            <div className="overflow-hidden rounded-3xl bg-secondary">
+              <img src={dialogue} alt="Policymakers in dialogue" loading="lazy" className="h-56 w-full object-cover" />
+              <div className="p-8">
+                <p className="eyebrow text-primary">Theme & objectives</p>
+                <p className="mt-3 text-xl font-semibold leading-snug">{EVENT.theme}</p>
+                <p className="mt-4 text-foreground/75">
+                  The theme positions tobacco control within Africa's broader movement towards health sovereignty. The Conference strengthens African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                [plenary, "High-level plenaries", "sm:col-span-2 aspect-[16/9]"],
+                [youth, "Youth at the centre", "aspect-[4/3]"],
+                [eposter, "African evidence", "aspect-[4/3]"],
+                [nairobi, "Nairobi, the host city", "sm:col-span-2 aspect-[16/9]"],
+              ].map(([src, label, cls]) => (
+                <figure key={label} className={`group relative overflow-hidden rounded-3xl ${cls}`}>
+                  <img src={src} alt={label} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/10 to-transparent" />
+                  <figcaption className="absolute bottom-5 left-5 font-semibold text-forest-foreground">{label}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
