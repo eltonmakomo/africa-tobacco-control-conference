@@ -42,17 +42,17 @@
 :root {
   --radius: 1rem;
   --background: #ffffff;
-  --foreground: oklch(0.22 0.04 155);
+  --foreground: #1a1a1a;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.04 155);
+  --card-foreground: #1a1a1a;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.04 155);
+  --popover-foreground: #1a1a1a;
   --primary: #277f3e;          /* ACTCD primary green (brand guide) */
   --primary-foreground: #ffffff;
   --secondary: color-mix(in oklab, #277f3e 8%, #ffffff);
   --secondary-foreground: #277f3e;
   --muted: color-mix(in oklab, #277f3e 5%, #ffffff);
-  --muted-foreground: oklch(0.45 0.03 150);
+  --muted-foreground: #555555;
   --accent: #dfa726;          /* ACTCD secondary gold (brand guide) */
   --accent-foreground: #1a1a1a;
   --destructive: oklch(0.577 0.245 27.325);
@@ -60,14 +60,14 @@
   --border: color-mix(in oklab, #277f3e 15%, #ffffff);
   --input: color-mix(in oklab, #277f3e 15%, #ffffff);
   --ring: #277f3e;
-  --forest: color-mix(in oklab, #277f3e 45%, #0b1a10);
-  --forest-foreground: oklch(0.97 0.02 100);
+  --forest: #277f3e;
+  --forest-foreground: #ffffff;
   --gold: #dfa726;
   --olive: color-mix(in oklab, #277f3e 50%, #dfa726);
   --cream: color-mix(in oklab, #dfa726 8%, #ffffff);
   --gradient-brand: linear-gradient(120deg, var(--primary) 30%, var(--gold));
   --gradient-hero: linear-gradient(100deg, color-mix(in oklab, var(--forest) 95%, transparent) 0%, color-mix(in oklab, var(--primary) 70%, transparent) 50%, color-mix(in oklab, var(--primary) 15%, transparent) 100%);
-  --shadow-elegant: 0 30px 60px -30px oklch(0.3 0.1 150 / 0.45);
+  --shadow-elegant: 0 30px 60px -30px color-mix(in oklab, #277f3e 40%, transparent);
   --shadow-gold: 0 14px 34px -12px oklch(0.7 0.15 80 / 0.6);
 }
 
