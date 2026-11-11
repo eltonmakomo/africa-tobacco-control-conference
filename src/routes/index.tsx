@@ -2,6 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarDays, Globe2, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import hero from "@/assets/hero-delegates.jpg";
+import plenary from "@/assets/plenary.jpg";
+import eposter from "@/assets/eposter.jpg";
+import youth from "@/assets/youth.jpg";
+import dialogue from "@/assets/dialogue.jpg";
+import nairobi from "@/assets/nairobi.jpg";
 import emblem from "@/assets/actcd-emblem.png";
 import { Pending, Section } from "@/components/site/Bits";
 import { CONVENERS, EVENT, NUMBERS, TRACKS } from "@/lib/conference";
@@ -84,25 +89,44 @@ function Home() {
           <p className="text-lg leading-relaxed text-foreground/80">
             The 3rd Africa Conference on Tobacco Control and Development brings together policymakers, researchers, public health leaders, civil society, youth and development partners to accelerate tobacco control across the continent. The African Capacity Building Foundation convenes the Conference with the Ministry of Health of Kenya, the African Union Commission and the Africa Centres for Disease Control and Prevention.
           </p>
-          <div className="rounded-3xl bg-secondary p-8">
+          <div className="overflow-hidden rounded-3xl bg-secondary"><img src={dialogue} alt="Policymakers in dialogue" loading="lazy" className="h-56 w-full object-cover" /><div className="p-8">
             <p className="eyebrow text-primary">Theme & objectives</p>
             <p className="mt-3 text-xl font-semibold leading-snug">{EVENT.theme}</p>
             <p className="mt-4 text-foreground/75">
               The theme positions tobacco control within Africa's broader movement towards health sovereignty. The Conference strengthens African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future.
             </p>
             <Link to="/about" className="mt-6 inline-flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">Read more <ArrowRight className="size-4" /></Link>
-          </div>
+          </div></div>
         </div>
       </Section>
 
+      {/* Photo mosaic */}
+      <section className="px-5 pb-8">
+        <div className="mx-auto grid max-w-7xl auto-rows-[14rem] gap-4 md:grid-cols-4">
+          {[
+            [plenary, "High-level plenaries", "md:col-span-2 md:row-span-2"],
+            [youth, "Youth at the centre", "md:row-span-2"],
+            [dialogue, "Ministerial dialogue", ""],
+            [eposter, "African evidence", ""],
+          ].map(([src, label, cls]) => (
+            <figure key={label} className={`group relative overflow-hidden rounded-3xl ${cls}`}>
+              <img src={src} alt={label} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/10 to-transparent" />
+              <figcaption className="absolute bottom-5 left-5 font-semibold text-forest-foreground">{label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* Numbers */}
-      <section className="relative overflow-hidden bg-forest py-20 text-forest-foreground">
+      <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
+        <img src={nairobi} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover opacity-20" />
         <div className="pointer-events-none absolute -left-40 top-1/2 size-[40rem] -translate-y-1/2 rounded-full bg-swirl opacity-30" />
         <div className="relative mx-auto max-w-7xl px-5">
           <p className="eyebrow text-gold">ACTCD in numbers</p>
           <div className="mt-10 grid gap-px overflow-hidden rounded-3xl bg-forest-foreground/15 sm:grid-cols-2 lg:grid-cols-3">
             {NUMBERS.map((n) => (
-              <div key={n.label} className="bg-forest p-8 transition hover:bg-forest-foreground/5">
+              <div key={n.label} className="bg-forest/85 p-8 transition hover:bg-forest-foreground/5">
                 <div className="flex items-baseline gap-2"><span className="text-5xl font-bold text-gold">{n.figure}</span><span className="text-lg font-semibold">{n.label}</span></div>
                 <p className="mt-2 text-sm text-forest-foreground/70">{n.detail}</p>
               </div>
@@ -135,6 +159,7 @@ function Home() {
           <Link to="/call-for-abstracts" className="mt-8 inline-flex items-center gap-2 rounded-full bg-card px-7 py-4 font-semibold text-primary transition hover:-translate-y-0.5">
             View guidelines & key dates <ArrowRight className="size-4" />
           </Link>
+          <img src={eposter} alt="Researcher presenting a digital e-poster" loading="lazy" className="absolute right-10 top-1/2 hidden h-[115%] w-80 -translate-y-1/2 rotate-3 rounded-3xl object-cover shadow-elegant lg:block" />
         </div>
       </section>
 

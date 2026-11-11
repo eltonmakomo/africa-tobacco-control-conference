@@ -1,3 +1,4 @@
+import heroImg from "@/assets/youth.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import nairobi from "@/assets/nairobi.jpg";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/participate")({
 function Participate() {
   return (
     <>
-      <PageHero eyebrow="Participate" title="Join Africa's tobacco control community in Nairobi" />
+      <PageHero image={heroImg} eyebrow="Participate" title="Join Africa's tobacco control community in Nairobi" />
       <Section id="registration" eyebrow="Registration" title="In person or virtual">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-4 text-lg text-foreground/80">

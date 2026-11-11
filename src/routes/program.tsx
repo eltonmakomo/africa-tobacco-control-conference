@@ -1,3 +1,4 @@
+import heroImg from "@/assets/plenary.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
@@ -24,7 +25,7 @@ function Program() {
   const [active, setActive] = useState(0);
   return (
     <>
-      <PageHero eyebrow="Program" title="Two days. Five tracks. One Call to Action." intro="The Conference combines high-level political dialogue with a rigorous scientific program, closing with a Continental Call to Action on Tobacco Control and Health Sovereignty." />
+      <PageHero image={heroImg} eyebrow="Program" title="Two days. Five tracks. One Call to Action." intro="The Conference combines high-level political dialogue with a rigorous scientific program, closing with a Continental Call to Action on Tobacco Control and Health Sovereignty." />
       <Section id="agenda" eyebrow="Agenda at a glance" title="Structure of the two days">
         <div role="tablist" className="inline-flex rounded-full bg-secondary p-1">
           {DAYS.map((d, i) => (
