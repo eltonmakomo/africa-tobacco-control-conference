@@ -51,7 +51,6 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
         <img src={hero} alt="Delegates at the 2nd ACTCD in Accra, 2024" width={1920} height={1088} className="absolute inset-0 -z-20 size-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-hero" />
-        <img src={emblem} alt="" aria-hidden className="pointer-events-none absolute -right-24 top-10 -z-10 hidden w-[36rem] opacity-25 animate-spin-slow lg:block" />
         <div className="mx-auto grid min-h-[min(86vh,820px)] max-w-7xl items-end gap-10 px-5 pb-16 pt-24 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <p className="eyebrow text-gold animate-rise">3rd Africa Conference on Tobacco Control and Development</p>
