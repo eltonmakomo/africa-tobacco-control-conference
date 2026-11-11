@@ -16,7 +16,7 @@ export function Footer() {
         <div className="md:col-span-3">
           <h3 className="eyebrow text-gold">Explore</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {[["/about","About"],["/program","Program"],["/call-for-abstracts","Call for Abstracts"],["/participate","Participate"],["/knowledge-hub","Knowledge Hub"],["/media","Media"]].map(([to,l]) => (
+            {([["/about","About"],["/program","Program"],["/call-for-abstracts","Call for Abstracts"],["/participate","Participate"],["/knowledge-hub","Knowledge Hub"],["/media","Media"]] as const).map(([to,l]) => (
               <li key={to}><Link to={to} className="text-forest-foreground/80 hover:text-gold">{l}</Link></li>
             ))}
           </ul>
