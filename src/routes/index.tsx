@@ -109,12 +109,12 @@ function Home() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                [plenary, "High-level plenaries"],
-                [youth, "Youth at the centre"],
-                [eposter, "African evidence"],
-                [nairobi, "Nairobi, the host city"],
-              ].map(([src, label]) => (
-                <figure key={label} className="group relative aspect-[4/3] overflow-hidden rounded-3xl">
+                [plenary, "High-level plenaries", "sm:col-span-2 aspect-[16/9]"],
+                [youth, "Youth at the centre", "aspect-[4/3]"],
+                [eposter, "African evidence", "aspect-[4/3]"],
+                [nairobi, "Nairobi, the host city", "sm:col-span-2 aspect-[16/9]"],
+              ].map(([src, label, cls]) => (
+                <figure key={label} className={`group relative overflow-hidden rounded-3xl ${cls}`}>
                   <img src={src} alt={label} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/10 to-transparent" />
                   <figcaption className="absolute bottom-5 left-5 font-semibold text-forest-foreground">{label}</figcaption>
