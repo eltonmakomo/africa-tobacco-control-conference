@@ -1,7 +1,7 @@
 import heroImg from "@/assets/dialogue.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
-import { ARTICLE_53, CONVENERS, CROSS_CUTTING, EVENT, OBJECTIVES, TRACKS } from "@/lib/conference";
+import { ARTICLE_53, CONVENERS, CROSS_CUTTING, EVENT, EXPECTED_OUTCOMES, KEY_STATS, OBJECTIVES, OUTPUTS, PAST_EDITIONS, RESOLUTIONS_2024, TRACKS } from "@/lib/conference";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -25,9 +25,9 @@ function About() {
             <p>Two decades after the WHO Framework Convention on Tobacco Control entered into force, Africa has made real progress, with 44 of the 47 countries in the WHO African Region having ratified the Convention. The environment continues to shift through emerging nicotine products, industry interference, illicit trade and constrained financing.</p>
             <p>Africa holds the world's youngest population, with more than 60% of its people under the age of 25. Rapid urbanization, uneven policy implementation and aggressive industry marketing create conditions for a rise in tobacco use without decisive action. The African Capacity Building Foundation convenes the Conference as the African Union's specialized agency for capacity development, building on the first edition in 2021 and the second in Accra, Ghana, in 2024.</p>
           </div>
-          <div className="space-y-4">
-            {[["44 / 47", "WHO African Region countries have ratified the WHO FCTC"], ["60%+", "of Africa's people are under the age of 25"]].map(([f, l]) => (
-              <div key={f} className="rounded-3xl bg-forest p-7 text-forest-foreground"><div className="text-4xl font-bold text-gold">{f}</div><p className="mt-2 text-sm text-forest-foreground/80">{l}</p></div>
+          <div className="grid grid-cols-2 gap-4">
+            {KEY_STATS.map(({ figure: f, label: l }) => (
+              <div key={f} className="rounded-3xl bg-forest p-6 text-forest-foreground"><div className="text-3xl font-bold text-gold">{f}</div><p className="mt-2 text-sm text-forest-foreground/80">{l}</p></div>
             ))}
           </div>
         </div>
@@ -45,6 +45,10 @@ function About() {
             </li>
           ))}
         </ol>
+        <h3 className="mt-14 text-2xl font-semibold">Expected outcomes</h3>
+        <ul className="mt-6 grid gap-3 md:grid-cols-2">{EXPECTED_OUTCOMES.map((o) => <li key={o} className="flex gap-3 text-foreground/80"><span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />{o}</li>)}</ul>
+        <h3 className="mt-12 text-2xl font-semibold">Key outputs</h3>
+        <div className="mt-5 flex flex-wrap gap-3">{OUTPUTS.map((o) => <span key={o} className="rounded-full bg-secondary px-5 py-2.5 font-medium">{o}</span>)}</div>
       </Section>
       <Section id="structure" eyebrow="Conference structure" title="High-level dialogue meets rigorous science" className="bg-secondary/60">
         <div className="overflow-hidden rounded-3xl border border-border bg-card">
@@ -61,17 +65,21 @@ function About() {
       </Section>
       <Section id="past" eyebrow="Past editions" title="Building on 2021 and 2024">
         <div className="relative grid gap-6 md:grid-cols-3">
-          {[
-            ["2021", "1st edition · Virtual", "Galvanized collective action through research, knowledge exchange and strategic partnerships."],
-            ["2024", "2nd edition · Accra, Ghana", "Strengthened the foundation through policy dialogue, institutional capacity, youth and gender engagement, and the environmental and development dimensions of tobacco control."],
-            ["2027", "3rd edition · Nairobi, Kenya", "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty."],
-          ].map(([y, t, d], i) => (
-            <div key={y} className={`rounded-3xl p-8 ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
-              <div className="text-5xl font-bold">{y}</div><p className="mt-3 font-semibold">{t}</p><p className={`mt-3 text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{d}</p>
+          {PAST_EDITIONS.map((e, i) => (
+            <div key={e.year} className={`rounded-3xl p-8 ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
+              <div className="text-5xl font-bold">{e.year}</div><p className="mt-3 font-semibold">{e.title}</p>
+              <p className={`text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.dates}</p>
+              <p className="mt-4 font-medium italic">"{e.theme}"</p>
+              <p className={`mt-3 text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.detail}</p>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-sm text-muted-foreground">Reports and communiqués from both editions appear in the Knowledge Hub.</p>
+        <p className="mt-6 text-sm text-muted-foreground">Reports and communiqués from both editions are available in the <a href="/knowledge-hub" className="font-semibold text-primary underline">Knowledge Hub</a>.</p>
+        <div className="mt-12 rounded-3xl bg-forest p-8 text-forest-foreground md:p-10">
+          <p className="eyebrow text-gold">2024 Accra Communiqué</p>
+          <h3 className="mt-3 text-2xl font-semibold">What participants resolved in 2024</h3>
+          <ul className="mt-6 grid gap-3 md:grid-cols-2">{RESOLUTIONS_2024.map((r) => <li key={r} className="flex gap-3 text-forest-foreground/85"><span className="mt-2 size-2 shrink-0 rounded-full bg-gold" />{r}</li>)}</ul>
+        </div>
       </Section>
       <Section id="organizers" eyebrow="Organizers and partners" title="Who convenes ACTCD" className="bg-secondary/60">
         <div className="flex flex-wrap gap-3">{CONVENERS.map((c) => <span key={c} className="rounded-full bg-card px-5 py-3 font-medium shadow-sm">{c}</span>)}<span className="rounded-full bg-card px-5 py-3 font-medium text-muted-foreground shadow-sm">and other partners</span></div>

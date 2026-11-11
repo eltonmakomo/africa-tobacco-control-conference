@@ -52,3 +52,38 @@ export const KEY_DATES = [
 
 export const ARTICLE_53 =
   "The Conference observes WHO FCTC Article 5.3 and accepts no financial or in-kind support from the tobacco industry or organizations acting to further its interests.";
+
+export const EXPECTED_OUTCOMES = [
+  "Stronger continental leadership and commitment to accelerated WHO FCTC implementation and protection of public health policy from tobacco industry interference",
+  "Increased generation, sharing and use of African-generated knowledge and evidence",
+  "Enhanced regulatory and health-system preparedness to prevent tobacco and nicotine uptake, particularly among young people, and improved access to tobacco dependence treatment",
+  "Increased recognition of tobacco taxation and domestic resource mobilisation as part of sustainable tobacco control and health financing",
+  "Stronger collaboration and networks among tobacco control actors in Africa",
+  "Clearer positioning of tobacco control within Africa's health sovereignty and sustainable development agendas",
+];
+
+export const OUTPUTS = ["Knowledge Compendium", "Conference Communiqué", "Continental Call to Action", "Conference Report", "Follow-up and Accountability Framework"];
+
+export const KEY_STATS = [
+  { figure: "44 / 47", label: "WHO African Region countries have ratified the WHO FCTC" },
+  { figure: "7M+", label: "deaths a year globally from tobacco use" },
+  { figure: "~9.5%", label: "adult tobacco use in the WHO African Region" },
+  { figure: "60%+", label: "of Africa's people are under the age of 25" },
+];
+
+export const PAST_EDITIONS = [
+  { year: "2021", title: "1st edition · Virtual", dates: "26–28 October 2021", theme: "A Tobacco Free Africa. An Urgent Call for Joint Action.", detail: "Held on the WHOVA platform with 586 registered participants and about 280 attending each day, across plenaries and parallel workshops on sustainability, local evidence, multisectoral support and partnerships." },
+  { year: "2024", title: "2nd edition · Accra, Ghana", dates: "13–14 November 2024 · Labadi Beach Hotel", theme: "Breaking Barriers, Building Futures: Advancing the Tobacco Control Ecosystem in Africa", detail: "Convened by ACBF with the Centre for Tobacco Control in Africa and Youth in Action, hosted by Ghana's Ministry of Health. 96% of surveyed participants, from 23 countries, rated the theme relevant to Africa's development challenges." },
+  { year: "2027", title: "3rd edition · Nairobi, Kenya", dates: "22–23 April 2027", theme: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty", detail: "Convened by ACBF with Kenya's Ministry of Health, the African Union Commission, Africa CDC and partners." },
+];
+
+export const RESOLUTIONS_2024 = [
+  "Strengthen and enforce tobacco control policies in line with the WHO FCTC, and amend laws to ban emerging products",
+  "Establish and scale accessible smoking cessation programs, particularly for high-risk populations",
+  "Engage young people intentionally in tobacco control across the continent",
+  "Dedicate resources to tobacco control, including through tobacco taxes, with African governments owning the financing",
+  "Develop targeted interventions for women and young people",
+  "Invest in research on local dynamics of tobacco use and emerging products",
+  "Integrate environmental health and alternative livelihoods for tobacco farmers",
+  "Build robust monitoring, evaluation and accountability frameworks",
+];
