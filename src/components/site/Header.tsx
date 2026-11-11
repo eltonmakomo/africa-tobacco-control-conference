@@ -18,7 +18,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2.5">
         <Link to="/" aria-label="ACTCD 2027 home" className="shrink-0">
-          <Logo className="h-14" />
+          <Logo className="h-16" />
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {NAV.map((n) => (
