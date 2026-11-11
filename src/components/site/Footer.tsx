@@ -8,7 +8,7 @@ export function Footer() {
       <div className="pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full bg-swirl opacity-30" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
-          <div className="inline-block rounded-2xl bg-card p-4"><Logo className="h-24" /></div>
+          <div className="inline-block rounded-2xl bg-primary px-4 py-3"><Logo variant="reverse" className="h-16" /></div>
           <p className="mt-6 max-w-sm text-sm text-forest-foreground/75">
             Convened by The African Capacity Building Foundation, the African Union's specialized agency for capacity development.
           </p>
