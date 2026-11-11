@@ -85,17 +85,17 @@ function Home() {
 
       {/* About — sticky scroll: the heading column pins while the cards and photos scroll past */}
       <section id="about" className="scroll-mt-24 py-20 md:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-10 px-5 lg:flex-row lg:gap-14">
-          <div className="lg:sticky lg:top-28 lg:w-[38%] lg:self-start">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 md:flex-row md:gap-10 lg:gap-14">
+          <div className="md:sticky md:top-24 md:w-[40%] md:self-start lg:top-28 lg:w-[38%]">
             <p className="eyebrow text-primary">About the Conference</p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight md:text-5xl">A continental platform for <span className="text-gradient-brand">collective action</span></h2>
-            <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+            <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">A continental platform for <span className="text-gradient-brand">collective action</span></h2>
+            <p className="mt-6 text-base leading-relaxed text-foreground/80 md:text-lg">
               The 3rd Africa Conference on Tobacco Control and Development brings together policymakers, researchers, public health leaders, civil society, youth and development partners to accelerate tobacco control across the continent. The African Capacity Building Foundation convenes the Conference with the Ministry of Health of Kenya, the African Union Commission and the Africa Centres for Disease Control and Prevention.
             </p>
             <Link to="/about" className="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition-all hover:gap-3">Read more <ArrowRight className="size-4" /></Link>
           </div>
 
-          <div className="w-full space-y-4 lg:w-[62%]">
+          <div className="w-full space-y-4 md:w-[60%] lg:w-[62%]">
             <div className="overflow-hidden rounded-3xl bg-secondary">
               <img src={dialogue} alt="Policymakers in dialogue" loading="lazy" className="h-56 w-full object-cover" />
               <div className="p-8">
