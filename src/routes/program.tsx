@@ -34,7 +34,7 @@ function Program() {
           ))}
         </div>
         <ol className="mt-8 border-l-2 border-primary/20 pl-8">
-          {DAYS[active].items.map((it) => (
+          {DAYS[active]?.items.map((it) => (
             <li key={it} className="relative mb-4 rounded-2xl border border-border bg-card p-5 animate-rise">
               <span className="absolute -left-[2.6rem] top-6 size-4 rounded-full border-4 border-background bg-accent" />
               <span className="font-medium">{it}</span>
