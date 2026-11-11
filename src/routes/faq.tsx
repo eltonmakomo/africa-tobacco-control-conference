@@ -15,7 +15,7 @@ export const Route = createFileRoute("/faq")({
   component: FAQ,
 });
 
-const QA = [
+const QA: [string, string][] = [
   ["When and where is the Conference?", "22–23 April 2027 in Nairobi, Kenya, held in person with an option for virtual attendance."],
   ["Which languages are used?", "English and French, with simultaneous interpretation."],
   ["How do I register?", "Registration for in-person and virtual participation opens on the Participate page and is managed through Whova."],
