@@ -49,7 +49,7 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
-        <img src={hero} alt="Delegates in discussion at an African health conference" width={1920} height={1088} className="absolute inset-0 -z-20 size-full object-cover" />
+        <img src={hero} alt="Delegates at the 2nd ACTCD in Accra, 2024" width={1920} height={1088} className="absolute inset-0 -z-20 size-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-hero" />
         <img src={emblem} alt="" aria-hidden className="pointer-events-none absolute -right-24 top-10 -z-10 hidden w-[36rem] opacity-25 animate-spin-slow lg:block" />
         <div className="mx-auto grid min-h-[min(86vh,820px)] max-w-7xl items-end gap-10 px-5 pb-16 pt-24 lg:grid-cols-12">
@@ -97,7 +97,7 @@ function Home() {
 
           <div className="w-full space-y-4 md:w-[60%] lg:w-[62%]">
             <div className="overflow-hidden rounded-3xl bg-secondary">
-              <img src={dialogue} alt="Policymakers in dialogue" loading="lazy" className="h-56 w-full object-cover" />
+              <img src={dialogue} alt="Panel discussion at the 2nd ACTCD, Accra 2024" loading="lazy" className="h-56 w-full object-cover" />
               <div className="p-8">
                 <p className="eyebrow text-primary">Theme & objectives</p>
                 <p className="mt-3 text-xl font-semibold leading-snug">{EVENT.theme}</p>
@@ -110,7 +110,7 @@ function Home() {
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 [plenary, "High-level plenaries", "sm:col-span-2 aspect-[16/9]"],
-                [youth, "Youth at the centre", "aspect-[4/3]"],
+                [youth, "Voices from the floor", "aspect-[4/3]"],
                 [eposter, "African evidence", "aspect-[4/3]"],
                 [nairobi, "Nairobi, the host city", "sm:col-span-2 aspect-[16/9]"],
               ].map(([src, label, cls]) => (
@@ -166,7 +166,7 @@ function Home() {
           <Link to="/call-for-abstracts" className="mt-8 inline-flex items-center gap-2 rounded-full bg-card px-7 py-4 font-semibold text-primary transition hover:-translate-y-0.5">
             View guidelines & key dates <ArrowRight className="size-4" />
           </Link>
-          <img src={eposter} alt="Researcher presenting a digital e-poster" loading="lazy" className="absolute right-10 top-1/2 hidden h-[115%] w-80 -translate-y-1/2 rotate-3 rounded-3xl object-cover shadow-elegant lg:block" />
+          <img src={eposter} alt="Delegates viewing research posters at the 2nd ACTCD" loading="lazy" className="absolute right-10 top-1/2 hidden h-[115%] w-80 -translate-y-1/2 rotate-3 rounded-3xl object-cover shadow-elegant lg:block" />
         </div>
       </section>
 
