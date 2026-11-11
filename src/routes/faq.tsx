@@ -1,3 +1,4 @@
+import heroImg from "@/assets/nairobi.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -27,7 +28,7 @@ const QA: [string, string][] = [
 function FAQ() {
   return (
     <>
-      <PageHero eyebrow="FAQs" title="Frequently asked questions" />
+      <PageHero image={heroImg} eyebrow="FAQs" title="Frequently asked questions" />
       <Section>
         <Accordion type="single" collapsible className="max-w-3xl">
           {QA.map(([q, a]) => (

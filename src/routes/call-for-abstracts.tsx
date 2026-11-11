@@ -1,3 +1,4 @@
+import heroImg from "@/assets/eposter.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Pending, Section, TBC } from "@/components/site/Bits";
 import { KEY_DATES, TRACKS } from "@/lib/conference";
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/call-for-abstracts")({
 function CFA() {
   return (
     <>
-      <PageHero eyebrow="Call for Abstracts" title="African evidence, at the centre of policy" intro="The call invites research papers, implementation experiences, policy analyses and innovations that reflect African-generated evidence.">
+      <PageHero image={heroImg} eyebrow="Call for Abstracts" title="African evidence, at the centre of policy" intro="The call invites research papers, implementation experiences, policy analyses and innovations that reflect African-generated evidence.">
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <button disabled className="cursor-not-allowed rounded-full bg-accent/60 px-7 py-4 font-semibold text-accent-foreground">Submit an abstract · opens Oct/Nov 2026</button>
         </div>

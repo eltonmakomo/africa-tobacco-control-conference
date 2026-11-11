@@ -1,3 +1,4 @@
+import heroImg from "@/assets/dialogue.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { ARTICLE_53, CONVENERS, CROSS_CUTTING, EVENT, OBJECTIVES, TRACKS } from "@/lib/conference";
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <>
-      <PageHero eyebrow="About" title="Securing Africa's tobacco control gains" intro={EVENT.theme} />
+      <PageHero image={heroImg} eyebrow="About" title="Securing Africa's tobacco control gains" intro={EVENT.theme} />
       <Section id="about" eyebrow="About ACTCD" title="Progress is real. So is the risk.">
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="space-y-5 text-lg leading-relaxed text-foreground/80 lg:col-span-2">

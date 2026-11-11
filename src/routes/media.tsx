@@ -1,3 +1,4 @@
+import heroImg from "@/assets/plenary.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
 
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/media")({
 function Media() {
   return (
     <>
-      <PageHero eyebrow="Media" title="Media centre" intro="All media materials observe WHO FCTC Article 5.3 and give no platform to tobacco industry narratives." />
+      <PageHero image={heroImg} eyebrow="Media" title="Media centre" intro="All media materials observe WHO FCTC Article 5.3 and give no platform to tobacco industry narratives." />
       <Section id="news" eyebrow="News & press releases" title="Latest">
         <Pending>News, press releases and events will be published here.</Pending>
       </Section>
