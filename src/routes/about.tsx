@@ -83,7 +83,7 @@ function About() {
         </div>
       </Section>
       <Section id="organizers" eyebrow="Organizers and partners" title="Who convenes ACTCD" className="bg-secondary/60">
-        <PartnerLogos columns="sm:grid-cols-2 lg:grid-cols-3" height="h-20" />
+        <PartnerLogos columns="sm:grid-cols-2 lg:grid-cols-3" height="h-14" />
         <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">{ARTICLE_53}</p>
       </Section>
     </>

@@ -2,7 +2,7 @@ import { PARTNERS } from "@/lib/conference";
 
 export function PartnerLogos({
   columns = "sm:grid-cols-2 lg:grid-cols-3",
-  height = "h-24",
+  height = "h-16",
   padded = true,
 }: {
   columns?: string;

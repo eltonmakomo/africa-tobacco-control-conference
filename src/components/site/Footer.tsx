@@ -43,8 +43,8 @@ export function Footer() {
           <p className="text-xs text-forest-foreground/70">Conveners and partners</p>
           <div className="mt-3 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3">
             {PARTNERS.map((p) => (
-              <div key={p.short} className="flex h-20 items-center justify-center rounded-xl bg-card px-4 shadow-card">
-                <img src={p.logo} alt={p.name} loading="lazy" className="max-h-12 w-auto max-w-full object-contain" />
+              <div key={p.short} className="flex h-16 items-center justify-center rounded-xl bg-card px-4 shadow-card">
+                <img src={p.logo} alt={p.name} loading="lazy" className="max-h-9 w-auto max-w-full object-contain" />
               </div>
             ))}
           </div>
