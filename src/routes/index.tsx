@@ -128,10 +128,10 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
         <img src={nairobi} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover" />
         <div className="relative mx-auto max-w-7xl px-5">
-          <p className="eyebrow inline-block rounded-full bg-forest px-4 py-2 text-gold">ACTCD in numbers</p>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-3xl bg-forest-foreground/20 shadow-elegant sm:grid-cols-2 lg:grid-cols-3">
+          <p className="eyebrow inline-block rounded-full glass-forest px-4 py-2 text-gold">ACTCD in numbers</p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {NUMBERS.map((n) => (
-              <div key={n.label} className="bg-forest/95 p-8 transition hover:bg-forest">
+              <div key={n.label} className="glass-forest rounded-3xl p-8">
                 <div className="flex items-baseline gap-2"><span className="text-5xl font-bold text-gold">{n.figure}</span><span className="text-lg font-semibold">{n.label}</span></div>
                 <p className="mt-2 text-sm text-forest-foreground/70">{n.detail}</p>
               </div>
