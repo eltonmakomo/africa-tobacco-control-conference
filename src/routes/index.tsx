@@ -9,7 +9,8 @@ import dialogue from "@/assets/dialogue.jpg";
 import nairobi from "@/assets/nairobi.jpg";
 import emblem from "@/assets/actcd-emblem.png";
 import { Pending, Section } from "@/components/site/Bits";
-import { CONVENERS, EVENT, NUMBERS, TRACKS } from "@/lib/conference";
+import { PartnerLogos } from "@/components/site/PartnerLogos";
+import { EVENT, NUMBERS, TRACKS } from "@/lib/conference";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -185,13 +186,9 @@ function Home() {
 
       {/* Partners */}
       <Section eyebrow="Conveners and partners" title="Convened together" className="bg-secondary/60">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CONVENERS.map((c) => (
-            <div key={c} className="flex min-h-28 items-center justify-center rounded-2xl bg-card p-6 text-center font-semibold text-foreground/80 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{c}</div>
-          ))}
-        </div>
+        <PartnerLogos />
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">Partner logos will be added once supplied.</p>
+          <p className="text-sm text-muted-foreground">Other partners and sponsors will be listed as they are confirmed.</p>
           <Link to="/participate" hash="partner" className="inline-flex items-center gap-2 font-semibold text-primary">Become a partner <ArrowRight className="size-4" /></Link>
         </div>
       </Section>

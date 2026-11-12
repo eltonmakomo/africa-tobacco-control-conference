@@ -1,7 +1,8 @@
 import heroImg from "@/assets/dialogue.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
-import { ARTICLE_53, CONVENERS, CROSS_CUTTING, EVENT, EXPECTED_OUTCOMES, KEY_STATS, OBJECTIVES, OUTPUTS, PAST_EDITIONS, RESOLUTIONS_2024, TRACKS } from "@/lib/conference";
+import { PartnerLogos } from "@/components/site/PartnerLogos";
+import { ARTICLE_53, CROSS_CUTTING, EVENT, EXPECTED_OUTCOMES, KEY_STATS, OBJECTIVES, OUTPUTS, PAST_EDITIONS, RESOLUTIONS_2024, TRACKS } from "@/lib/conference";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -82,7 +83,7 @@ function About() {
         </div>
       </Section>
       <Section id="organizers" eyebrow="Organizers and partners" title="Who convenes ACTCD" className="bg-secondary/60">
-        <div className="flex flex-wrap gap-3">{CONVENERS.map((c) => <span key={c} className="rounded-full bg-card px-5 py-3 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{c}</span>)}<span className="rounded-full bg-card px-5 py-3 font-medium text-muted-foreground shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">and other partners</span></div>
+        <PartnerLogos columns="sm:grid-cols-2 lg:grid-cols-3" height="h-20" />
         <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">{ARTICLE_53}</p>
       </Section>
     </>

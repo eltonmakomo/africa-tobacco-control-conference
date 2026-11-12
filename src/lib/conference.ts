@@ -1,3 +1,10 @@
+import acbfLogo from "@/assets/partners/acbf.png.asset.json";
+import africacdcLogo from "@/assets/partners/africacdc.png.asset.json";
+import aucLogo from "@/assets/partners/auc.png.asset.json";
+import mohKenyaLogo from "@/assets/partners/mohkenya.png.asset.json";
+import fctcLogo from "@/assets/partners/fctc.png.asset.json";
+import whoafroLogo from "@/assets/partners/whoafro.png.asset.json";
+
 export const EVENT = {
   edition: "3rd Africa Conference on Tobacco Control and Development",
   short: "ACTCD 2027",
@@ -41,6 +48,15 @@ export const CONVENERS = [
   "Africa CDC",
   "WHO AFRO",
   "WHO FCTC Secretariat",
+];
+
+export const PARTNERS = [
+  { name: "The African Capacity Building Foundation (ACBF)", short: "ACBF", logo: acbfLogo.url },
+  { name: "Ministry of Health, Kenya", short: "Ministry of Health, Kenya", logo: mohKenyaLogo.url },
+  { name: "African Union Commission", short: "African Union Commission", logo: aucLogo.url },
+  { name: "Africa CDC", short: "Africa CDC", logo: africacdcLogo.url },
+  { name: "WHO Regional Office for Africa", short: "WHO AFRO", logo: whoafroLogo.url },
+  { name: "WHO FCTC Secretariat", short: "WHO FCTC Secretariat", logo: fctcLogo.url },
 ];
 
 export const KEY_DATES = [
