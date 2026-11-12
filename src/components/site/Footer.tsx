@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { ARTICLE_53, PARTNERS } from "@/lib/conference";
+import { ARTICLE_53 } from "@/lib/conference";
 
 export function Footer() {
   return (
@@ -40,15 +40,7 @@ export function Footer() {
       </div>
       <div className="relative border-t border-forest-foreground/15">
         <div className="mx-auto max-w-7xl px-5 py-6">
-          <p className="text-xs text-forest-foreground/70">Conveners and partners</p>
-          <div className="mt-3 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3">
-            {PARTNERS.map((p) => (
-              <div key={p.short} className="flex h-16 items-center justify-center rounded-xl bg-card px-4 shadow-card">
-                <img src={p.logo} alt={p.name} loading="lazy" className="max-h-9 w-auto max-w-full object-contain" />
-              </div>
-            ))}
-          </div>
-          <p className="mt-3 text-xs font-medium text-forest-foreground/80">{ARTICLE_53}</p>
+          <p className="text-xs font-medium text-forest-foreground/80">{ARTICLE_53}</p>
           <p className="mt-3 text-xs text-forest-foreground/50">© 2027 The African Capacity Building Foundation</p>
         </div>
       </div>
