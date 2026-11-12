@@ -130,11 +130,12 @@ function Home() {
       {/* Numbers */}
       <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
         <img src={nairobi} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover" />
+        <div className="absolute inset-0 -z-10 bg-foreground/25" />
         <div className="relative mx-auto max-w-7xl px-5">
-          <p className="eyebrow inline-block rounded-full glass-forest px-4 py-2 text-forest-foreground">ACTCD in numbers</p>
+          <p className="eyebrow inline-block rounded-full glass px-4 py-2 text-forest-foreground">ACTCD in numbers</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {NUMBERS.map((n) => (
-              <div key={n.label} className="glass-forest rounded-3xl p-8 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+              <div key={n.label} className="glass rounded-2xl p-8 text-on-photo shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
                 <div className="flex items-baseline gap-2"><span className="text-5xl font-bold text-forest-foreground">{n.figure}</span><span className="text-lg font-semibold">{n.label}</span></div>
                 <p className="mt-2 text-sm text-forest-foreground/70">{n.detail}</p>
               </div>

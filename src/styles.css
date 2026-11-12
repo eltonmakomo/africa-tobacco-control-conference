@@ -113,6 +113,9 @@
   background-image: repeating-conic-gradient(from 0deg at 50% 50%, color-mix(in oklab, var(--olive) 35%, transparent) 0deg 3deg, transparent 3deg 12deg);
   mask-image: radial-gradient(circle, transparent 28%, black 30%, black 62%, transparent 70%);
 }
+@utility text-on-photo {
+  text-shadow: 0 1px 2px color-mix(in oklab, black 45%, transparent), 0 2px 18px color-mix(in oklab, black 40%, transparent);
+}
 @utility eyebrow {
   font-family: var(--font-display);
   font-size: 0.75rem;
