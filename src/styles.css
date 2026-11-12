@@ -69,6 +69,8 @@
   --gradient-hero: linear-gradient(100deg, color-mix(in oklab, var(--forest) 85%, transparent) 0%, color-mix(in oklab, var(--primary) 45%, transparent) 50%, transparent 85%);
   --shadow-elegant: 0 30px 60px -30px color-mix(in oklab, #277f3e 40%, transparent);
   --shadow-gold: 0 14px 34px -12px oklch(0.7 0.15 80 / 0.6);
+  --shadow-card: 0 1px 2px color-mix(in oklab, var(--forest) 10%, transparent), 0 14px 30px -14px color-mix(in oklab, var(--forest) 26%, transparent);
+  --shadow-card-lg: 0 2px 4px color-mix(in oklab, var(--forest) 12%, transparent), 0 26px 48px -18px color-mix(in oklab, var(--forest) 36%, transparent);
 }
 
 @layer base {
@@ -92,6 +94,8 @@
 @utility bg-gradient-brand { background: var(--gradient-brand); }
 @utility bg-gradient-hero { background: var(--gradient-hero); }
 @utility shadow-elegant { box-shadow: var(--shadow-elegant); }
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility shadow-card-lg { box-shadow: var(--shadow-card-lg); }
 @utility shadow-gold { box-shadow: var(--shadow-gold); }
 @utility glass {
   background: color-mix(in oklab, var(--forest-foreground) 10%, transparent);

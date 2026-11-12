@@ -19,7 +19,7 @@ function Legal() {
     <>
       <PageHero eyebrow="Legal" title="Policies and statements" />
       <Section id="article-5-3" eyebrow="WHO FCTC Article 5.3 statement" title="Protected from industry interference">
-        <p className="max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 text-lg font-medium">{ARTICLE_53}</p>
+        <p className="max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 text-lg font-medium shadow-card transition hover:shadow-card-lg">{ARTICLE_53}</p>
       </Section>
       <Section id="privacy" eyebrow="Privacy policy" title="Privacy" className="bg-secondary/60"><Pending>Privacy policy text to be supplied by ACBF.</Pending></Section>
       <Section id="legal-notice" eyebrow="Legal notice" title="Legal notice"><Pending>Legal notice text to be supplied by ACBF.</Pending></Section>

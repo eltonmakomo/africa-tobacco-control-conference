@@ -20,12 +20,12 @@ function CFA() {
     <>
       <PageHero image={heroImg} eyebrow="Call for Abstracts" title="African evidence, at the centre of policy" intro="The call invites research papers, implementation experiences, policy analyses and innovations that reflect African-generated evidence.">
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <button disabled className="cursor-not-allowed rounded-full bg-accent/60 px-7 py-4 font-semibold text-accent-foreground">Submit an abstract · opens Oct/Nov 2026</button>
+          <button disabled className="cursor-not-allowed rounded-full bg-forest-foreground/80 px-7 py-4 font-semibold text-primary/70">Submit an abstract · opens Oct/Nov 2026</button>
         </div>
       </PageHero>
       <Section eyebrow="Overview and tracks" title="Map your submission to one of five tracks">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-          {TRACKS.map((t) => <div key={t.n} className="rounded-3xl border border-border bg-card p-6"><span className="eyebrow text-primary">Track {t.n}</span><p className="mt-2 font-semibold">{t.short}</p></div>)}
+          {TRACKS.map((t) => <div key={t.n} className="rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><span className="eyebrow text-primary">Track {t.n}</span><p className="mt-2 font-semibold">{t.short}</p></div>)}
         </div>
       </Section>
       <Section id="guidelines" eyebrow="Submission guidelines" title="Format" className="bg-secondary/60">
@@ -35,10 +35,10 @@ function CFA() {
       <Section id="dates" eyebrow="Key dates" title="Timeline">
         <ol className="grid gap-4 md:grid-cols-4">
           {KEY_DATES.map((k, i) => (
-            <li key={k.milestone} className={`rounded-3xl p-7 ${i === 3 ? "bg-forest text-forest-foreground" : "border border-border bg-card"}`}>
+            <li key={k.milestone} className={`rounded-3xl p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === 3 ? "bg-forest text-forest-foreground" : "border border-border bg-card"}`}>
               <span className="text-sm opacity-70">0{i + 1}</span>
               <p className="mt-3 font-semibold">{k.milestone}</p>
-              <div className="mt-3 text-lg font-bold">{k.date === "To be confirmed" ? <TBC /> : <span className={i === 3 ? "text-gold" : "text-primary"}>{k.date}</span>}</div>
+              <div className="mt-3 text-lg font-bold">{k.date === "To be confirmed" ? <TBC /> : <span className={i === 3 ? "text-forest-foreground" : "text-primary"}>{k.date}</span>}</div>
             </li>
           ))}
         </ol>

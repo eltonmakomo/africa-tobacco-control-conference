@@ -27,7 +27,7 @@ function Media() {
       </Section>
       <Section id="media-kit" eyebrow="Media kit" title="Fact sheets, logos and approved visuals">
         <div className="grid gap-4 md:grid-cols-4">
-          {["Fact sheets", "Logos & brand guidelines", "Key data", "Approved visuals"].map((x) => <div key={x} className="rounded-3xl border border-border bg-card p-6"><p className="font-semibold">{x}</p><p className="mt-2 text-xs text-muted-foreground">Download coming soon</p></div>)}
+          {["Fact sheets", "Logos & brand guidelines", "Key data", "Approved visuals"].map((x) => <div key={x} className="rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><p className="font-semibold">{x}</p><p className="mt-2 text-xs text-muted-foreground">Download coming soon</p></div>)}
         </div>
       </Section>
     </>

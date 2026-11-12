@@ -3,5 +3,9 @@
 - [x] Build pages: Home, About, Program, Call for Abstracts, Participate, Knowledge Hub, Media, FAQ, Legal
 - [x] Real 2024 photos (from Google Drive)
 - [x] Numbers cards translucent (frosted glass over Nairobi photo)
-- [ ] "Our history" (About) and "Latest news" (Media) images — blocked: reference screenshots show another site's card (school campus); need user's intent
+- [x] Soft shadow on all cards and non-button panels
+- [x] Green-to-gold gradient on the big track numbers on the home page
+- [x] Hover effects (lift + deeper shadow) on all cards
+- [x] Minimize gold/orange on green backgrounds (hero + green panels) — white instead
+- [x] Footer swirl pattern animated like the page banners
 - [ ] WHOVA registration link, contacts, social handles, Mailchimp — blocked: not supplied

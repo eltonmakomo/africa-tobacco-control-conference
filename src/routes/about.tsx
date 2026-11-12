@@ -27,7 +27,7 @@ function About() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {KEY_STATS.map(({ figure: f, label: l }) => (
-              <div key={f} className="rounded-3xl bg-forest p-6 text-forest-foreground"><div className="text-3xl font-bold text-gold">{f}</div><p className="mt-2 text-sm text-forest-foreground/80">{l}</p></div>
+              <div key={f} className="rounded-3xl bg-forest p-6 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><div className="text-3xl font-bold text-forest-foreground">{f}</div><p className="mt-2 text-sm text-forest-foreground/80">{l}</p></div>
             ))}
           </div>
         </div>
@@ -39,7 +39,7 @@ function About() {
         <p className="max-w-3xl text-foreground/75">The overall goal is to strengthen African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future and advancing health sovereignty.</p>
         <ol className="mt-10 grid gap-5 md:grid-cols-2">
           {OBJECTIVES.map((o, i) => (
-            <li key={i} className="flex gap-5 rounded-3xl border border-border bg-card p-7">
+            <li key={i} className="flex gap-5 rounded-3xl border border-border bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-brand font-bold text-primary-foreground">{i + 1}</span>
               <p className="text-foreground/85">{o}</p>
             </li>
@@ -48,10 +48,10 @@ function About() {
         <h3 className="mt-14 text-2xl font-semibold">Expected outcomes</h3>
         <ul className="mt-6 grid gap-3 md:grid-cols-2">{EXPECTED_OUTCOMES.map((o) => <li key={o} className="flex gap-3 text-foreground/80"><span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />{o}</li>)}</ul>
         <h3 className="mt-12 text-2xl font-semibold">Key outputs</h3>
-        <div className="mt-5 flex flex-wrap gap-3">{OUTPUTS.map((o) => <span key={o} className="rounded-full bg-secondary px-5 py-2.5 font-medium">{o}</span>)}</div>
+        <div className="mt-5 flex flex-wrap gap-3">{OUTPUTS.map((o) => <span key={o} className="rounded-full bg-secondary px-5 py-2.5 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{o}</span>)}</div>
       </Section>
       <Section id="structure" eyebrow="Conference structure" title="High-level dialogue meets rigorous science" className="bg-secondary/60">
-        <div className="overflow-hidden rounded-3xl border border-border bg-card">
+        <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:shadow-card-lg">
           {TRACKS.map((t) => (
             <div key={t.n} className="grid gap-2 border-b border-border p-6 last:border-0 md:grid-cols-[10rem_1fr]">
               <span className="font-semibold text-primary">Track {t.n}</span><span className="font-medium">{t.title}</span>
@@ -66,7 +66,7 @@ function About() {
       <Section id="past" eyebrow="Past editions" title="Building on 2021 and 2024">
         <div className="relative grid gap-6 md:grid-cols-3">
           {PAST_EDITIONS.map((e, i) => (
-            <div key={e.year} className={`rounded-3xl p-8 ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
+            <div key={e.year} className={`rounded-3xl p-8 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
               <div className="text-5xl font-bold">{e.year}</div><p className="mt-3 font-semibold">{e.title}</p>
               <p className={`text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.dates}</p>
               <p className="mt-4 font-medium italic">"{e.theme}"</p>
@@ -75,15 +75,15 @@ function About() {
           ))}
         </div>
         <p className="mt-6 text-sm text-muted-foreground">Reports and communiqués from both editions are available in the <a href="/knowledge-hub" className="font-semibold text-primary underline">Knowledge Hub</a>.</p>
-        <div className="mt-12 rounded-3xl bg-forest p-8 text-forest-foreground md:p-10">
-          <p className="eyebrow text-gold">2024 Accra Communiqué</p>
+        <div className="mt-12 rounded-3xl bg-forest p-8 text-forest-foreground shadow-card transition hover:shadow-card-lg md:p-10">
+          <p className="eyebrow text-forest-foreground/90">2024 Accra Communiqué</p>
           <h3 className="mt-3 text-2xl font-semibold">What participants resolved in 2024</h3>
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">{RESOLUTIONS_2024.map((r) => <li key={r} className="flex gap-3 text-forest-foreground/85"><span className="mt-2 size-2 shrink-0 rounded-full bg-gold" />{r}</li>)}</ul>
+          <ul className="mt-6 grid gap-3 md:grid-cols-2">{RESOLUTIONS_2024.map((r) => <li key={r} className="flex gap-3 text-forest-foreground/85"><span className="mt-2 size-2 shrink-0 rounded-full bg-forest-foreground" />{r}</li>)}</ul>
         </div>
       </Section>
       <Section id="organizers" eyebrow="Organizers and partners" title="Who convenes ACTCD" className="bg-secondary/60">
-        <div className="flex flex-wrap gap-3">{CONVENERS.map((c) => <span key={c} className="rounded-full bg-card px-5 py-3 font-medium shadow-sm">{c}</span>)}<span className="rounded-full bg-card px-5 py-3 font-medium text-muted-foreground shadow-sm">and other partners</span></div>
-        <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium">{ARTICLE_53}</p>
+        <div className="flex flex-wrap gap-3">{CONVENERS.map((c) => <span key={c} className="rounded-full bg-card px-5 py-3 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{c}</span>)}<span className="rounded-full bg-card px-5 py-3 font-medium text-muted-foreground shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">and other partners</span></div>
+        <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">{ARTICLE_53}</p>
       </Section>
     </>
   );

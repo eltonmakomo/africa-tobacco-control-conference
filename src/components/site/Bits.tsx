@@ -8,7 +8,7 @@ export function PageHero({ eyebrow, title, intro, children, image }: { eyebrow: 
       <div className="pointer-events-none absolute -right-32 top-1/2 size-[40rem] -translate-y-1/2 rounded-full bg-swirl opacity-50 animate-spin-slow" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:py-28">
-        <p className="eyebrow text-gold animate-rise">{eyebrow}</p>
+        <p className="eyebrow text-forest-foreground/90 animate-rise">{eyebrow}</p>
         <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-[1.05] md:text-6xl animate-rise">{title}</h1>
         {intro && <p className="mt-6 max-w-2xl text-lg text-forest-foreground/80 animate-rise">{intro}</p>}
         {children}

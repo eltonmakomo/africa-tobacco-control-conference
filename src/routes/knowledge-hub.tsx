@@ -44,7 +44,7 @@ function Hub() {
       <Section eyebrow="Documents" title="Concept note, reports and communiqués">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {AVAILABLE.map((d) => (
-            <div key={d.title} className="group flex gap-4 rounded-3xl border border-border bg-card p-6 transition hover:shadow-elegant">
+            <div key={d.title} className="group flex gap-4 rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-secondary text-primary"><FileText /></span>
               <div><p className="font-semibold">{d.title}</p><p className="text-sm text-muted-foreground">{d.note}</p>
                 <div className="mt-3 flex gap-2">{d.files.map((f) => <a key={f.label} href={f.url} download className="inline-flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground hover:opacity-90"><Download className="size-3" />{f.label}</a>)}</div>
@@ -54,7 +54,7 @@ function Hub() {
         </div>
       </Section>
       <Section eyebrow="After the event" title="Coming after April 2027" className="bg-secondary/60">
-        <div className="flex flex-wrap gap-3">{AFTER.map((a) => <span key={a} className="rounded-full bg-card px-5 py-3 font-medium shadow-sm">{a}</span>)}</div>
+        <div className="flex flex-wrap gap-3">{AFTER.map((a) => <span key={a} className="rounded-full bg-card px-5 py-3 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{a}</span>)}</div>
       </Section>
     </>
   );

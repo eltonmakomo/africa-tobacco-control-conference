@@ -36,7 +36,7 @@ function Program() {
         </div>
         <ol className="mt-8 border-l-2 border-primary/20 pl-8">
           {DAYS[active]?.items.map((it) => (
-            <li key={it} className="relative mb-4 rounded-2xl border border-border bg-card p-5 animate-rise">
+            <li key={it} className="relative mb-4 rounded-2xl border border-border bg-card p-5 shadow-card animate-rise transition hover:-translate-y-1 hover:shadow-card-lg">
               <span className="absolute -left-[2.6rem] top-6 size-4 rounded-full border-4 border-background bg-accent" />
               <span className="font-medium">{it}</span>
             </li>
@@ -46,14 +46,14 @@ function Program() {
       </Section>
       <Section eyebrow="Plenaries and high-level segments" title="Where commitments are made" className="bg-secondary/60">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl bg-forest p-8 text-forest-foreground"><h3 className="text-2xl font-semibold text-gold">Opening Plenary</h3><p className="mt-3 text-forest-foreground/85">Brings together ministers, senior officials of the African Union Commission and the Africa CDC, WHO representatives and civil society leaders to frame the strategic priorities.</p></div>
-          <div className="rounded-3xl bg-gradient-brand p-8 text-primary-foreground"><h3 className="text-2xl font-semibold">Closing Plenary</h3><p className="mt-3 text-primary-foreground/90">Consolidates the outcomes, adopts key recommendations and secures commitments through a Continental Call to Action.</p></div>
+          <div className="rounded-3xl bg-forest p-8 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><h3 className="text-2xl font-semibold text-forest-foreground">Opening Plenary</h3><p className="mt-3 text-forest-foreground/85">Brings together ministers, senior officials of the African Union Commission and the Africa CDC, WHO representatives and civil society leaders to frame the strategic priorities.</p></div>
+          <div className="rounded-3xl bg-gradient-brand p-8 text-primary-foreground shadow-elegant transition hover:-translate-y-1 hover:shadow-card-lg"><h3 className="text-2xl font-semibold">Closing Plenary</h3><p className="mt-3 text-primary-foreground/90">Consolidates the outcomes, adopts key recommendations and secures commitments through a Continental Call to Action.</p></div>
         </div>
       </Section>
       <Section eyebrow="Conference tracks" title="Simultaneous sessions, oral presentations and digital e-Posters">
         <div className="space-y-4">
           {TRACKS.map((t) => (
-            <article id={`track-${t.n}`} key={t.n} className="scroll-mt-28 grid gap-4 rounded-3xl border border-border bg-card p-7 transition hover:shadow-elegant md:grid-cols-[6rem_1fr]">
+            <article id={`track-${t.n}`} key={t.n} className="scroll-mt-28 grid gap-4 rounded-3xl border border-border bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg md:grid-cols-[6rem_1fr]">
               <span className="text-5xl font-bold text-gradient-brand">0{t.n}</span>
               <div><h3 className="text-xl font-semibold">{t.title}</h3><p className="mt-2 text-muted-foreground">{t.scope}</p></div>
             </article>
@@ -64,7 +64,7 @@ function Program() {
       <Section id="side-events" eyebrow="Pre-conference, side events and exhibitions" title="Beyond the main program" className="bg-secondary/60">
         <div className="grid gap-4 md:grid-cols-4">
           {["Pre-conference and side meetings", "Ministerial and high-level dialogues", "Invited symposia and special sessions", "Exhibition area: innovations, research findings and best practices"].map((x) => (
-            <div key={x} className="rounded-2xl bg-card p-6 font-medium shadow-sm">{x}</div>
+            <div key={x} className="rounded-2xl bg-card p-6 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
           ))}
         </div>
         <p className="mt-6 text-foreground/75">Organizers interested in a side event or an exhibition apply through the <a href="/participate#exhibit" className="font-semibold text-primary underline">Participate</a> section.</p>

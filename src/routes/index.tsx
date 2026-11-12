@@ -53,20 +53,20 @@ function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-hero" />
         <div className="mx-auto grid min-h-[min(86vh,820px)] max-w-7xl items-end gap-10 px-5 pb-16 pt-24 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <p className="eyebrow text-gold animate-rise">3rd Africa Conference on Tobacco Control and Development</p>
+            <p className="eyebrow text-forest-foreground/90 animate-rise">3rd Africa Conference on Tobacco Control and Development</p>
             <h1 className="mt-5 text-5xl font-bold leading-[0.98] md:text-7xl animate-rise">
-              Protecting <span className="text-gold">Africa's Future</span>
+              Protecting <span className="text-forest-foreground underline decoration-forest-foreground/70 decoration-4 underline-offset-8">Africa's Future</span>
             </h1>
             <p className="mt-5 max-w-2xl text-xl font-medium text-forest-foreground/90 md:text-2xl animate-rise">
               Advancing Tobacco Control and Health Sovereignty
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-foreground/85">
-              <span className="flex items-center gap-2"><CalendarDays className="size-4 text-gold" />{EVENT.dates}</span>
-              <span className="flex items-center gap-2"><MapPin className="size-4 text-gold" />{EVENT.location}</span>
-              <span className="flex items-center gap-2"><Globe2 className="size-4 text-gold" />In person + virtual · English & French</span>
+              <span className="flex items-center gap-2"><CalendarDays className="size-4 text-forest-foreground" />{EVENT.dates}</span>
+              <span className="flex items-center gap-2"><MapPin className="size-4 text-forest-foreground" />{EVENT.location}</span>
+              <span className="flex items-center gap-2"><Globe2 className="size-4 text-forest-foreground" />In person + virtual · English & French</span>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/participate" hash="registration" className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 font-semibold text-accent-foreground shadow-gold transition hover:-translate-y-0.5">
+              <Link to="/participate" hash="registration" className="inline-flex items-center gap-2 rounded-full bg-forest-foreground px-7 py-4 font-semibold text-primary shadow-elegant transition hover:-translate-y-0.5">
                 Register <ArrowRight className="size-4" />
               </Link>
               <Link to="/call-for-abstracts" className="glass inline-flex items-center gap-2 rounded-full px-7 py-4 font-semibold transition hover:bg-forest-foreground/20">
@@ -95,7 +95,7 @@ function Home() {
           </div>
 
           <div className="w-full space-y-4 md:w-[60%] lg:w-[62%]">
-            <div className="overflow-hidden rounded-3xl bg-secondary">
+            <div className="overflow-hidden rounded-3xl bg-secondary shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
               <img src={dialogue} alt="Panel discussion at the 2nd ACTCD, Accra 2024" loading="lazy" className="h-56 w-full object-cover" />
               <div className="p-8">
                 <p className="eyebrow text-primary">Theme & objectives</p>
@@ -113,7 +113,7 @@ function Home() {
                 [eposter, "African evidence", "aspect-[4/3]"],
                 [nairobi, "Nairobi, the host city", "sm:col-span-2 aspect-[16/9]"],
               ].map(([src, label, cls]) => (
-                <figure key={label} className={`group relative overflow-hidden rounded-3xl ${cls}`}>
+                <figure key={label} className={`group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${cls}`}>
                   <img src={src} alt={label} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/10 to-transparent" />
                   <figcaption className="absolute bottom-5 left-5 font-semibold text-forest-foreground">{label}</figcaption>
@@ -128,11 +128,11 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
         <img src={nairobi} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover" />
         <div className="relative mx-auto max-w-7xl px-5">
-          <p className="eyebrow inline-block rounded-full glass-forest px-4 py-2 text-gold">ACTCD in numbers</p>
+          <p className="eyebrow inline-block rounded-full glass-forest px-4 py-2 text-forest-foreground">ACTCD in numbers</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {NUMBERS.map((n) => (
-              <div key={n.label} className="glass-forest rounded-3xl p-8">
-                <div className="flex items-baseline gap-2"><span className="text-5xl font-bold text-gold">{n.figure}</span><span className="text-lg font-semibold">{n.label}</span></div>
+              <div key={n.label} className="glass-forest rounded-3xl p-8 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+                <div className="flex items-baseline gap-2"><span className="text-5xl font-bold text-forest-foreground">{n.figure}</span><span className="text-lg font-semibold">{n.label}</span></div>
                 <p className="mt-2 text-sm text-forest-foreground/70">{n.detail}</p>
               </div>
             ))}
@@ -144,9 +144,9 @@ function Home() {
       <Section eyebrow="Conference tracks" title="Five tracks. One continental agenda.">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {TRACKS.map((t) => (
-            <Link key={t.n} to="/program" hash={`track-${t.n}`} className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-elegant">
+            <Link key={t.n} to="/program" hash={`track-${t.n}`} className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-elegant">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-brand opacity-0 transition group-hover:opacity-100" />
-              <span className="text-5xl font-bold text-primary/15">0{t.n}</span>
+              <span className="text-5xl font-bold text-gradient-brand">0{t.n}</span>
               <h3 className="mt-4 font-semibold leading-snug">{t.short}</h3>
               <p className="mt-3 line-clamp-4 text-sm text-muted-foreground">{t.scope}</p>
             </Link>
@@ -156,7 +156,7 @@ function Home() {
 
       {/* Abstracts CTA */}
       <section className="px-5">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-brand p-10 text-primary-foreground md:p-16">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-brand p-10 text-primary-foreground shadow-elegant md:p-16">
           <img src={emblem} alt="" aria-hidden className="pointer-events-none absolute -bottom-24 -right-16 w-96 opacity-20 mix-blend-screen" />
           <p className="eyebrow">Call for abstracts</p>
           <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-5xl">Share African evidence that shapes policy.</h2>
@@ -172,7 +172,7 @@ function Home() {
       <Section eyebrow="Featured speakers" title="Voices leading Africa's response">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="aspect-[3/4] rounded-3xl border border-dashed border-border bg-muted p-6 flex flex-col justify-end">
+            <div key={i} className="aspect-[3/4] rounded-3xl border border-dashed border-border bg-muted p-6 flex flex-col justify-end shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
               <div className="mb-auto size-16 rounded-full bg-gradient-brand opacity-30" />
               <p className="font-semibold text-foreground/60">Speaker to be announced</p>
             </div>
@@ -185,7 +185,7 @@ function Home() {
       <Section eyebrow="Conveners and partners" title="Convened together" className="bg-secondary/60">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CONVENERS.map((c) => (
-            <div key={c} className="flex min-h-28 items-center justify-center rounded-2xl bg-card p-6 text-center font-semibold text-foreground/80 shadow-sm">{c}</div>
+            <div key={c} className="flex min-h-28 items-center justify-center rounded-2xl bg-card p-6 text-center font-semibold text-foreground/80 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{c}</div>
           ))}
         </div>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -198,10 +198,10 @@ function Home() {
       <Section eyebrow="News & updates" title="Stay informed">
         <div className="grid gap-6 lg:grid-cols-2">
           <Pending>The latest news and press releases will be published in the Media section as updates are confirmed.</Pending>
-          <div className="rounded-3xl bg-forest p-8 text-forest-foreground">
+          <div className="rounded-3xl bg-forest p-8 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <h3 className="text-xl font-semibold">Newsletter</h3>
             <p className="mt-2 text-sm text-forest-foreground/75">Newsletter signup will connect to the ACBF mailing list shortly.</p>
-            <Link to="/media" className="mt-5 inline-flex items-center gap-2 font-semibold text-gold">Go to Media <ArrowRight className="size-4" /></Link>
+            <Link to="/media" className="mt-5 inline-flex items-center gap-2 font-semibold text-forest-foreground">Go to Media <ArrowRight className="size-4" /></Link>
           </div>
         </div>
       </Section>
