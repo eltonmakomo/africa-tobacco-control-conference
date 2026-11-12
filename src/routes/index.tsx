@@ -33,13 +33,16 @@ function Countdown() {
   const diff = now === null ? 0 : Math.max(0, new Date(EVENT.startISO).getTime() - now);
   const d = Math.floor(diff / 864e5), h = Math.floor((diff % 864e5) / 36e5), m = Math.floor((diff % 36e5) / 6e4);
   return (
-    <div className="glass grid grid-cols-3 gap-4 rounded-3xl p-5 text-center">
+    <div className="glass rounded-3xl p-5 text-center">
+      <p className="eyebrow mb-4 text-forest-foreground/80">Countdown to Nairobi</p>
+      <div className="grid grid-cols-3 gap-4">
       {[[d, "Days"], [h, "Hours"], [m, "Minutes"]].map(([v, l]) => (
         <div key={l}>
           <div className="text-3xl font-bold tabular-nums md:text-4xl">{now === null ? "—" : v}</div>
           <div className="eyebrow mt-1 text-[0.65rem] text-forest-foreground/70">{l}</div>
         </div>
       ))}
+      </div>
     </div>
   );
 }
@@ -75,7 +78,6 @@ function Home() {
             </div>
           </div>
           <div className="lg:col-span-4">
-            <p className="eyebrow mb-3 text-forest-foreground/70">Countdown to Nairobi</p>
             <Countdown />
           </div>
         </div>
