@@ -1,4 +1,5 @@
 import heroImg from "@/assets/panelist-seated.jpg";
+import sideImg from "@/assets/faq-side.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -30,11 +31,17 @@ function FAQ() {
     <>
       <PageHero image={heroImg} eyebrow="FAQs" title="Frequently asked questions" />
       <Section>
-        <Accordion type="single" collapsible className="max-w-3xl">
-          {QA.map(([q, a]) => (
-            <AccordionItem key={q} value={q}><AccordionTrigger className="text-left text-lg font-semibold">{q}</AccordionTrigger><AccordionContent className="text-base text-foreground/80">{a}</AccordionContent></AccordionItem>
-          ))}
-        </Accordion>
+        <div className="grid items-start gap-10 lg:grid-cols-5">
+          <Accordion type="single" collapsible className="lg:col-span-3">
+            {QA.map(([q, a]) => (
+              <AccordionItem key={q} value={q}><AccordionTrigger className="text-left text-lg font-semibold">{q}</AccordionTrigger><AccordionContent className="text-base text-foreground/80">{a}</AccordionContent></AccordionItem>
+            ))}
+          </Accordion>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:col-span-2">
+            <img src={sideImg} alt="Delegates at the 2nd ACTCD evening reception, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
       </Section>
     </>
   );

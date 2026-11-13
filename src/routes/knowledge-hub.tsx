@@ -9,6 +9,7 @@ import comFr from "@/assets/docs/Communique_Final_1330hrs_ACTD_french.docx.asset
 import rep21 from "@/assets/docs/Conference_Report_Final_Version_14_Feb_2022_1st_ACTD_ONLINE.docx.asset.json";
 import post from "@/assets/docs/2nd_ACTD_Post-Assessment_Report_rev1.docx.asset.json";
 import heroImg from "@/assets/delegates-laptops.jpg";
+import afterImg from "@/assets/hub-after.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Download, FileText } from "lucide-react";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -54,7 +55,13 @@ function Hub() {
         </div>
       </Section>
       <Section eyebrow="After the event" title="Coming after April 2027" className="bg-secondary/60">
-        <div className="flex flex-wrap gap-3">{AFTER.map((a) => <span key={a} className="rounded-full bg-card px-5 py-3 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{a}</span>)}</div>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="flex flex-wrap gap-3">{AFTER.map((a) => <span key={a} className="rounded-full bg-card px-5 py-3 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{a}</span>)}</div>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={afterImg} alt="Delegates at the 2nd ACTCD evening reception, Accra 2024" loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
       </Section>
     </>
   );

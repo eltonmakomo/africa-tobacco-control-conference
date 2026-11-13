@@ -9,3 +9,5 @@
 - [x] Minimize gold/orange on green backgrounds (hero + green panels) — white instead
 - [x] Footer swirl pattern animated like the page banners
 - [ ] WHOVA registration link, contacts, social handles, Mailchimp — blocked: not supplied
+- [x] Unique photo per slot (no repeats)
+- [ ] Add more imagery inside text-heavy sections (About, Program, Call for Abstracts, Knowledge Hub, Media, FAQ)

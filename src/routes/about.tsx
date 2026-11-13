@@ -1,5 +1,8 @@
 import heroImg from "@/assets/dialogue.jpg";
 import themeImg from "@/assets/delegates-banner.jpg";
+import objectivesImg from "@/assets/about-objectives.jpg";
+import structureImg from "@/assets/about-structure.jpg";
+import edition2024Img from "@/assets/edition-2024.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
@@ -49,7 +52,13 @@ function About() {
         </div>
       </Section>
       <Section id="objectives" eyebrow="Goal and objectives" title="Strengthen African leadership, evidence and sustainable capacity">
-        <p className="max-w-3xl text-foreground/75">The overall goal is to strengthen African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future and advancing health sovereignty.</p>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <p className="text-foreground/75">The overall goal is to strengthen African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future and advancing health sovereignty.</p>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={objectivesImg} alt="A delegate at the 2nd ACTCD backdrop, Accra 2024" loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
         <ol className="mt-10 grid gap-5 md:grid-cols-2">
           {OBJECTIVES.map((o, i) => (
             <li key={i} className="flex gap-5 rounded-3xl border border-border bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
@@ -64,12 +73,18 @@ function About() {
         <div className="mt-5 flex flex-wrap gap-3">{OUTPUTS.map((o) => <span key={o} className="rounded-full bg-secondary px-5 py-2.5 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{o}</span>)}</div>
       </Section>
       <Section id="structure" eyebrow="Conference structure" title="High-level dialogue meets rigorous science" className="bg-secondary/60">
-        <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:shadow-card-lg">
-          {TRACKS.map((t) => (
-            <div key={t.n} className="grid gap-2 border-b border-border p-6 last:border-0 md:grid-cols-[10rem_1fr]">
-              <span className="font-semibold text-primary">Track {t.n}</span><span className="font-medium">{t.title}</span>
-            </div>
-          ))}
+        <div className="grid items-start gap-6 lg:grid-cols-5">
+          <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:shadow-card-lg lg:col-span-3">
+            {TRACKS.map((t) => (
+              <div key={t.n} className="grid gap-2 border-b border-border p-6 last:border-0 md:grid-cols-[10rem_1fr]">
+                <span className="font-semibold text-primary">Track {t.n}</span><span className="font-medium">{t.title}</span>
+              </div>
+            ))}
+          </div>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:col-span-2">
+            <img src={structureImg} alt="A parallel session room at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-2">
           <span className="mr-2 text-sm text-muted-foreground">Cross-cutting themes:</span>
@@ -79,11 +94,14 @@ function About() {
       <Section id="past" eyebrow="Past editions" title="Building on 2021 and 2024">
         <div className="relative grid gap-6 md:grid-cols-3">
           {PAST_EDITIONS.map((e, i) => (
-            <div key={e.year} className={`rounded-3xl p-8 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
+            <div key={e.year} className={`overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
+              {i === 1 && <img src={edition2024Img} alt="Delegates at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[16/9] w-full object-cover" />}
+              <div className="p-8">
               <div className="text-5xl font-bold">{e.year}</div><p className="mt-3 font-semibold">{e.title}</p>
               <p className={`text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.dates}</p>
               <p className="mt-4 font-medium italic">"{e.theme}"</p>
               <p className={`mt-3 text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.detail}</p>
+              </div>
             </div>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import heroImg from "@/assets/cocktail-group.jpg";
+import exhibitImg from "@/assets/participate-exhibit.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import nairobi from "@/assets/nairobi.jpg";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
@@ -44,7 +45,13 @@ function Participate() {
         <div className="mt-6"><Pending>Package details and Committee contact details to be confirmed.</Pending></div>
       </Section>
       <Section id="exhibit" eyebrow="Exhibit" title="Showcase innovation" className="bg-secondary/60">
-        <p className="max-w-3xl text-foreground/80">Exhibitors showcase innovations, research and best practices in the exhibition area. Organizers of side events and exhibitions apply through this section.</p>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <p className="text-foreground/80">Exhibitors showcase innovations, research and best practices in the exhibition area. Organizers of side events and exhibitions apply through this section.</p>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={exhibitImg} alt="A panellist at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
       </Section>
       <section id="travel" className="relative scroll-mt-24 overflow-hidden text-forest-foreground">
         <img src={nairobi} alt="Nairobi skyline at sunset" loading="lazy" width={1600} height={1008} className="absolute inset-0 -z-10 size-full object-cover" />

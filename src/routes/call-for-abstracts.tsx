@@ -1,4 +1,5 @@
 import heroImg from "@/assets/delegates-phone.jpg";
+import guidelinesImg from "@/assets/cfa-guidelines.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Pending, Section, TBC } from "@/components/site/Bits";
 import { KEY_DATES, TRACKS } from "@/lib/conference";
@@ -29,8 +30,16 @@ function CFA() {
         </div>
       </Section>
       <Section id="guidelines" eyebrow="Submission guidelines" title="Format" className="bg-secondary/60">
-        <p className="max-w-3xl text-foreground/80">Submissions map to one of the five tracks and follow the structured format set by the Scientific Committee. Accepted abstracts appear as oral presentations or digital e-Posters.</p>
-        <div className="mt-6"><Pending>Detailed guidelines from the Scientific Committee will be published here.</Pending></div>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-foreground/80">Submissions map to one of the five tracks and follow the structured format set by the Scientific Committee. Accepted abstracts appear as oral presentations or digital e-Posters.</p>
+            <div className="mt-6"><Pending>Detailed guidelines from the Scientific Committee will be published here.</Pending></div>
+          </div>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={guidelinesImg} alt="A speaker presenting at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
       </Section>
       <Section id="dates" eyebrow="Key dates" title="Timeline">
         <ol className="grid gap-4 md:grid-cols-4">

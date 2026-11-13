@@ -1,4 +1,5 @@
 import heroImg from "@/assets/speaker-mic.jpg";
+import newsImg from "@/assets/media-news.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
 
@@ -19,7 +20,13 @@ function Media() {
     <>
       <PageHero image={heroImg} eyebrow="Media" title="Media centre" intro="All media materials observe WHO FCTC Article 5.3 and give no platform to tobacco industry narratives." />
       <Section id="news" eyebrow="News & press releases" title="Latest">
-        <Pending>News, press releases and events will be published here.</Pending>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <Pending>News, press releases and events will be published here.</Pending>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={newsImg} alt="Delegates at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
       </Section>
       <Section id="accreditation" eyebrow="Media accreditation" title="Covering ACTCD 2027?" className="bg-secondary/60">
         <p className="max-w-3xl text-foreground/80">Journalists can apply for accreditation through the media accreditation form.</p>

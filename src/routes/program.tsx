@@ -1,4 +1,6 @@
 import heroImg from "@/assets/plenary.jpg";
+import agendaImg from "@/assets/program-agenda.jpg";
+import sideImg from "@/assets/program-side.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
@@ -34,15 +36,21 @@ function Program() {
             </button>
           ))}
         </div>
-        <ol className="mt-8 border-l-2 border-primary/20 pl-8">
-          {DAYS[active]?.items.map((it) => (
-            <li key={it} className="relative mb-4 rounded-2xl border border-border bg-card p-5 shadow-card animate-rise transition hover:-translate-y-1 hover:shadow-card-lg">
-              <span className="absolute -left-[2.6rem] top-6 size-4 rounded-full border-4 border-background bg-accent" />
-              <span className="font-medium">{it}</span>
-            </li>
-          ))}
-        </ol>
-        <Pending>The agenda follows the structure of previous editions. The full detailed agenda, with times and speakers, will be published here once the Scientific Committee confirms it.</Pending>
+        <div className="mt-8 grid items-start gap-8 lg:grid-cols-5">
+          <ol className="border-l-2 border-primary/20 pl-8 lg:col-span-3">
+            {DAYS[active]?.items.map((it) => (
+              <li key={it} className="relative mb-4 rounded-2xl border border-border bg-card p-5 shadow-card animate-rise transition hover:-translate-y-1 hover:shadow-card-lg">
+                <span className="absolute -left-[2.6rem] top-6 size-4 rounded-full border-4 border-background bg-accent" />
+                <span className="font-medium">{it}</span>
+              </li>
+            ))}
+          </ol>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:col-span-2">
+            <img src={agendaImg} alt="Delegates in discussion at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
+        <div className="mt-8"><Pending>The agenda follows the structure of previous editions. The full detailed agenda, with times and speakers, will be published here once the Scientific Committee confirms it.</Pending></div>
       </Section>
       <Section eyebrow="Plenaries and high-level segments" title="Where commitments are made" className="bg-secondary/60">
         <div className="grid gap-6 md:grid-cols-2">
@@ -62,7 +70,11 @@ function Program() {
         <p className="mt-6 text-sm text-muted-foreground">Cross-cutting themes: {CROSS_CUTTING.join(", ")}.</p>
       </Section>
       <Section id="side-events" eyebrow="Pre-conference, side events and exhibitions" title="Beyond the main program" className="bg-secondary/60">
-        <div className="grid gap-4 md:grid-cols-4">
+        <div className="grid items-start gap-6 lg:grid-cols-4">
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:row-span-2">
+            <img src={sideImg} alt="Delegates around a table at a 2nd ACTCD side session" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105 lg:h-full" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
           {["Pre-conference and side meetings", "Ministerial and high-level dialogues", "Invited symposia and special sessions", "Exhibition area: innovations, research findings and best practices"].map((x) => (
             <div key={x} className="rounded-2xl bg-card p-6 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
           ))}
