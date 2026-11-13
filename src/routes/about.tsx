@@ -28,7 +28,12 @@ function About() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {KEY_STATS.map(({ figure: f, label: l }) => (
-              <div key={f} className="rounded-3xl bg-forest p-6 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><div className="text-3xl font-bold text-forest-foreground">{f}</div><p className="mt-2 text-sm text-forest-foreground/80">{l}</p></div>
+              <div key={f} className="group relative overflow-hidden rounded-3xl bg-forest p-6 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+                <div className="pointer-events-none absolute -right-10 -top-10 size-28 rounded-full bg-gold/25 blur-2xl transition group-hover:bg-gold/35" />
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-brand" />
+                <div className="relative text-3xl font-bold md:text-4xl">{f}</div>
+                <p className="relative mt-2 text-sm leading-snug text-forest-foreground/80">{l}</p>
+              </div>
             ))}
           </div>
         </div>
