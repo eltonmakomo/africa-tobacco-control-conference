@@ -1,4 +1,5 @@
 import heroImg from "@/assets/dialogue.jpg";
+import themeImg from "@/assets/plenary.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
@@ -39,7 +40,13 @@ function About() {
         </div>
       </Section>
       <Section id="theme" eyebrow="Theme and rationale" title="Health sovereignty" className="bg-secondary/60">
-        <p className="max-w-3xl text-lg leading-relaxed text-foreground/80">The theme reflects the need to secure Africa's tobacco control gains while positioning tobacco control within the continent's drive for health sovereignty. Health sovereignty means strengthening Africa's capacity to determine, finance and implement its public health priorities in the public interest, through capable institutions, policymaking protected from commercial interests, African-generated evidence and sustainable domestic financing.</p>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <p className="text-lg leading-relaxed text-foreground/80">The theme reflects the need to secure Africa's tobacco control gains while positioning tobacco control within the continent's drive for health sovereignty. Health sovereignty means strengthening Africa's capacity to determine, finance and implement its public health priorities in the public interest, through capable institutions, policymaking protected from commercial interests, African-generated evidence and sustainable domestic financing.</p>
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={themeImg} alt="Delegates in plenary at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+        </div>
       </Section>
       <Section id="objectives" eyebrow="Goal and objectives" title="Strengthen African leadership, evidence and sustainable capacity">
         <p className="max-w-3xl text-foreground/75">The overall goal is to strengthen African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future and advancing health sovereignty.</p>
