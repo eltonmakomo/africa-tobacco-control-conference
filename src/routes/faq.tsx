@@ -1,5 +1,5 @@
-import heroImg from "@/assets/panelist-seated.jpg";
-import sideImg from "@/assets/faq-side.jpg";
+import heroImg from "@/assets/faq-side.jpg";
+import sideImg from "@/assets/panelist-seated.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -29,7 +29,7 @@ const QA: [string, string][] = [
 function FAQ() {
   return (
     <>
-      <PageHero image={heroImg} eyebrow="FAQs" title="Frequently asked questions" />
+      <PageHero image={heroImg} imgClassName="object-[center_20%]" eyebrow="FAQs" title="Frequently asked questions" />
       <Section>
         <div className="grid items-start gap-10 lg:grid-cols-5">
           <Accordion type="single" collapsible className="lg:col-span-3">
@@ -38,7 +38,7 @@ function FAQ() {
             ))}
           </Accordion>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:col-span-2">
-            <img src={sideImg} alt="Delegates at the 2nd ACTCD evening reception, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={sideImg} alt="A panellist at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>

@@ -36,7 +36,7 @@ function CFA() {
             <div className="mt-6"><Pending>Detailed guidelines from the Scientific Committee will be published here.</Pending></div>
           </div>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-            <img src={guidelinesImg} alt="A speaker presenting at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={guidelinesImg} alt="A speaker presenting at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>

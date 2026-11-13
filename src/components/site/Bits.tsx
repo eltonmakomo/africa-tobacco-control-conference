@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-export function PageHero({ eyebrow, title, intro, children, image }: { eyebrow: string; title: ReactNode; intro?: string; children?: ReactNode; image?: string }) {
+export function PageHero({ eyebrow, title, intro, children, image, imgClassName = "" }: { eyebrow: string; title: ReactNode; intro?: string; children?: ReactNode; image?: string; imgClassName?: string }) {
   return (
     <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
-      {image && <img src={image} alt="" aria-hidden className="absolute inset-0 -z-20 size-full object-cover" />}
+      {image && <img src={image} alt="" aria-hidden className={`absolute inset-0 -z-20 size-full object-cover ${imgClassName}`} />}
       {image && <div className="absolute inset-0 -z-10 bg-gradient-hero" />}
       <div className="pointer-events-none absolute -right-32 top-1/2 size-[40rem] -translate-y-1/2 rounded-full bg-swirl opacity-50 animate-spin-slow" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />

@@ -1,5 +1,5 @@
 import heroImg from "@/assets/cocktail-group.jpg";
-import exhibitImg from "@/assets/participate-exhibit.jpg";
+import exhibitImg from "@/assets/exhibit-presenter.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import nairobi from "@/assets/nairobi.jpg";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
@@ -48,7 +48,7 @@ function Participate() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <p className="text-foreground/80">Exhibitors showcase innovations, research and best practices in the exhibition area. Organizers of side events and exhibitions apply through this section.</p>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-            <img src={exhibitImg} alt="A panellist at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={exhibitImg} alt="A presenter at a 2nd ACTCD session, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>
