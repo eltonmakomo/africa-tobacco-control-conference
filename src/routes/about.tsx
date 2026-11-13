@@ -1,5 +1,5 @@
 import heroImg from "@/assets/dialogue.jpg";
-import themeImg from "@/assets/plenary.jpg";
+import themeImg from "@/assets/delegates-banner.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { PartnerLogos } from "@/components/site/PartnerLogos";

@@ -2,11 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarDays, Globe2, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import hero from "@/assets/hero-delegates.jpg";
-import plenary from "@/assets/plenary.jpg";
+import plenary from "@/assets/session-room.jpg";
 import eposter from "@/assets/eposter.jpg";
 import youth from "@/assets/youth.jpg";
-import dialogue from "@/assets/dialogue.jpg";
-import nairobi from "@/assets/nairobi.jpg";
+import dialogue from "@/assets/panel-speaker.jpg";
+import nairobi from "@/assets/cultural-welcome.jpg";
+import numbersBg from "@/assets/cocktail-night.jpg";
+import ctaImg from "@/assets/photo-frame.jpg";
 import emblem from "@/assets/actcd-emblem.png";
 import { Pending, Section } from "@/components/site/Bits";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
@@ -99,7 +101,7 @@ function Home() {
 
           <div className="w-full space-y-4 md:w-[60%] lg:w-[62%]">
             <div className="overflow-hidden rounded-3xl bg-secondary shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-              <img src={dialogue} alt="Panel discussion at the 2nd ACTCD, Accra 2024" loading="lazy" className="h-56 w-full object-cover" />
+              <img src={dialogue} alt="A speaker on the panel at the 2nd ACTCD, Accra 2024" loading="lazy" className="h-56 w-full object-cover" />
               <div className="p-8">
                 <p className="eyebrow text-primary">Theme & objectives</p>
                 <p className="mt-3 text-xl font-semibold leading-snug">{EVENT.theme}</p>
@@ -114,7 +116,7 @@ function Home() {
                 [plenary, "High-level plenaries", "sm:col-span-2 aspect-[16/9]"],
                 [youth, "Voices from the floor", "aspect-[4/3]"],
                 [eposter, "African evidence", "aspect-[4/3]"],
-                [nairobi, "Nairobi, the host city", "sm:col-span-2 aspect-[16/9]"],
+                [nairobi, "A cultural welcome", "sm:col-span-2 aspect-[16/9]"],
               ].map(([src, label, cls]) => (
                 <figure key={label} className={`group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${cls}`}>
                   <img src={src} alt={label} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
@@ -129,7 +131,7 @@ function Home() {
 
       {/* Numbers */}
       <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
-        <img src={nairobi} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover" />
+        <img src={numbersBg} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-foreground/25" />
         <div className="relative mx-auto max-w-7xl px-5">
           <p className="eyebrow inline-block rounded-full glass px-4 py-2 text-forest-foreground">ACTCD in numbers</p>
@@ -168,7 +170,7 @@ function Home() {
           <Link to="/call-for-abstracts" className="mt-8 inline-flex items-center gap-2 rounded-full bg-card px-7 py-4 font-semibold text-primary transition hover:-translate-y-0.5">
             View guidelines & key dates <ArrowRight className="size-4" />
           </Link>
-          <img src={eposter} alt="Delegates viewing research posters at the 2nd ACTCD" loading="lazy" className="absolute right-10 top-1/2 hidden h-[115%] w-80 -translate-y-1/2 rotate-3 rounded-3xl object-cover shadow-elegant lg:block" />
+          <img src={ctaImg} alt="A delegate with a photo frame at the 2nd ACTCD" loading="lazy" className="absolute right-10 top-1/2 hidden h-[115%] w-80 -translate-y-1/2 rotate-3 rounded-3xl object-cover shadow-elegant lg:block" />
         </div>
       </section>
 

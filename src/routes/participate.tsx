@@ -1,4 +1,4 @@
-import heroImg from "@/assets/youth.jpg";
+import heroImg from "@/assets/cocktail-group.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import nairobi from "@/assets/nairobi.jpg";
 import { PageHero, Pending, Section } from "@/components/site/Bits";

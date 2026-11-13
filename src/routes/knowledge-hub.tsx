@@ -8,7 +8,7 @@ import comEn from "@/assets/docs/Communique_Final_1330hrs_ACTD.docx.asset.json";
 import comFr from "@/assets/docs/Communique_Final_1330hrs_ACTD_french.docx.asset.json";
 import rep21 from "@/assets/docs/Conference_Report_Final_Version_14_Feb_2022_1st_ACTD_ONLINE.docx.asset.json";
 import post from "@/assets/docs/2nd_ACTD_Post-Assessment_Report_rev1.docx.asset.json";
-import heroImg from "@/assets/dialogue.jpg";
+import heroImg from "@/assets/delegates-laptops.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Download, FileText } from "lucide-react";
 import { PageHero, Section } from "@/components/site/Bits";

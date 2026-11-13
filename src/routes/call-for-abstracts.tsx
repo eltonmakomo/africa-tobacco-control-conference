@@ -1,4 +1,4 @@
-import heroImg from "@/assets/eposter.jpg";
+import heroImg from "@/assets/delegates-phone.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Pending, Section, TBC } from "@/components/site/Bits";
 import { KEY_DATES, TRACKS } from "@/lib/conference";

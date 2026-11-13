@@ -1,4 +1,4 @@
-import heroImg from "@/assets/plenary.jpg";
+import heroImg from "@/assets/speaker-mic.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
 
