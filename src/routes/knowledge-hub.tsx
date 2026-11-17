@@ -41,7 +41,7 @@ const AFTER = ["Knowledge Compendium", "Continental Call to Action", "Conference
 function Hub() {
   return (
     <>
-      <PageHero image={heroImg} eyebrow="Knowledge Hub" title="Evidence, outcomes and records" intro="The Knowledge Hub gathers the official documents and knowledge products of the Conference. Documents appear in English and French." />
+      <PageHero image={heroImg} imgClassName="object-[center_18%]" eyebrow="Knowledge Hub" title="Evidence, outcomes and records" intro="The Knowledge Hub gathers the official documents and knowledge products of the Conference. Documents appear in English and French." />
       <Section eyebrow="Documents" title="Concept note, reports and communiqués">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {AVAILABLE.map((d) => (

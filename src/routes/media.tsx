@@ -18,7 +18,7 @@ export const Route = createFileRoute("/media")({
 function Media() {
   return (
     <>
-      <PageHero image={heroImg} eyebrow="Media" title="Media centre" intro="All media materials observe WHO FCTC Article 5.3 and give no platform to tobacco industry narratives." />
+      <PageHero image={heroImg} imgClassName="object-[center_15%]" eyebrow="Media" title="Media centre" intro="All media materials observe WHO FCTC Article 5.3 and give no platform to tobacco industry narratives." />
       <Section id="news" eyebrow="News & press releases" title="Latest">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <Pending>News, press releases and events will be published here.</Pending>
