@@ -133,7 +133,7 @@ function AccreditationForm() {
           <input type="checkbox" name="declaration" className="mt-1 size-4 accent-primary" />
           I confirm the information is accurate, that I am a working member of the media, and that I have no affiliation with the tobacco industry, in line with WHO FCTC Article 5.3.
         </label>
-        {errors.declaration && <span className="mt-1 block text-xs text-destructive">{errors.declaration}</span>}
+        {errors["declaration"] && <span className="mt-1 block text-xs text-destructive">{errors["declaration"]}</span>}
       </div>
       <div className="md:col-span-2">
         <button type="submit" className="rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">Submit accreditation request</button>
