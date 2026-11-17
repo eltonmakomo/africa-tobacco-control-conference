@@ -11,3 +11,4 @@
 - [ ] WHOVA registration link, contacts, social handles, Mailchimp — blocked: not supplied
 - [x] Unique photo per slot (no repeats)
 - [x] Add more imagery inside text-heavy sections (About, Program, Call for Abstracts, Knowledge Hub, Media, FAQ, Participate)
+- [x] Add missing accreditation supporting-document fields and validate required attachments.

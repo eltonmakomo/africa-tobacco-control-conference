@@ -6,6 +6,8 @@ import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { PageHero, Section } from "@/components/site/Bits";
 import { FieldSelect } from "@/components/site/FieldSelect";
+import { Button } from "@/components/ui/button";
+import { mediaDocumentsSchema } from "@/lib/media-documents";
 
 export const Route = createFileRoute("/media")({
   head: () => ({
@@ -44,7 +46,7 @@ const schema = z.object({
   attendance: z.string().min(1, "Choose how you'll attend"),
   coverage: z.string().trim().max(1000).optional(),
   declaration: z.literal("on", { errorMap: () => ({ message: "Please confirm the declaration" }) }),
-});
+}).merge(mediaDocumentsSchema);
 
 const field = "mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20";
 
@@ -71,10 +73,11 @@ function FS({ label, name, errors, children }: { label: string; name: string; er
 
 function AccreditationForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [done, setDone] = useState(false);
+  const [deliveryNotice, setDeliveryNotice] = useState(false);
 
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setDeliveryNotice(false);
     const data = Object.fromEntries(new FormData(e.currentTarget));
     const r = schema.safeParse(data);
     if (!r.success) {
@@ -84,17 +87,7 @@ function AccreditationForm() {
       return;
     }
     setErrors({});
-    setDone(true);
-  }
-
-  if (done) {
-    return (
-      <div className="rounded-3xl border border-border bg-card p-10 text-center shadow-card">
-        <p className="text-2xl font-bold text-primary">Thank you</p>
-        <p className="mt-3 text-foreground/80">Your accreditation request has been received. The media team will review it and contact you by email.</p>
-        <button onClick={() => setDone(false)} className="mt-6 rounded-full border border-primary px-6 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground">Submit another request</button>
-      </div>
-    );
+    setDeliveryNotice(true);
   }
 
   const h = "md:col-span-2 mt-4 border-b border-border pb-2 text-lg font-semibold text-primary";
@@ -133,6 +126,31 @@ function AccreditationForm() {
         <F label="Planned coverage (optional)" name="coverage" errors={errors}><textarea name="coverage" rows={4} maxLength={1000} className={field} placeholder="Sessions, interviews or stories you plan to cover" /></F>
       </div>
 
+      <h3 className={h}>5. Supporting documents</h3>
+      <F label="Valid photo ID or passport copy *" name="photoId" errors={errors}>
+        <input name="photoId" type="file" accept=".pdf,.jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+      </F>
+      <F label="Valid press card or media organisation badge *" name="pressBadge" errors={errors}>
+        <input name="pressBadge" type="file" accept=".pdf,.jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+      </F>
+      <div className="md:col-span-2">
+        <F label="Editor’s or assignment letter on official letterhead *" name="assignmentLetter" errors={errors}>
+          <input name="assignmentLetter" type="file" accept=".pdf,.jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+        </F>
+        <p className="mt-2 text-xs text-muted-foreground">From your media house, confirming your employment or commissioning you to cover the event.</p>
+      </div>
+      <F label="Passport-sized photograph *" name="portrait" errors={errors}>
+        <input name="portrait" type="file" accept=".jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+      </F>
+      <F label="Past work samples (optional)" name="workSamples" errors={errors}>
+        <input name="workSamples" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+      </F>
+      <div className="md:col-span-2">
+        <F label="Portfolio or published work links (optional)" name="portfolio" errors={errors}>
+          <textarea name="portfolio" rows={3} className={field} placeholder="https://" />
+        </F>
+      </div>
+
       <div className="md:col-span-2">
         <label className="flex items-start gap-3 text-sm text-foreground/80">
           <input type="checkbox" name="declaration" className="mt-1 size-4 accent-primary" />
@@ -141,7 +159,9 @@ function AccreditationForm() {
         {errors["declaration"] && <span className="mt-1 block text-xs text-destructive">{errors["declaration"]}</span>}
       </div>
       <div className="md:col-span-2">
-        <button type="submit" className="rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">Submit accreditation request</button>
+        <p className="mb-4 text-sm text-muted-foreground">Accreditation submissions are not open yet. Selected documents are not saved or sent.</p>
+        <Button type="submit" className="h-auto whitespace-normal rounded-full px-8 py-3 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">Submit accreditation request</Button>
+        {deliveryNotice && <p role="status" className="mt-4 text-sm text-foreground">Your details passed the checks, but your request has not been submitted. Accreditation submissions are not open yet.</p>}
       </div>
     </form>
   );

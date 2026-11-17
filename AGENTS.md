@@ -30,3 +30,4 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Conference facts (tracks, dates, numbers, conveners) live in src/lib/conference.ts so every page reads one source.
+- Accreditation document validation lives in a browser-safe shared schema with tests; never report a request received until a delivery service confirms it.
