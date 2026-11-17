@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarDays, Globe2, MapPin } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import hero from "@/assets/hero-delegates.jpg";
 import plenary from "@/assets/session-room.jpg";
 import eposter from "@/assets/eposter.jpg";
@@ -27,21 +27,56 @@ export const Route = createFileRoute("/")({
 });
 
 function Countdown() {
+  const ref = useRef<HTMLDivElement>(null);
   const [now, setNow] = useState<number | null>(null);
+  const [progress, setProgress] = useState(0); // 0 → 1 count-up when scrolled into view
+
   useEffect(() => {
     setNow(Date.now());
-    const t = setInterval(() => setNow(Date.now()), 60000);
+    const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0]?.isIntersecting) return;
+        io.disconnect();
+        const start = performance.now();
+        const duration = 1600;
+        const tick = (t: number) => {
+          const p = Math.min(1, (t - start) / duration);
+          setProgress(1 - Math.pow(1 - p, 3)); // ease-out cubic
+          if (p < 1) raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+      },
+      { threshold: 0.4 },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   const diff = now === null ? 0 : Math.max(0, new Date(EVENT.startISO).getTime() - now);
-  const d = Math.floor(diff / 864e5), h = Math.floor((diff % 864e5) / 36e5), m = Math.floor((diff % 36e5) / 6e4);
+  const units: [number, string][] = [
+    [Math.floor(diff / 864e5), "Days"],
+    [Math.floor((diff % 864e5) / 36e5), "Hours"],
+    [Math.floor((diff % 36e5) / 6e4), "Minutes"],
+    [Math.floor((diff % 6e4) / 1e3), "Seconds"],
+  ];
   return (
-    <div className="glass rounded-3xl p-5 text-center">
+    <div ref={ref} className="glass rounded-3xl p-5 text-center">
       <p className="eyebrow mb-4 text-forest-foreground/80">Countdown to Nairobi</p>
-      <div className="grid grid-cols-3 gap-4">
-      {[[d, "Days"], [h, "Hours"], [m, "Minutes"]].map(([v, l]) => (
+      <div className="grid grid-cols-4 gap-3">
+      {units.map(([v, l]) => (
         <div key={l}>
-          <div className="text-3xl font-bold tabular-nums md:text-4xl">{now === null ? "—" : v}</div>
+          <div className="text-3xl font-bold tabular-nums md:text-4xl">{now === null ? "—" : Math.floor(v * progress)}</div>
           <div className="eyebrow mt-1 text-[0.65rem] text-forest-foreground/70">{l}</div>
         </div>
       ))}
