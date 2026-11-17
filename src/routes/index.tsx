@@ -7,7 +7,7 @@ import eposter from "@/assets/eposter.jpg";
 import youth from "@/assets/youth.jpg";
 import dialogue from "@/assets/panel-speaker.jpg";
 import nairobi from "@/assets/cultural-welcome.jpg";
-import numbersBg from "@/assets/cocktail-night.jpg";
+import numbersBg from "@/assets/elephants-herd.jpg";
 import ctaImg from "@/assets/photo-frame.jpg";
 import emblem from "@/assets/actcd-emblem.png";
 import { Pending, Section } from "@/components/site/Bits";
@@ -165,8 +165,8 @@ function Home() {
       </section>
 
       {/* Numbers */}
-      <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
-        <img src={numbersBg} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover object-[center_30%]" />
+      <section className="relative isolate overflow-hidden bg-forest pt-20 pb-[21rem] text-forest-foreground md:pb-[23rem]">
+        <img src={numbersBg} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover object-[35%_100%] md:object-[center_100%]" />
         <div className="absolute inset-0 -z-10 bg-foreground/25" />
         <div className="relative mx-auto max-w-7xl px-5">
           <p className="eyebrow inline-block rounded-full glass px-4 py-2 text-forest-foreground">ACTCD in numbers</p>
