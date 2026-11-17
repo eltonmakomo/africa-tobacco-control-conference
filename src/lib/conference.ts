@@ -103,3 +103,44 @@ export const RESOLUTIONS_2024 = [
   "Integrate environmental health and alternative livelihoods for tobacco farmers",
   "Build robust monitoring, evaluation and accountability frameworks",
 ];
+
+// Sample tiers for layout only — pricing and entitlements to be confirmed by the
+// Sponsorship and Exhibition Financing Committee before publication.
+export const PARTNERSHIP_PACKAGES = [
+  {
+    tier: "Bronze",
+    price: "USD 5,000",
+    featured: false,
+    includes: [
+      "2 conference registrations",
+      "Logo on the ACTCD 2027 website partner wall",
+      "Organisation listing in the conference programme",
+      "Invitations for two to the networking cocktail",
+    ],
+  },
+  {
+    tier: "Silver",
+    price: "USD 15,000",
+    featured: false,
+    includes: [
+      "6 conference registrations",
+      "Exhibition stand in the main exhibition hall",
+      "Logo on website, programme and stage backdrop",
+      "One 15-minute partner session slot",
+      "Recognition across conference social media",
+    ],
+  },
+  {
+    tier: "Gold",
+    price: "USD 35,000",
+    featured: true,
+    includes: [
+      "12 conference registrations",
+      "Premium exhibition stand with meeting space",
+      "Naming rights for one track or side event",
+      "Speaking slot in a plenary session",
+      "Branding on conference materials and signage",
+      "Recognition in the communiqué and conference report",
+    ],
+  },
+];

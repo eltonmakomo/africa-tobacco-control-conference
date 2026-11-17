@@ -1,9 +1,10 @@
 import heroImg from "@/assets/cocktail-group.jpg";
 import exhibitImg from "@/assets/exhibit-presenter.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import nairobi from "@/assets/nairobi.jpg";
 import { PageHero, Pending, Section } from "@/components/site/Bits";
-import { ARTICLE_53 } from "@/lib/conference";
+import { ARTICLE_53, PARTNERSHIP_PACKAGES } from "@/lib/conference";
 
 export const Route = createFileRoute("/participate")({
   head: () => ({
@@ -17,7 +18,19 @@ export const Route = createFileRoute("/participate")({
   component: Participate,
 });
 
+type TierAccent = { line: string; chip: string; ring: string };
+
+const BRONZE_ACCENT: TierAccent = { line: "bg-bronze", chip: "bg-bronze/12 text-bronze", ring: "" };
+
+const TIER_ACCENT: Record<string, TierAccent> = {
+  Bronze: BRONZE_ACCENT,
+  Silver: { line: "bg-silver", chip: "bg-silver/15 text-silver", ring: "" },
+  Gold: { line: "bg-gold", chip: "bg-gold/18 text-accent-foreground", ring: "ring-2 ring-gold" },
+};
+
 function Participate() {
+  const [enquiry, setEnquiry] = useState<string | null>(null);
+
   return (
     <>
       <PageHero image={heroImg} eyebrow="Participate" title="Join Africa's tobacco control community in Nairobi" />
@@ -39,14 +52,46 @@ function Participate() {
       <Section eyebrow="Call for Abstracts" title="Present your work" className="bg-secondary/60">
         <Link to="/call-for-abstracts" className="inline-flex rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground">See the Call for Abstracts</Link>
       </Section>
-      <Section id="partner" eyebrow="Become a partner or sponsor" title="Tiered partnership packages">
+      <Section id="packages" eyebrow="Become a partner or sponsor" title="Tiered partnership packages">
         <p className="max-w-3xl text-foreground/80">The Conference offers partnership and sponsorship opportunities through tiered packages, alongside exhibition options, coordinated by the Sponsorship and Exhibition Financing Committee. Prospective partners reach the Committee through the contact details on this page.</p>
         <p className="mt-6 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">All partnerships follow the conflict-of-interest safeguards and WHO FCTC Article 5.3. {ARTICLE_53}</p>
-        <div className="mt-6"><Pending>Package details and Committee contact details to be confirmed.</Pending></div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {PARTNERSHIP_PACKAGES.map((p) => {
+            const accent = TIER_ACCENT[p.tier] ?? BRONZE_ACCENT;
+            return (
+              <div key={p.tier} className={`relative flex h-full flex-col overflow-hidden rounded-3xl bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${accent.ring}`}>
+                <div className={`absolute inset-x-0 top-0 h-1.5 ${accent.line}`} />
+                <div className="flex items-center justify-between gap-3">
+                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${accent.chip}`}>{p.tier}</span>
+                  {p.featured && <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">Most requested</span>}
+                </div>
+                <p className="mt-5 text-3xl font-bold">{p.price}</p>
+                <p className="mt-1 text-xs text-muted-foreground">Sample indicative price · to be confirmed</p>
+                <ul className="mt-5 space-y-2 text-sm text-foreground/80">
+                  {p.includes.map((x) => (
+                    <li key={x} className="flex gap-2.5"><span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-primary" />{x}</li>
+                  ))}
+                </ul>
+                <button onClick={() => setEnquiry(p.tier)} className="mt-7 w-full rounded-full bg-primary py-3.5 font-semibold text-primary-foreground transition hover:-translate-y-0.5 hover:shadow-card-lg">Book now</button>
+              </div>
+            );
+          })}
+        </div>
+        <p className="mt-5 text-xs text-muted-foreground">Bronze, Silver and Gold packages shown here are sample content for layout. Pricing and entitlements are to be confirmed by the Sponsorship and Exhibition Financing Committee.</p>
+        {enquiry && (
+          <div className="mt-6 max-w-3xl rounded-2xl border-l-4 border-primary bg-secondary/70 p-5 text-sm shadow-card">
+            <p className="font-semibold">{enquiry} package — enquiry noted on this page</p>
+            <p className="mt-1 text-foreground/75">Nothing has been sent yet. Booking requests open once the Committee contact details are confirmed.</p>
+          </div>
+        )}
+        <div className="mt-6"><Pending>Committee contact details to be confirmed.</Pending></div>
       </Section>
-      <Section id="exhibit" eyebrow="Exhibit" title="Showcase innovation" className="bg-secondary/60">
+      <Section id="exhibit" eyebrow="Exhibit with us" title="Showcase your innovations" className="bg-secondary/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          <p className="text-foreground/80">Exhibitors showcase innovations, research and best practices in the exhibition area. Organizers of side events and exhibitions apply through this section.</p>
+          <div className="space-y-6">
+            <p className="text-foreground/80">Exhibitors showcase innovations, research and best practices in the exhibition area. Organizers of side events and exhibitions apply through this section.</p>
+            <Link to="/participate" hash="packages" className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">Book now <span aria-hidden>→</span></Link>
+          </div>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <img src={exhibitImg} alt="A presenter at a 2nd ACTCD session, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />

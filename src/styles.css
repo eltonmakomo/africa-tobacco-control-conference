@@ -35,6 +35,8 @@
   --color-forest: var(--forest);
   --color-forest-foreground: var(--forest-foreground);
   --color-gold: var(--gold);
+  --color-bronze: var(--bronze);
+  --color-silver: var(--silver);
   --color-olive: var(--olive);
   --color-cream: var(--cream);
 }
@@ -63,6 +65,8 @@
   --forest: #277f3e;
   --forest-foreground: #ffffff;
   --gold: #dfa726;
+  --bronze: #8a5a34;
+  --silver: #6f757c;
   --olive: color-mix(in oklab, #277f3e 50%, #dfa726);
   --cream: color-mix(in oklab, #dfa726 8%, #ffffff);
   --gradient-brand: linear-gradient(120deg, var(--primary) 30%, var(--gold));
