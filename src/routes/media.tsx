@@ -71,9 +71,40 @@ function FS({ label, name, errors, children }: { label: string; name: string; er
   );
 }
 
+const STEPS = [
+  { title: "Personal details", fields: ["fullName", "email", "phone", "nationality"] },
+  { title: "Media organisation", fields: ["outlet", "outletType", "role", "country", "website", "pressCard"] },
+  { title: "Editor or assignment reference", fields: ["editorName", "editorEmail"] },
+  { title: "Coverage", fields: ["attendance", "coverage"] },
+  { title: "Supporting documents", fields: ["photoId", "pressBadge", "assignmentLetter", "portrait", "workSamples", "portfolio", "declaration"] },
+] as const;
+
 function AccreditationForm() {
+  const [step, setStep] = useState(0);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [deliveryNotice, setDeliveryNotice] = useState(false);
+
+  /** Validate the whole form, then keep only the errors for the given step. */
+  function validateStep(form: HTMLFormElement, stepIndex: number): Record<string, string> {
+    const data = Object.fromEntries(new FormData(form));
+    const r = schema.safeParse(data);
+    if (r.success) return {};
+    const stepFields = new Set<string>(STEPS[stepIndex]?.fields ?? []);
+    const errs: Record<string, string> = {};
+    r.error.issues.forEach((i) => {
+      const key = String(i.path[0]);
+      if (stepFields.has(key)) errs[key] ??= i.message;
+    });
+    return errs;
+  }
+
+  function next(e: React.MouseEvent<HTMLButtonElement>) {
+    const form = e.currentTarget.form;
+    if (!form) return;
+    const errs = validateStep(form, step);
+    setErrors(errs);
+    if (Object.keys(errs).length === 0) setStep((s) => Math.min(s + 1, STEPS.length - 1));
+  }
 
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -84,84 +115,149 @@ function AccreditationForm() {
       const errs: Record<string, string> = {};
       r.error.issues.forEach((i) => { errs[String(i.path[0])] ??= i.message; });
       setErrors(errs);
+      // Jump back to the first step that has a problem so the user sees it.
+      const firstBad = STEPS.findIndex((s) => s.fields.some((f) => errs[f]));
+      if (firstBad >= 0) setStep(firstBad);
       return;
     }
     setErrors({});
     setDeliveryNotice(true);
   }
 
-  const h = "md:col-span-2 mt-4 border-b border-border pb-2 text-lg font-semibold text-primary";
+  const h = "border-b border-border pb-2 text-lg font-semibold text-primary";
+  const stepCls = (i: number) => (i === step ? "grid gap-5 md:grid-cols-2" : "hidden");
+
   return (
-    <form onSubmit={submit} noValidate className="grid gap-5 rounded-3xl border border-border bg-card p-6 shadow-card md:grid-cols-2 md:p-10">
-      <h3 className={`${h} mt-0`}>1. Personal details</h3>
-      <F label="Full name *" name="fullName" errors={errors}><input name="fullName" className={field} /></F>
-      <F label="Email address *" name="email" errors={errors}><input name="email" type="email" className={field} /></F>
-      <F label="Phone (with country code) *" name="phone" errors={errors}><input name="phone" type="tel" className={field} /></F>
-      <F label="Nationality *" name="nationality" errors={errors}><input name="nationality" className={field} /></F>
+    <form onSubmit={submit} noValidate className="rounded-3xl border border-border bg-card p-6 shadow-card md:p-10">
+      {/* Progress */}
+      <ol className="mb-8 flex flex-wrap items-center gap-2" aria-label="Form progress">
+        {STEPS.map((s, i) => (
+          <li key={s.title} className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => i < step && setStep(i)}
+              aria-current={i === step ? "step" : undefined}
+              className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                i === step
+                  ? "bg-primary text-primary-foreground shadow-card"
+                  : i < step
+                    ? "bg-secondary text-primary hover:bg-secondary/70"
+                    : "bg-muted text-muted-foreground"
+              }`}
+            >
+              <span className={`flex size-5 items-center justify-center rounded-full text-[10px] ${i === step ? "bg-primary-foreground/20" : "bg-primary/10 text-primary"}`}>{i + 1}</span>
+              <span className="hidden sm:inline">{s.title}</span>
+            </button>
+            {i < STEPS.length - 1 && <span className="h-px w-3 bg-border" aria-hidden />}
+          </li>
+        ))}
+      </ol>
 
-      <h3 className={h}>2. Media organisation</h3>
-      <F label="Media outlet *" name="outlet" errors={errors}><input name="outlet" className={field} /></F>
-      <FS label="Type of media *" name="outletType" errors={errors}>
-        <FieldSelect name="outletType" options={["Print", "Online", "Television", "Radio", "News agency", "Freelance"]} />
-      </FS>
-      <FS label="Your role *" name="role" errors={errors}>
-        <FieldSelect
-          name="role"
-          options={["Reporter / Journalist", "Editor", "Photographer", "Camera operator", "Producer", "Blogger / Content creator"]}
-        />
-      </FS>
-      <F label="Country of the outlet *" name="country" errors={errors}><input name="country" className={field} /></F>
-      <F label="Outlet website" name="website" errors={errors}><input name="website" type="url" placeholder="https://" className={field} /></F>
-      <F label="Press card / ID number *" name="pressCard" errors={errors}><input name="pressCard" className={field} /></F>
+      {/* Step 1 — Personal details */}
+      <fieldset className={stepCls(0)}>
+        <legend className={`${h} mb-1 w-full md:col-span-2`}>1. Personal details</legend>
+        <F label="Full name *" name="fullName" errors={errors}><input name="fullName" className={field} /></F>
+        <F label="Email address *" name="email" errors={errors}><input name="email" type="email" className={field} /></F>
+        <F label="Phone (with country code) *" name="phone" errors={errors}><input name="phone" type="tel" className={field} /></F>
+        <F label="Nationality *" name="nationality" errors={errors}><input name="nationality" className={field} /></F>
+      </fieldset>
 
-      <h3 className={h}>3. Editor or assignment reference</h3>
-      <F label="Editor's name *" name="editorName" errors={errors}><input name="editorName" className={field} /></F>
-      <F label="Editor's email *" name="editorEmail" errors={errors}><input name="editorEmail" type="email" className={field} /></F>
+      {/* Step 2 — Media organisation */}
+      <fieldset className={stepCls(1)}>
+        <legend className={`${h} mb-1 w-full md:col-span-2`}>2. Media organisation</legend>
+        <F label="Media outlet *" name="outlet" errors={errors}><input name="outlet" className={field} /></F>
+        <FS label="Type of media *" name="outletType" errors={errors}>
+          <FieldSelect name="outletType" options={["Print", "Online", "Television", "Radio", "News agency", "Freelance"]} />
+        </FS>
+        <FS label="Your role *" name="role" errors={errors}>
+          <FieldSelect
+            name="role"
+            options={["Reporter / Journalist", "Editor", "Photographer", "Camera operator", "Producer", "Blogger / Content creator"]}
+          />
+        </FS>
+        <F label="Country of the outlet *" name="country" errors={errors}><input name="country" className={field} /></F>
+        <F label="Outlet website" name="website" errors={errors}><input name="website" type="url" placeholder="https://" className={field} /></F>
+        <F label="Press card / ID number *" name="pressCard" errors={errors}><input name="pressCard" className={field} /></F>
+      </fieldset>
 
-      <h3 className={h}>4. Coverage</h3>
-      <FS label="How will you attend? *" name="attendance" errors={errors}>
-        <FieldSelect name="attendance" options={["In person, Nairobi", "Virtually"]} />
-      </FS>
-      <div className="md:col-span-2">
-        <F label="Planned coverage (optional)" name="coverage" errors={errors}><textarea name="coverage" rows={4} maxLength={1000} className={field} placeholder="Sessions, interviews or stories you plan to cover" /></F>
-      </div>
+      {/* Step 3 — Editor or assignment reference */}
+      <fieldset className={stepCls(2)}>
+        <legend className={`${h} mb-1 w-full md:col-span-2`}>3. Editor or assignment reference</legend>
+        <F label="Editor's name *" name="editorName" errors={errors}><input name="editorName" className={field} /></F>
+        <F label="Editor's email *" name="editorEmail" errors={errors}><input name="editorEmail" type="email" className={field} /></F>
+      </fieldset>
 
-      <h3 className={h}>5. Supporting documents</h3>
-      <F label="Valid photo ID or passport copy *" name="photoId" errors={errors}>
-        <input name="photoId" type="file" accept=".pdf,.jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
-      </F>
-      <F label="Valid press card or media organisation badge *" name="pressBadge" errors={errors}>
-        <input name="pressBadge" type="file" accept=".pdf,.jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
-      </F>
-      <div className="md:col-span-2">
-        <F label="Editor’s or assignment letter on official letterhead *" name="assignmentLetter" errors={errors}>
-          <input name="assignmentLetter" type="file" accept=".pdf,.jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+      {/* Step 4 — Coverage */}
+      <fieldset className={stepCls(3)}>
+        <legend className={`${h} mb-1 w-full md:col-span-2`}>4. Coverage</legend>
+        <FS label="How will you attend? *" name="attendance" errors={errors}>
+          <FieldSelect name="attendance" options={["In person, Nairobi", "Virtually"]} />
+        </FS>
+        <div className="md:col-span-2">
+          <F label="Planned coverage (optional)" name="coverage" errors={errors}><textarea name="coverage" rows={4} maxLength={1000} className={field} placeholder="Sessions, interviews or stories you plan to cover" /></F>
+        </div>
+      </fieldset>
+
+      {/* Step 5 — Supporting documents */}
+      <fieldset className={stepCls(4)}>
+        <legend className={`${h} mb-1 w-full md:col-span-2`}>5. Supporting documents</legend>
+        <F label="Valid photo ID or passport copy *" name="photoId" errors={errors}>
+          <input name="photoId" type="file" accept=".pdf,.jpg,.jpeg,.png" className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
         </F>
-        <p className="mt-2 text-xs text-muted-foreground">From your media house, confirming your employment or commissioning you to cover the event.</p>
-      </div>
-      <F label="Passport-sized photograph *" name="portrait" errors={errors}>
-        <input name="portrait" type="file" accept=".jpg,.jpeg,.png" required className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
-      </F>
-      <F label="Past work samples (optional)" name="workSamples" errors={errors}>
-        <input name="workSamples" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
-      </F>
-      <div className="md:col-span-2">
-        <F label="Portfolio or published work links (optional)" name="portfolio" errors={errors}>
-          <textarea name="portfolio" rows={3} className={field} placeholder="https://" />
+        <F label="Valid press card or media organisation badge *" name="pressBadge" errors={errors}>
+          <input name="pressBadge" type="file" accept=".pdf,.jpg,.jpeg,.png" className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
         </F>
-      </div>
+        <div className="md:col-span-2">
+          <F label="Editor’s or assignment letter on official letterhead *" name="assignmentLetter" errors={errors}>
+            <input name="assignmentLetter" type="file" accept=".pdf,.jpg,.jpeg,.png" className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+          </F>
+          <p className="mt-2 text-xs text-muted-foreground">From your media house, confirming your employment or commissioning you to cover the event.</p>
+        </div>
+        <F label="Passport-sized photograph *" name="portrait" errors={errors}>
+          <input name="portrait" type="file" accept=".jpg,.jpeg,.png" className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+        </F>
+        <F label="Past work samples (optional)" name="workSamples" errors={errors}>
+          <input name="workSamples" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple className={`${field} file:mr-3 file:rounded-lg file:border-0 file:bg-secondary file:px-3 file:py-2 file:font-medium file:text-primary`} />
+        </F>
+        <div className="md:col-span-2">
+          <F label="Portfolio or published work links (optional)" name="portfolio" errors={errors}>
+            <textarea name="portfolio" rows={3} className={field} placeholder="https://" />
+          </F>
+        </div>
+        <div className="md:col-span-2">
+          <label className="flex items-start gap-3 text-sm text-foreground/80">
+            <input type="checkbox" name="declaration" className="mt-1 size-4 accent-primary" />
+            I confirm the information is accurate, that I am a working member of the media, and that I have no affiliation with the tobacco industry, in line with WHO FCTC Article 5.3.
+          </label>
+          {errors["declaration"] && <span className="mt-1 block text-xs text-destructive">{errors["declaration"]}</span>}
+        </div>
+      </fieldset>
 
-      <div className="md:col-span-2">
-        <label className="flex items-start gap-3 text-sm text-foreground/80">
-          <input type="checkbox" name="declaration" className="mt-1 size-4 accent-primary" />
-          I confirm the information is accurate, that I am a working member of the media, and that I have no affiliation with the tobacco industry, in line with WHO FCTC Article 5.3.
-        </label>
-        {errors["declaration"] && <span className="mt-1 block text-xs text-destructive">{errors["declaration"]}</span>}
+      {/* Navigation */}
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => { setErrors({}); setStep((s) => Math.max(s - 1, 0)); }}
+          disabled={step === 0}
+          className="h-auto rounded-full px-6 py-2.5 text-sm font-semibold"
+        >
+          ← Back
+        </Button>
+        <p className="text-xs text-muted-foreground">Step {step + 1} of {STEPS.length}</p>
+        {step < STEPS.length - 1 ? (
+          <Button type="button" onClick={next} className="h-auto rounded-full px-8 py-3 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">
+            Continue →
+          </Button>
+        ) : (
+          <Button type="submit" className="h-auto whitespace-normal rounded-full px-8 py-3 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">
+            Submit accreditation request
+          </Button>
+        )}
       </div>
-      <div className="md:col-span-2">
-        <p className="mb-4 text-sm text-muted-foreground">Accreditation submissions are not open yet. Selected documents are not saved or sent.</p>
-        <Button type="submit" className="h-auto whitespace-normal rounded-full px-8 py-3 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">Submit accreditation request</Button>
-        {deliveryNotice && <p role="status" className="mt-4 text-sm text-foreground">Your details passed the checks, but your request has not been submitted. Accreditation submissions are not open yet.</p>}
+      <div className="mt-4">
+        <p className="text-sm text-muted-foreground">Accreditation submissions are not open yet. Selected documents are not saved or sent.</p>
+        {deliveryNotice && <p role="status" className="mt-3 text-sm text-foreground">Your details passed the checks, but your request has not been submitted. Accreditation submissions are not open yet.</p>}
       </div>
     </form>
   );
