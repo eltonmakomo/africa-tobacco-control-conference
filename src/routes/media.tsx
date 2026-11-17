@@ -5,6 +5,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { PageHero, Section } from "@/components/site/Bits";
+import { FieldSelect } from "@/components/site/FieldSelect";
 
 export const Route = createFileRoute("/media")({
   head: () => ({
@@ -57,6 +58,17 @@ function F({ label, name, errors, children }: { label: string; name: string; err
   );
 }
 
+/** Same look as F, but the label sits outside the control so the custom dropdown stays clickable. */
+function FS({ label, name, errors, children }: { label: string; name: string; errors: Record<string, string>; children: React.ReactNode }) {
+  return (
+    <div className="block text-sm font-medium">
+      <label htmlFor={`${name}-select`}>{label}</label>
+      {children}
+      {errors[name] && <span className="mt-1 block text-xs text-destructive">{errors[name]}</span>}
+    </div>
+  );
+}
+
 function AccreditationForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
@@ -96,18 +108,15 @@ function AccreditationForm() {
 
       <h3 className={h}>2. Media organisation</h3>
       <F label="Media outlet *" name="outlet" errors={errors}><input name="outlet" className={field} /></F>
-      <F label="Type of media *" name="outletType" errors={errors}>
-        <select name="outletType" defaultValue="" className={field}>
-          <option value="" disabled>Select…</option>
-          {["Print", "Online", "Television", "Radio", "News agency", "Freelance"].map((o) => <option key={o}>{o}</option>)}
-        </select>
-      </F>
-      <F label="Your role *" name="role" errors={errors}>
-        <select name="role" defaultValue="" className={field}>
-          <option value="" disabled>Select…</option>
-          {["Reporter / Journalist", "Editor", "Photographer", "Camera operator", "Producer", "Blogger / Content creator"].map((o) => <option key={o}>{o}</option>)}
-        </select>
-      </F>
+      <FS label="Type of media *" name="outletType" errors={errors}>
+        <FieldSelect name="outletType" options={["Print", "Online", "Television", "Radio", "News agency", "Freelance"]} />
+      </FS>
+      <FS label="Your role *" name="role" errors={errors}>
+        <FieldSelect
+          name="role"
+          options={["Reporter / Journalist", "Editor", "Photographer", "Camera operator", "Producer", "Blogger / Content creator"]}
+        />
+      </FS>
       <F label="Country of the outlet *" name="country" errors={errors}><input name="country" className={field} /></F>
       <F label="Outlet website" name="website" errors={errors}><input name="website" type="url" placeholder="https://" className={field} /></F>
       <F label="Press card / ID number *" name="pressCard" errors={errors}><input name="pressCard" className={field} /></F>
@@ -117,13 +126,9 @@ function AccreditationForm() {
       <F label="Editor's email *" name="editorEmail" errors={errors}><input name="editorEmail" type="email" className={field} /></F>
 
       <h3 className={h}>4. Coverage</h3>
-      <F label="How will you attend? *" name="attendance" errors={errors}>
-        <select name="attendance" defaultValue="" className={field}>
-          <option value="" disabled>Select…</option>
-          <option>In person, Nairobi</option>
-          <option>Virtually</option>
-        </select>
-      </F>
+      <FS label="How will you attend? *" name="attendance" errors={errors}>
+        <FieldSelect name="attendance" options={["In person, Nairobi", "Virtually"]} />
+      </FS>
       <div className="md:col-span-2">
         <F label="Planned coverage (optional)" name="coverage" errors={errors}><textarea name="coverage" rows={4} maxLength={1000} className={field} placeholder="Sessions, interviews or stories you plan to cover" /></F>
       </div>
