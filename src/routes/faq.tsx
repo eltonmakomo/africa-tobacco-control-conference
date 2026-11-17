@@ -29,7 +29,7 @@ const QA: [string, string][] = [
 function FAQ() {
   return (
     <>
-      <PageHero image={heroImg} imgClassName="object-[center_30%]" eyebrow="FAQs" title="Frequently asked questions" />
+      <PageHero image={heroImg} imgClassName="object-[center_12%]" eyebrow="FAQs" title="Frequently asked questions" />
       <Section>
         <div className="grid items-start gap-10 lg:grid-cols-5">
           <Accordion type="single" collapsible className="lg:col-span-3">
