@@ -136,7 +136,7 @@ function Home() {
 
           <div className="w-full space-y-4 md:w-[60%] lg:w-[62%]">
             <div className="overflow-hidden rounded-3xl bg-secondary shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-              <img src={dialogue} alt="A speaker on the panel at the 2nd ACTCD, Accra 2024" loading="lazy" className="h-56 w-full object-cover object-top" />
+              <img src={dialogue} alt="A speaker on the panel at the 2nd ACTCD, Accra 2024" loading="lazy" className="h-56 w-full object-cover object-[center_8%]" />
               <div className="p-8">
                 <p className="eyebrow text-primary">Theme & objectives</p>
                 <p className="mt-3 text-xl font-semibold leading-snug">{EVENT.theme}</p>
@@ -166,7 +166,7 @@ function Home() {
 
       {/* Numbers */}
       <section className="relative isolate overflow-hidden bg-forest py-20 text-forest-foreground">
-        <img src={numbersBg} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover object-top" />
+        <img src={numbersBg} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover object-[center_8%]" />
         <div className="absolute inset-0 -z-10 bg-foreground/25" />
         <div className="relative mx-auto max-w-7xl px-5">
           <p className="eyebrow inline-block rounded-full glass px-4 py-2 text-forest-foreground">ACTCD in numbers</p>
