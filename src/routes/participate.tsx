@@ -3,7 +3,7 @@ import exhibitImg from "@/assets/exhibit-presenter.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import nairobi from "@/assets/nairobi.jpg";
-import { PageHero, Pending, Section } from "@/components/site/Bits";
+import { PageHero, Section } from "@/components/site/Bits";
 import { ARTICLE_53, PARTNERSHIP_PACKAGES } from "@/lib/conference";
 
 export const Route = createFileRoute("/participate")({
@@ -66,7 +66,6 @@ function Participate() {
                   {p.featured && <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">Most requested</span>}
                 </div>
                 <p className="mt-5 text-3xl font-bold">{p.price}</p>
-                <p className="mt-1 text-xs text-muted-foreground">Sample indicative price · to be confirmed</p>
                 <ul className="mt-5 space-y-2 text-sm text-foreground/80">
                   {p.includes.map((x) => (
                     <li key={x} className="flex gap-2.5"><span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-primary" />{x}</li>
@@ -77,14 +76,12 @@ function Participate() {
             );
           })}
         </div>
-        <p className="mt-5 text-xs text-muted-foreground">Bronze, Silver and Gold packages shown here are sample content for layout. Pricing and entitlements are to be confirmed by the Sponsorship and Exhibition Financing Committee.</p>
         {enquiry && (
           <div className="mt-6 max-w-3xl rounded-2xl border-l-4 border-primary bg-secondary/70 p-5 text-sm shadow-card">
             <p className="font-semibold">{enquiry} package — enquiry noted on this page</p>
             <p className="mt-1 text-foreground/75">Nothing has been sent yet. Booking requests open once the Committee contact details are confirmed.</p>
           </div>
         )}
-        <div className="mt-6"><Pending>Committee contact details to be confirmed.</Pending></div>
       </Section>
       <Section id="exhibit" eyebrow="Exhibit with us" title="Showcase your innovations" className="bg-secondary/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -106,7 +103,7 @@ function Participate() {
           <h2 className="mt-3 text-4xl font-bold md:text-5xl">Welcome to Nairobi</h2>
           <div className="mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {["Venue", "Visa requirements for Kenya", "Accommodation & preferred hotels", "Airport transfers", "Local travel"].map((x) => (
-              <div key={x} className="glass rounded-2xl p-5 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><p className="font-semibold">{x}</p><p className="mt-1 text-xs text-forest-foreground/70">Details to follow as arrangements are finalized</p></div>
+              <div key={x} className="glass rounded-2xl p-5 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><p className="font-semibold">{x}</p></div>
             ))}
           </div>
         </div>

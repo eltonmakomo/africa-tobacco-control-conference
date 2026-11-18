@@ -21,7 +21,7 @@ const QA: [string, string][] = [
   ["When and where is the Conference?", "22–23 April 2027 in Nairobi, Kenya, held in person with an option for virtual attendance."],
   ["Which languages are used?", "English and French, with simultaneous interpretation."],
   ["How do I register?", "Registration for in-person and virtual participation opens on the Participate page and is managed through Whova."],
-  ["When does the call for abstracts open?", "October or November 2026. Submission deadline and notification dates are to be confirmed."],
+  ["When does the call for abstracts open?", "October or November 2026."],
   ["Who convenes the Conference?", "The African Capacity Building Foundation, with the Ministry of Health of Kenya, the African Union Commission, the Africa CDC, WHO AFRO, the FCTC Secretariat and other partners."],
   ["Does the Conference accept industry sponsorship?", ARTICLE_53],
 ];

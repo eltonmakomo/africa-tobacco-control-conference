@@ -1,7 +1,7 @@
 import heroImg from "@/assets/delegates-phone.jpg";
 import guidelinesImg from "@/assets/cfa-guidelines.jpg";
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, Pending, Section, TBC } from "@/components/site/Bits";
+import { PageHero, Section } from "@/components/site/Bits";
 import { KEY_DATES, TRACKS } from "@/lib/conference";
 
 export const Route = createFileRoute("/call-for-abstracts")({
@@ -33,7 +33,6 @@ function CFA() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-foreground/80">Submissions map to one of the five tracks and follow the structured format set by the Scientific Committee. Accepted abstracts appear as oral presentations or digital e-Posters.</p>
-            <div className="mt-6"><Pending>Detailed guidelines from the Scientific Committee will be published here.</Pending></div>
           </div>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <img src={guidelinesImg} alt="A speaker presenting at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
@@ -42,12 +41,12 @@ function CFA() {
         </div>
       </Section>
       <Section id="dates" eyebrow="Key dates" title="Timeline">
-        <ol className="grid gap-4 md:grid-cols-4">
+        <ol className="grid gap-4 md:grid-cols-2">
           {KEY_DATES.map((k, i) => (
-            <li key={k.milestone} className={`rounded-3xl p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === 3 ? "bg-forest text-forest-foreground" : "border border-border bg-card"}`}>
+            <li key={k.milestone} className={`rounded-3xl p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === KEY_DATES.length - 1 ? "bg-forest text-forest-foreground" : "border border-border bg-card"}`}>
               <span className="text-sm opacity-70">0{i + 1}</span>
               <p className="mt-3 font-semibold">{k.milestone}</p>
-              <div className="mt-3 text-lg font-bold">{k.date === "To be confirmed" ? <TBC /> : <span className={i === 3 ? "text-forest-foreground" : "text-primary"}>{k.date}</span>}</div>
+              <div className="mt-3 text-lg font-bold"><span className={i === KEY_DATES.length - 1 ? "text-forest-foreground" : "text-primary"}>{k.date}</span></div>
             </li>
           ))}
         </ol>

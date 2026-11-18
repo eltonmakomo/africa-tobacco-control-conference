@@ -61,8 +61,6 @@ export const PARTNERS = [
 
 export const KEY_DATES = [
   { milestone: "Call for abstracts opens", date: "October / November 2026" },
-  { milestone: "Submission deadline", date: "To be confirmed" },
-  { milestone: "Notification to authors", date: "To be confirmed" },
   { milestone: "Conference dates", date: "22–23 April 2027" },
 ];
 

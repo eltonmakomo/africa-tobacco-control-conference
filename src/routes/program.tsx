@@ -3,7 +3,7 @@ import agendaImg from "@/assets/program-agenda.jpg";
 import sideImg from "@/assets/program-side.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHero, Pending, Section } from "@/components/site/Bits";
+import { PageHero, Section } from "@/components/site/Bits";
 import { CROSS_CUTTING, TRACKS } from "@/lib/conference";
 
 export const Route = createFileRoute("/program")({
@@ -50,7 +50,6 @@ function Program() {
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>
-        <div className="mt-8"><Pending>The agenda follows the structure of previous editions. The full detailed agenda, with times and speakers, will be published here once the Scientific Committee confirms it.</Pending></div>
       </Section>
       <Section eyebrow="Plenaries and high-level segments" title="Where commitments are made" className="bg-secondary/60">
         <div className="grid gap-6 md:grid-cols-2">

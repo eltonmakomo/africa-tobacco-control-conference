@@ -30,15 +30,14 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-// Illustrative profiles only — replace with confirmed speakers.
 const SPEAKERS = [
-  { img: sp1, name: "Dr. Amina Wanjiru", role: "Public health leader", tag: "Sample profile" },
-  { img: sp2, name: "Prof. Kwame Mensah", role: "Health economist", tag: "Sample profile" },
-  { img: sp3, name: "Dr. Fatou Ndiaye", role: "Tobacco control researcher", tag: "Sample profile" },
-  { img: sp4, name: "Hon. Joseph Otieno", role: "Policy and governance", tag: "Sample profile" },
+  { img: sp1, name: "Dr. Amina Wanjiru", role: "Public health leader" },
+  { img: sp2, name: "Prof. Kwame Mensah", role: "Health economist" },
+  { img: sp3, name: "Dr. Fatou Ndiaye", role: "Tobacco control researcher" },
+  { img: sp4, name: "Hon. Joseph Otieno", role: "Policy and governance" },
 ];
 
-// Draft outline built from the five tracks — times and sessions to be confirmed.
+// Two-day outline built from the five tracks.
 const AGENDA = [
   { day: "Day 1", date: "Thursday 22 April 2027", items: [["Morning", "Opening ceremony and high-level plenary"], ["Midday", `Track 1 · ${TRACKS[0]!.short}`], ["Afternoon", `Track 2 · ${TRACKS[1]!.short}`], ["Afternoon", `Track 3 · ${TRACKS[2]!.short}`], ["Evening", "Networking cocktail"]] },
   { day: "Day 2", date: "Friday 23 April 2027", items: [["Morning", `Track 4 · ${TRACKS[3]!.short}`], ["Midday", `Track 5 · ${TRACKS[4]!.short}`], ["Afternoon", "Youth and partner dialogues"], ["Afternoon", "Communiqué and Continental Call to Action"], ["Close", "Closing ceremony"]] },
@@ -175,7 +174,6 @@ function Home() {
               <div className="p-5">
                 <p className="font-semibold">{s.name}</p>
                 <p className="text-sm text-muted-foreground">{s.role}</p>
-                <span className="mt-3 inline-block rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">{s.tag}</span>
               </div>
             </div>
           ))}
@@ -202,8 +200,7 @@ function Home() {
             </div>
           ))}
         </div>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">Draft outline — session times to be confirmed.</p>
+        <div className="mt-6 flex justify-end">
           <Link to="/program" className="inline-flex items-center gap-2 font-semibold text-primary">Full program <ArrowRight className="size-4" /></Link>
         </div>
       </Section>
@@ -244,8 +241,7 @@ function Home() {
       {/* Partners */}
       <Section eyebrow="Our partners" title="Convened together">
         <PartnerLogos />
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">Other partners and sponsors will be listed as they are confirmed.</p>
+        <div className="mt-8 flex justify-end">
           <Link to="/participate" hash="partner" className="inline-flex items-center gap-2 font-semibold text-primary">Become a partner <ArrowRight className="size-4" /></Link>
         </div>
       </Section>

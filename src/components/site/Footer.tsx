@@ -35,7 +35,6 @@ export function Footer() {
           <h3 className="eyebrow text-forest-foreground">Contact</h3>
           <p className="mt-4 text-sm text-forest-foreground/80">ACBF Communications Unit</p>
           <a href="https://www.acbf-pact.org" target="_blank" rel="noreferrer" className="mt-1 block text-sm text-forest-foreground underline hover:opacity-80">acbf-pact.org</a>
-          <p className="mt-3 text-xs text-forest-foreground/60">Conference contact details and social media handles to be confirmed.</p>
         </div>
       </div>
       <div className="relative border-t border-forest-foreground/15">

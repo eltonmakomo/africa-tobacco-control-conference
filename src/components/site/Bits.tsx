@@ -28,16 +28,3 @@ export function Section({ id, eyebrow, title, children, className = "" }: { id?:
     </section>
   );
 }
-
-export function Pending({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex items-start gap-3 rounded-2xl border border-dashed border-accent bg-accent/10 p-5 text-sm">
-      <span className="mt-1 size-2 shrink-0 rounded-full bg-accent" />
-      <p className="text-foreground/80">{children}</p>
-    </div>
-  );
-}
-
-export function TBC() {
-  return <span className="rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">To be confirmed</span>;
-}
