@@ -144,3 +144,11 @@ export const PARTNERSHIP_PACKAGES = [
     ],
   },
 ];
+
+// Home page impact figures, as supplied by the organisers.
+export const HOME_IMPACT = [
+  { figure: "350+", label: "participants" },
+  { figure: "30+", label: "countries represented" },
+  { figure: "20+", label: "media houses" },
+  { figure: "3rd", label: "edition" },
+];
