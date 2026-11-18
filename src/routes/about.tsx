@@ -5,6 +5,7 @@ import structureImg from "@/assets/about-structure.jpg";
 import edition2024Img from "@/assets/edition-2024.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
+import { CountUp } from "@/components/site/CountUp";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
 import { ARTICLE_53, CROSS_CUTTING, EVENT, EXPECTED_OUTCOMES, KEY_STATS, OBJECTIVES, OUTPUTS, PAST_EDITIONS, RESOLUTIONS_2024, TRACKS } from "@/lib/conference";
 
@@ -35,7 +36,7 @@ function About() {
               <div key={f} className="group relative overflow-hidden rounded-3xl bg-forest p-6 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
                 <div className="pointer-events-none absolute -right-10 -top-10 size-28 rounded-full bg-gold/25 blur-2xl transition group-hover:bg-gold/35" />
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-brand" />
-                <div className="relative text-3xl font-bold md:text-4xl">{f}</div>
+                <div className="relative text-3xl font-bold md:text-4xl"><CountUp value={f} /></div>
                 <p className="relative mt-2 text-sm leading-snug text-forest-foreground/80">{l}</p>
               </div>
             ))}

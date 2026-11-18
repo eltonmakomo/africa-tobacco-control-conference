@@ -13,6 +13,8 @@ import mohLogo from "@/assets/partners/mohkenya.png.asset.json";
 import treasuryLogo from "@/assets/partners/treasury-kenya.png.asset.json";
 import acbfLogo from "@/assets/partners/acbf.png.asset.json";
 import { Section } from "@/components/site/Bits";
+import { CountUp } from "@/components/site/CountUp";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
 import { EVENT, HOME_IMPACT, PAST_EDITIONS, TRACKS } from "@/lib/conference";
 
@@ -31,10 +33,10 @@ export const Route = createFileRoute("/")({
 });
 
 const SPEAKERS = [
-  { img: sp1, name: "Dr. Amina Wanjiru", role: "Public health leader" },
-  { img: sp2, name: "Prof. Kwame Mensah", role: "Health economist" },
-  { img: sp3, name: "Dr. Fatou Ndiaye", role: "Tobacco control researcher" },
-  { img: sp4, name: "Hon. Joseph Otieno", role: "Policy and governance" },
+  { img: sp1, name: "Dr. Amina Wanjiru", role: "Public health leader", org: "Nairobi, Kenya", bio: "A public health physician with two decades of experience leading national tobacco control and NCD prevention programmes, with a focus on protecting young people from emerging nicotine products." },
+  { img: sp2, name: "Prof. Kwame Mensah", role: "Health economist", org: "Accra, Ghana", bio: "An economist whose research on tobacco taxation and domestic resource mobilisation has informed excise reforms in several African countries." },
+  { img: sp3, name: "Dr. Fatou Ndiaye", role: "Tobacco control researcher", org: "Dakar, Senegal", bio: "A researcher working on surveillance of tobacco use and industry interference, and a champion of African-generated evidence for policy." },
+  { img: sp4, name: "Hon. Joseph Otieno", role: "Policy and governance", org: "Nairobi, Kenya", bio: "A legislator and governance advocate who has championed WHO FCTC Article 5.3 safeguards and multisectoral coordination." },
 ];
 
 // Two-day outline built from the five tracks.
@@ -157,7 +159,7 @@ function Home() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {HOME_IMPACT.map((n) => (
               <div key={n.label} className="glass rounded-2xl p-8 text-on-photo shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-                <div className="text-5xl font-bold">{n.figure}</div>
+                <div className="text-5xl font-bold"><CountUp value={n.figure} /></div>
                 <p className="mt-2 text-lg font-semibold">{n.label}</p>
               </div>
             ))}
@@ -169,13 +171,30 @@ function Home() {
       <Section eyebrow="Featured speakers" title="Voices leading Africa's response">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SPEAKERS.map((s) => (
-            <div key={s.name} className="group overflow-hidden rounded-3xl bg-card shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-              <img src={s.img} alt={s.name} loading="lazy" width={768} height={1024} className="aspect-[4/5] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
-              <div className="p-5">
-                <p className="font-semibold">{s.name}</p>
-                <p className="text-sm text-muted-foreground">{s.role}</p>
-              </div>
-            </div>
+            <Dialog key={s.name}>
+              <DialogTrigger asChild>
+                <button type="button" className="group overflow-hidden rounded-3xl bg-card text-left shadow-card transition hover:-translate-y-1 hover:shadow-card-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                  <img src={s.img} alt={s.name} loading="lazy" width={768} height={1024} className="aspect-[4/5] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+                  <div className="p-5">
+                    <p className="font-semibold">{s.name}</p>
+                    <p className="text-sm text-muted-foreground">{s.role}</p>
+                    <p className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">View profile <ArrowRight className="size-3.5" /></p>
+                  </div>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl overflow-hidden p-0 sm:rounded-3xl">
+                <div className="grid sm:grid-cols-[220px_1fr]">
+                  <img src={s.img} alt={s.name} className="h-64 w-full object-cover object-top sm:h-full" />
+                  <div className="p-7">
+                    <p className="eyebrow text-primary">{s.role}</p>
+                    <DialogTitle className="mt-2 text-2xl font-bold">{s.name}</DialogTitle>
+                    <p className="text-sm text-muted-foreground">{s.org}</p>
+                    <div className="mt-4 h-1 w-12 rounded-full bg-gradient-brand" />
+                    <DialogDescription className="mt-4 text-base leading-relaxed text-foreground/80">{s.bio}</DialogDescription>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
       </Section>
