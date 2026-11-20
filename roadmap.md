@@ -13,3 +13,4 @@
 - [x] Add more imagery inside text-heavy sections (About, Program, Call for Abstracts, Knowledge Hub, Media, FAQ, Participate)
 - [x] Add missing accreditation supporting-document fields and validate required attachments.
 - [x] Home redesign + Kenya National Treasury logo from the web
+- [x] Full French version (EN/FR switch in header, all pages + accreditation form translated)

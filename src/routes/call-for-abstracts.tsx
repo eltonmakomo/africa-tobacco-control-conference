@@ -2,7 +2,8 @@ import heroImg from "@/assets/delegates-phone.jpg";
 import guidelinesImg from "@/assets/cfa-guidelines.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
-import { KEY_DATES, TRACKS } from "@/lib/conference";
+import { KEY_DATES, KEY_DATES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
+import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/call-for-abstracts")({
   head: () => ({
@@ -17,42 +18,61 @@ export const Route = createFileRoute("/call-for-abstracts")({
 });
 
 function CFA() {
+  const { fr } = useLang();
+  const tracks = fr ? TRACKS_FR : TRACKS;
+  const keyDates = fr ? KEY_DATES_FR : KEY_DATES;
+
   return (
     <>
-      <PageHero image={heroImg} eyebrow="Call for Abstracts" title="African evidence, at the centre of policy" intro="The call invites research papers, implementation experiences, policy analyses and innovations that reflect African-generated evidence.">
+      <PageHero
+        image={heroImg}
+        eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"}
+        title={fr ? "Les données africaines, au cœur des politiques" : "African evidence, at the centre of policy"}
+        intro={fr ? "L'appel invite des travaux de recherche, des expériences de mise en œuvre, des analyses de politiques et des innovations qui reflètent les données produites en Afrique." : "The call invites research papers, implementation experiences, policy analyses and innovations that reflect African-generated evidence."}
+      >
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <button disabled className="cursor-not-allowed rounded-full bg-forest-foreground/80 px-7 py-4 font-semibold text-primary/70">Submit an abstract · opens Oct/Nov 2026</button>
+          <button disabled className="cursor-not-allowed rounded-full bg-forest-foreground/80 px-7 py-4 font-semibold text-primary/70">
+            {fr ? "Soumettre un résumé · ouverture oct./nov. 2026" : "Submit an abstract · opens Oct/Nov 2026"}
+          </button>
         </div>
       </PageHero>
-      <Section eyebrow="Overview and tracks" title="Map your submission to one of five tracks">
+      <Section eyebrow={fr ? "Aperçu et pistes" : "Overview and tracks"} title={fr ? "Rattachez votre soumission à l'une des cinq pistes" : "Map your submission to one of five tracks"}>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-          {TRACKS.map((t) => <div key={t.n} className="rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><span className="eyebrow text-primary">Track {t.n}</span><p className="mt-2 font-semibold">{t.short}</p></div>)}
+          {tracks.map((t) => <div key={t.n} className="rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><span className="eyebrow text-primary">{fr ? `Piste ${t.n}` : `Track ${t.n}`}</span><p className="mt-2 font-semibold">{t.short}</p></div>)}
         </div>
       </Section>
-      <Section id="guidelines" eyebrow="Submission guidelines" title="Format" className="bg-secondary/60">
+      <Section id="guidelines" eyebrow={fr ? "Directives de soumission" : "Submission guidelines"} title="Format" className="bg-secondary/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-foreground/80">Submissions map to one of the five tracks and follow the structured format set by the Scientific Committee. Accepted abstracts appear as oral presentations or digital e-Posters.</p>
+            <p className="text-foreground/80">
+              {fr
+                ? "Les soumissions se rattachent à l'une des cinq pistes et suivent le format structuré défini par le Comité scientifique. Les résumés acceptés sont présentés sous forme de présentations orales ou d'affiches électroniques."
+                : "Submissions map to one of the five tracks and follow the structured format set by the Scientific Committee. Accepted abstracts appear as oral presentations or digital e-Posters."}
+            </p>
           </div>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-            <img src={guidelinesImg} alt="A speaker presenting at the 2nd ACTCD, Accra 2024" loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+            <img src={guidelinesImg} alt={fr ? "Un intervenant à la 2e ACTCD, Accra 2024" : "A speaker presenting at the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>
       </Section>
-      <Section id="dates" eyebrow="Key dates" title="Timeline">
+      <Section id="dates" eyebrow={fr ? "Dates clés" : "Key dates"} title={fr ? "Calendrier" : "Timeline"}>
         <ol className="grid gap-4 md:grid-cols-2">
-          {KEY_DATES.map((k, i) => (
-            <li key={k.milestone} className={`rounded-3xl p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === KEY_DATES.length - 1 ? "bg-forest text-forest-foreground" : "border border-border bg-card"}`}>
+          {keyDates.map((k, i) => (
+            <li key={k.milestone} className={`rounded-3xl p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === keyDates.length - 1 ? "bg-forest text-forest-foreground" : "border border-border bg-card"}`}>
               <span className="text-sm opacity-70">0{i + 1}</span>
               <p className="mt-3 font-semibold">{k.milestone}</p>
-              <div className="mt-3 text-lg font-bold"><span className={i === KEY_DATES.length - 1 ? "text-forest-foreground" : "text-primary"}>{k.date}</span></div>
+              <div className="mt-3 text-lg font-bold"><span className={i === keyDates.length - 1 ? "text-forest-foreground" : "text-primary"}>{k.date}</span></div>
             </li>
           ))}
         </ol>
       </Section>
-      <Section id="e-posters" eyebrow="e-Posters" title="Digital e-Posters" className="bg-secondary/60">
-        <p className="max-w-3xl text-foreground/80">Accepted abstracts may be presented as digital e-Posters during dedicated e-Poster sessions within each track.</p>
+      <Section id="e-posters" eyebrow="e-Posters" title={fr ? "Affiches électroniques" : "Digital e-Posters"} className="bg-secondary/60">
+        <p className="max-w-3xl text-foreground/80">
+          {fr
+            ? "Les résumés acceptés peuvent être présentés sous forme d'affiches électroniques lors de sessions dédiées au sein de chaque piste."
+            : "Accepted abstracts may be presented as digital e-Posters during dedicated e-Poster sessions within each track."}
+        </p>
       </Section>
     </>
   );

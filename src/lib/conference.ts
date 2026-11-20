@@ -150,3 +150,119 @@ export const HOME_IMPACT = [
   { figure: "20+", label: "media houses" },
   { figure: "3rd", label: "edition" },
 ];
+
+// ============ French versions of the shared content above ============
+
+export const EVENT_FR = {
+  edition: "3e Conférence africaine sur la lutte antitabac et le développement",
+  theme: "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire",
+  dates: "22–23 avril 2027",
+  location: "Nairobi, Kenya",
+  format: "Hybride · Anglais et français",
+};
+
+export const TRACKS_FR = [
+  { n: 1, short: "Gouvernance et souveraineté des politiques", title: "Gouvernance, leadership et protection de la souveraineté des politiques", scope: "Article 5.3 de la CCLAT de l'OMS, ingérence de l'industrie, transparence et conflits d'intérêts, coordination multisectorielle et engagement de la société civile." },
+  { n: 2, short: "Nouveaux produits", title: "Nouveaux produits du tabac et de la nicotine et protection des générations futures", scope: "Cigarettes électroniques, tabac chauffé, sachets de nicotine et autres produits, avec un accent sur la préparation réglementaire, l'usage par les jeunes, les arômes et le marketing numérique." },
+  { n: 3, short: "Données et surveillance", title: "Connaissances, données et surveillance africaines et veille sur l'industrie du tabac", scope: "Surveillance épidémiologique et du marché, veille sur l'industrie, commerce illicite, recherche sur la mise en œuvre et l'économie, systèmes de données et de la donnée à la décision." },
+  { n: 4, short: "Systèmes de santé et développement", title: "Lutte antitabac, systèmes de santé et développement durable", scope: "Sevrage et traitement de la dépendance, intégration aux soins de santé primaires et à la couverture sanitaire universelle, interventions MPOWER, inégalités, environnement et moyens de subsistance." },
+  { n: 5, short: "Fiscalité et financement", title: "Fiscalité du tabac, financement durable et mobilisation des ressources intérieures", scope: "Conception et administration fiscales, taxation des nouveaux produits, commerce illicite et application des lois, et financement innovant de la lutte antitabac et de la santé." },
+];
+
+export const CROSS_CUTTING_FR = ["Jeunesse", "Genre", "Équité", "Ingérence de l'industrie du tabac", "De la donnée à la décision"];
+
+export const OBJECTIVES_FR = [
+  "Renforcer le leadership africain, la gouvernance et l'engagement multisectoriel pour accélérer la mise en œuvre de la CCLAT de l'OMS et protéger l'élaboration des politiques de l'ingérence de l'industrie.",
+  "Produire, consolider et diffuser les connaissances et les données africaines sur la lutte antitabac.",
+  "Promouvoir des réponses efficaces et durables qui protègent les jeunes et intègrent la prévention du tabagisme dans les réponses plus larges en matière de santé et de maladies non transmissibles.",
+  "Faire progresser le financement durable grâce à la fiscalité du tabac, à la mobilisation des ressources intérieures et à des approches de financement innovantes.",
+];
+
+export const EXPECTED_OUTCOMES_FR = [
+  "Un leadership et un engagement continentaux renforcés en faveur d'une mise en œuvre accélérée de la CCLAT de l'OMS et de la protection des politiques de santé publique contre l'ingérence de l'industrie du tabac",
+  "Une production, un partage et une utilisation accrus des connaissances et des données produites en Afrique",
+  "Une meilleure préparation réglementaire et des systèmes de santé pour prévenir l'usage du tabac et de la nicotine, en particulier chez les jeunes, et un meilleur accès au traitement de la dépendance tabagique",
+  "Une reconnaissance accrue de la fiscalité du tabac et de la mobilisation des ressources intérieures comme éléments du financement durable de la lutte antitabac et de la santé",
+  "Une collaboration et des réseaux renforcés entre les acteurs de la lutte antitabac en Afrique",
+  "Un positionnement plus clair de la lutte antitabac dans les agendas africains de souveraineté sanitaire et de développement durable",
+];
+
+export const OUTPUTS_FR = ["Recueil de connaissances", "Communiqué de la Conférence", "Appel à l'action continental", "Rapport de la Conférence", "Cadre de suivi et de redevabilité"];
+
+export const KEY_STATS_FR = [
+  { figure: "44 / 47", label: "pays de la Région africaine de l'OMS ont ratifié la CCLAT" },
+  { figure: "7M+", label: "décès par an dans le monde dus au tabagisme" },
+  { figure: "~9.5%", label: "de prévalence du tabagisme chez les adultes dans la Région africaine de l'OMS" },
+  { figure: "60%+", label: "de la population africaine a moins de 25 ans" },
+];
+
+export const PAST_EDITIONS_FR = [
+  { year: "2021", title: "1re édition · Virtuelle", dates: "26–28 octobre 2021", theme: "Une Afrique sans tabac. Un appel urgent à l'action conjointe.", detail: "Organisée sur la plateforme WHOVA avec 586 participants inscrits et environ 280 présents chaque jour, entre plénières et ateliers parallèles sur la durabilité, les données locales, le soutien multisectoriel et les partenariats." },
+  { year: "2024", title: "2e édition · Accra, Ghana", dates: "13–14 novembre 2024 · Labadi Beach Hotel", theme: "Briser les barrières, bâtir l'avenir : faire progresser l'écosystème de la lutte antitabac en Afrique", detail: "Convoquée par l'ACBF avec le Centre for Tobacco Control in Africa et Youth in Action, accueillie par le ministère de la Santé du Ghana. 96 % des participants sondés, issus de 23 pays, ont jugé le thème pertinent pour les défis de développement de l'Afrique." },
+  { year: "2027", title: "3e édition · Nairobi, Kenya", dates: "22–23 avril 2027", theme: "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire", detail: "Convoquée par l'ACBF avec le ministère de la Santé du Kenya, la Commission de l'Union africaine, Africa CDC et des partenaires." },
+];
+
+export const RESOLUTIONS_2024_FR = [
+  "Renforcer et appliquer les politiques de lutte antitabac conformément à la CCLAT de l'OMS, et modifier les lois pour interdire les nouveaux produits",
+  "Mettre en place et étendre des programmes accessibles de sevrage tabagique, en particulier pour les populations à haut risque",
+  "Impliquer intentionnellement les jeunes dans la lutte antitabac à travers le continent",
+  "Consacrer des ressources à la lutte antitabac, notamment grâce aux taxes sur le tabac, les gouvernements africains prenant en charge le financement",
+  "Développer des interventions ciblées pour les femmes et les jeunes",
+  "Investir dans la recherche sur les dynamiques locales du tabagisme et des nouveaux produits",
+  "Intégrer la santé environnementale et les moyens de subsistance alternatifs pour les producteurs de tabac",
+  "Mettre en place des cadres solides de suivi, d'évaluation et de redevabilité",
+];
+
+export const KEY_DATES_FR = [
+  { milestone: "Ouverture de l'appel à résumés", date: "Octobre / novembre 2026" },
+  { milestone: "Dates de la Conférence", date: "22–23 avril 2027" },
+];
+
+export const ARTICLE_53_FR =
+  "La Conférence respecte l'article 5.3 de la CCLAT de l'OMS et n'accepte aucun soutien financier ou en nature de l'industrie du tabac ni des organisations agissant dans son intérêt.";
+
+export const PARTNERSHIP_PACKAGES_FR = [
+  {
+    tier: "Bronze",
+    price: "USD 5 000",
+    featured: false,
+    includes: [
+      "2 inscriptions à la Conférence",
+      "Logo sur le mur des partenaires du site ACTCD 2027",
+      "Présence de l'organisation dans le programme de la Conférence",
+      "Invitations pour deux personnes au cocktail de réseautage",
+    ],
+  },
+  {
+    tier: "Argent",
+    price: "USD 15 000",
+    featured: false,
+    includes: [
+      "6 inscriptions à la Conférence",
+      "Stand d'exposition dans le hall principal",
+      "Logo sur le site, le programme et la toile de fond de la scène",
+      "Un créneau de session partenaire de 15 minutes",
+      "Reconnaissance sur les réseaux sociaux de la Conférence",
+    ],
+  },
+  {
+    tier: "Or",
+    price: "USD 35 000",
+    featured: true,
+    includes: [
+      "12 inscriptions à la Conférence",
+      "Stand d'exposition premium avec espace de réunion",
+      "Droit de nommer une piste ou un événement parallèle",
+      "Intervention dans une séance plénière",
+      "Image de marque sur les supports et la signalétique de la Conférence",
+      "Reconnaissance dans le communiqué et le rapport de la Conférence",
+    ],
+  },
+];
+
+export const HOME_IMPACT_FR = [
+  { figure: "350+", label: "participants" },
+  { figure: "30+", label: "pays représentés" },
+  { figure: "20+", label: "maisons de presse" },
+  { figure: "3e", label: "édition" },
+];
