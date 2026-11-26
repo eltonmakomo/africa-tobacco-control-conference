@@ -31,22 +31,22 @@ type Doc = { title: string; note: string; files: { label: string; url: string }[
 
 const AVAILABLE_EN: Doc[] = [
   { title: "Concept Note — 3rd ACTCD (abridged)", note: "2027 · Word", files: [{ label: "EN", url: concept.url }] },
-  { title: "Report — 1st ACTCD (2021, virtual)", note: "Word", files: [{ label: "EN", url: rep21.url }] },
   { title: "Report — 2nd ACTCD (2024, Accra)", note: "PDF", files: [{ label: "EN", url: rep24.url }, { label: "FR", url: rep24fr.url }] },
   { title: "Communiqué — 2nd ACTCD (2024)", note: "Word", files: [{ label: "EN", url: comEn.url }, { label: "FR", url: comFr.url }] },
   { title: "Agenda — 2nd ACTCD, 13–14 Nov 2024", note: "Word", files: [{ label: "EN", url: agendaEn.url }, { label: "FR", url: agendaFr.url }] },
   { title: "Post-Assessment Report — 2nd ACTCD", note: "Word", files: [{ label: "EN", url: post.url }] },
   { title: "Branded materials — 2nd ACTCD", note: "PDF", files: [{ label: "View", url: brand.url }] },
+  { title: "Report — 1st ACTCD (2021, virtual)", note: "Word", files: [{ label: "EN", url: rep21.url }] },
 ];
 
 const AVAILABLE_FR: Doc[] = [
   { title: "Note conceptuelle — 3e ACTCD (abrégée)", note: "2027 · Word", files: [{ label: "EN", url: concept.url }] },
-  { title: "Rapport — 1re ACTCD (2021, virtuelle)", note: "Word", files: [{ label: "EN", url: rep21.url }] },
   { title: "Rapport — 2e ACTCD (2024, Accra)", note: "PDF", files: [{ label: "EN", url: rep24.url }, { label: "FR", url: rep24fr.url }] },
   { title: "Communiqué — 2e ACTCD (2024)", note: "Word", files: [{ label: "EN", url: comEn.url }, { label: "FR", url: comFr.url }] },
   { title: "Ordre du jour — 2e ACTCD, 13–14 nov. 2024", note: "Word", files: [{ label: "EN", url: agendaEn.url }, { label: "FR", url: agendaFr.url }] },
   { title: "Rapport d'évaluation — 2e ACTCD", note: "Word", files: [{ label: "EN", url: post.url }] },
   { title: "Supports de marque — 2e ACTCD", note: "PDF", files: [{ label: "Voir", url: brand.url }] },
+  { title: "Rapport — 1re ACTCD (2021, virtuelle)", note: "Word", files: [{ label: "EN", url: rep21.url }] },
 ];
 
 const AFTER_EN = ["Knowledge Compendium", "Continental Call to Action", "Conference Report", "Session recordings", "Webinars", "Multimedia"];
