@@ -301,7 +301,6 @@ function Media() {
         imgClassName="object-[center_15%]"
         eyebrow={fr ? "Médias" : "Media"}
         title={fr ? "Espace médias" : "Media centre"}
-        intro={fr ? "Tous les supports médiatiques respectent l'article 5.3 de la CCLAT de l'OMS et n'offrent aucune tribune aux discours de l'industrie du tabac." : "All media materials observe WHO FCTC Article 5.3 and give no platform to tobacco industry narratives."}
       />
       <Section id="news" eyebrow={fr ? "Actualités et communiqués de presse" : "News & press releases"} title={fr ? "À la une" : "Latest"}>
         <div className="grid gap-6 md:grid-cols-2">
@@ -331,7 +330,7 @@ function Media() {
           ))}
         </div>
       </Section>
-      <Section id="accreditation" eyebrow={fr ? "Accréditation des médias" : "Media accreditation"} title={fr ? "Vous couvrez l'ACTCD 2027 ?" : "Covering ACTCD 2027?"} className="bg-secondary/60">
+      <Section id="accreditation" eyebrow={fr ? "Accréditation des médias" : "Media accreditation"} title={fr ? "Vous couvrez l'ACTCD 2027 ?" : "Covering ACTCD 2027?"} className="border-t border-border/60">
         <p className="mb-8 max-w-3xl text-foreground/80">{fr ? "Journalistes, photographes et créateurs de contenu peuvent demander une accréditation ci-dessous. Les champs marqués d'un * sont obligatoires." : "Journalists, photographers and content creators can apply for accreditation below. Fields marked * are required."}</p>
         <AccreditationForm />
       </Section>

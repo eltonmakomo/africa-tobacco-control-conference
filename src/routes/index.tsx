@@ -121,7 +121,7 @@ function Home() {
         <img src={hero} alt={fr ? "De jeunes Africains courent dans un champ au-dessus de Nairobi au coucher du soleil" : "Young Africans running through an open field above Nairobi at sunset"} width={1920} height={1088} className="absolute inset-0 -z-20 size-full object-cover object-[70%_center]" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-forest/30 md:hidden" />
-        <div className="mx-auto flex min-h-[min(82vh,760px)] max-w-7xl flex-col justify-center px-5 py-24">
+        <div className="mx-auto flex min-h-[min(82vh,760px)] max-w-7xl flex-col justify-center px-5 py-20 md:px-10 md:py-28">
           <div className="max-w-2xl">
             <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
             <h1 className="mt-5 text-4xl font-bold leading-[1.05] md:text-6xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique" : "Protecting Africa's Future"}</h1>
@@ -151,7 +151,7 @@ function Home() {
 
       {/* Host logos */}
       <section className="border-b border-border bg-card">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-5 py-8 md:flex-row md:gap-16">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-5 py-10 md:flex-row md:gap-16 md:px-10">
           <p className="eyebrow text-muted-foreground md:mr-4">{fr ? "Organisée par" : "Hosted by"}</p>
           <img src={gokLogo.url} alt={fr ? "Gouvernement du Kenya" : "Government of Kenya"} className="h-14 w-auto max-w-full object-contain" />
           <img src={acbfLogo.url} alt="The African Capacity Building Foundation (ACBF)" className="h-14 w-auto max-w-full object-contain" />
@@ -159,12 +159,12 @@ function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="scroll-mt-24 py-20 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-2 lg:gap-16">
+      <section id="about" className="scroll-mt-24 py-20 md:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:grid-cols-2 md:px-10 lg:gap-20">
           <div>
             <p className="eyebrow text-primary">{fr ? "À propos de la Conférence" : "About the Conference"}</p>
             <h2 className="mt-3 text-3xl font-bold leading-tight md:text-5xl">
-              {fr ? <>Une plateforme continentale pour <span className="text-gradient-brand">l'action collective</span></> : <>A continental platform for <span className="text-gradient-brand">collective action</span></>}
+              {fr ? <>Une plateforme continentale pour <span className="text-primary">l'action collective</span></> : <>A continental platform for <span className="text-primary">collective action</span></>}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-foreground/80 md:text-lg">
               {fr
@@ -180,10 +180,10 @@ function Home() {
       </section>
 
       {/* Impact numbers */}
-      <section className="relative isolate overflow-hidden bg-forest py-24 text-forest-foreground">
+      <section className="relative isolate overflow-hidden bg-forest py-24 text-forest-foreground md:py-32">
         <img src={numbersBg} alt="" aria-hidden loading="lazy" className="absolute inset-0 -z-10 size-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-foreground/35" />
-        <div className="mx-auto max-w-7xl px-5">
+        <div className="mx-auto max-w-7xl px-5 md:px-10">
           <p className="eyebrow inline-block rounded-full glass px-4 py-2">{fr ? "L'ACTCD en chiffres" : "ACTCD in numbers"}</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {impact.map((n) => (
@@ -229,12 +229,12 @@ function Home() {
       </Section>
 
       {/* Agenda */}
-      <Section title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"} className="bg-secondary/60">
+      <Section title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"} className="border-t border-border/60">
         <div className="grid gap-5 md:grid-cols-3">
           {agenda.map((d) => (
             <div key={d.day} className="rounded-3xl bg-card p-5 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg sm:p-6 lg:p-7">
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <h3 className="text-xl font-bold text-gradient-brand lg:text-2xl">{d.day}</h3>
+                <h3 className="text-xl font-bold text-primary lg:text-2xl">{d.day}</h3>
                 <p className="text-xs text-muted-foreground sm:text-sm">{d.date}</p>
               </div>
               <ul className="mt-4 divide-y divide-border sm:mt-6">
@@ -269,9 +269,8 @@ function Home() {
       </Section>
 
       {/* Join us */}
-      <section className="px-5">
+      <section className="px-5 md:px-10">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-forest p-10 text-forest-foreground shadow-elegant md:p-16">
-          <div className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full bg-swirl opacity-40 animate-spin-slow" />
           <div className="relative">
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>

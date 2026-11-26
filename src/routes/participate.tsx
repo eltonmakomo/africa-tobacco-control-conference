@@ -66,7 +66,7 @@ function Participate() {
           </div>
         </div>
       </Section>
-      <Section eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"} title={fr ? "Présentez vos travaux" : "Present your work"} className="bg-secondary/60">
+      <Section eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"} title={fr ? "Présentez vos travaux" : "Present your work"} className="border-t border-border/60">
         <Link to="/call-for-abstracts" className="inline-flex rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground">{fr ? "Voir l'appel à résumés" : "See the Call for Abstracts"}</Link>
       </Section>
       <Section id="packages" eyebrow={fr ? "Devenez partenaire ou sponsor" : "Become a partner or sponsor"} title={fr ? "Formules de partenariat par niveau" : "Tiered partnership packages"}>
@@ -106,7 +106,7 @@ function Participate() {
           </div>
         )}
       </Section>
-      <Section id="exhibit" eyebrow={fr ? "Exposez avec nous" : "Exhibit with us"} title={fr ? "Présentez vos innovations" : "Showcase your innovations"} className="bg-secondary/60">
+      <Section id="exhibit" eyebrow={fr ? "Exposez avec nous" : "Exhibit with us"} title={fr ? "Présentez vos innovations" : "Showcase your innovations"} className="border-t border-border/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="space-y-6">
             <p className="text-foreground/80">

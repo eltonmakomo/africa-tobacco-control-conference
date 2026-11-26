@@ -24,7 +24,7 @@ function Legal() {
       <Section id="article-5-3" eyebrow={fr ? "Déclaration Article 5.3 de la CCLAT de l'OMS" : "WHO FCTC Article 5.3 statement"} title={fr ? "Protégée de l'ingérence de l'industrie" : "Protected from industry interference"}>
         <p className="max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 text-lg font-medium shadow-card transition hover:shadow-card-lg">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
       </Section>
-      <Section id="privacy" eyebrow={fr ? "Politique de confidentialité" : "Privacy policy"} title={fr ? "Confidentialité" : "Privacy"} className="bg-secondary/60">
+      <Section id="privacy" eyebrow={fr ? "Politique de confidentialité" : "Privacy policy"} title={fr ? "Confidentialité" : "Privacy"} className="border-t border-border/60">
         <div className="max-w-3xl space-y-4 text-lg text-foreground/80">
           {fr ? (
             <>

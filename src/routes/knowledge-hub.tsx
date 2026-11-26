@@ -64,7 +64,6 @@ function Hub() {
         imgClassName="object-[center_10%]"
         eyebrow={fr ? "Centre de connaissances" : "Knowledge Hub"}
         title={fr ? "Données, résultats et archives" : "Evidence, outcomes and records"}
-        intro={fr ? "Le Centre de connaissances rassemble les documents officiels et les produits de connaissance de la Conférence. Les documents sont disponibles en anglais et en français." : "The Knowledge Hub gathers the official documents and knowledge products of the Conference. Documents appear in English and French."}
       />
       <Section eyebrow="Documents" title={fr ? "Note conceptuelle, rapports et communiqués" : "Concept note, reports and communiqués"}>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -78,7 +77,7 @@ function Hub() {
           ))}
         </div>
       </Section>
-      <Section eyebrow={fr ? "Après l'événement" : "After the event"} title={fr ? "Disponible après avril 2027" : "Coming after April 2027"} className="bg-secondary/60">
+      <Section eyebrow={fr ? "Après l'événement" : "After the event"} title={fr ? "Disponible après avril 2027" : "Coming after April 2027"} className="border-t border-border/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="flex flex-wrap gap-3">{after.map((a) => <span key={a} className="rounded-full bg-card px-5 py-3 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{a}</span>)}</div>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">

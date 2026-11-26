@@ -11,8 +11,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-forest text-forest-foreground">
-      <div className="pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full bg-swirl opacity-30 animate-spin-slow" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-12 md:px-10 md:py-24">
         <div className="md:col-span-4">
           <div className="inline-block rounded-2xl bg-primary px-4 py-3"><Logo variant="reverse" className="h-16" /></div>
           <p className="mt-6 max-w-sm text-sm text-forest-foreground/75">
@@ -46,7 +45,7 @@ export function Footer() {
         </div>
       </div>
       <div className="relative border-t border-forest-foreground/15">
-        <div className="mx-auto max-w-7xl px-5 py-6">
+        <div className="mx-auto max-w-7xl px-5 py-6 md:px-10">
           <p className="text-xs font-medium text-forest-foreground/80">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
           <p className="mt-3 text-xs text-forest-foreground/50">© 2027 The African Capacity Building Foundation</p>
         </div>

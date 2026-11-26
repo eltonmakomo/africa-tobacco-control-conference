@@ -28,7 +28,6 @@ function CFA() {
         image={heroImg}
         eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"}
         title={fr ? "Les données africaines, au cœur des politiques" : "African evidence, at the centre of policy"}
-        intro={fr ? "L'appel invite des travaux de recherche, des expériences de mise en œuvre, des analyses de politiques et des innovations qui reflètent les données produites en Afrique." : "The call invites research papers, implementation experiences, policy analyses and innovations that reflect African-generated evidence."}
       >
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <button disabled className="cursor-not-allowed rounded-full bg-forest-foreground/80 px-7 py-4 font-semibold text-primary/70">
@@ -41,7 +40,7 @@ function CFA() {
           {tracks.map((t) => <div key={t.n} className="rounded-3xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg"><span className="eyebrow text-primary">{fr ? `Piste ${t.n}` : `Track ${t.n}`}</span><p className="mt-2 font-semibold">{t.short}</p></div>)}
         </div>
       </Section>
-      <Section id="guidelines" eyebrow={fr ? "Directives de soumission" : "Submission guidelines"} title="Format" className="bg-secondary/60">
+      <Section id="guidelines" eyebrow={fr ? "Directives de soumission" : "Submission guidelines"} title="Format" className="border-t border-border/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-foreground/80">
@@ -67,7 +66,7 @@ function CFA() {
           ))}
         </ol>
       </Section>
-      <Section id="e-posters" eyebrow="e-Posters" title={fr ? "Affiches électroniques" : "Digital e-Posters"} className="bg-secondary/60">
+      <Section id="e-posters" eyebrow="e-Posters" title={fr ? "Affiches électroniques" : "Digital e-Posters"} className="border-t border-border/60">
         <p className="max-w-3xl text-foreground/80">
           {fr
             ? "Les résumés acceptés peuvent être présentés sous forme d'affiches électroniques lors de sessions dédiées au sein de chaque piste."

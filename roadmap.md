@@ -19,3 +19,8 @@
 - [x] "Past editions" as the section title, tag removed
 - [x] Countdown back in the home banner
 - [x] Rework the About statistic cards so their placement reads better
+- [x] Host row: Government of Kenya logo + ACBF only
+- [x] Make the site cleaner and airier, in the style of africathinktanksummit.org
+- [x] Remove the spinning pattern from banners
+- [x] Remove the "Expected outcomes" and "Key outputs" blocks from About
+- [x] Set the About banner title to "About the conference" and remove banner captions

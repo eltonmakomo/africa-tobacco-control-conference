@@ -71,7 +71,7 @@ function Program() {
           </figure>
         </div>
       </Section>
-      <Section eyebrow={fr ? "Plénières et segments de haut niveau" : "Plenaries and high-level segments"} title={fr ? "Là où les engagements se prennent" : "Where commitments are made"} className="bg-secondary/60">
+      <Section eyebrow={fr ? "Plénières et segments de haut niveau" : "Plenaries and high-level segments"} title={fr ? "Là où les engagements se prennent" : "Where commitments are made"} className="border-t border-border/60">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl bg-forest p-8 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <h3 className="text-2xl font-semibold text-forest-foreground">{fr ? "Plénière d'ouverture" : "Opening Plenary"}</h3>
@@ -94,7 +94,7 @@ function Program() {
         </div>
         <p className="mt-6 text-sm text-muted-foreground">{fr ? "Thèmes transversaux : " : "Cross-cutting themes: "}{crossCutting.join(", ")}.</p>
       </Section>
-      <Section id="side-events" eyebrow={fr ? "Pré-conférence, événements parallèles et expositions" : "Pre-conference, side events and exhibitions"} title={fr ? "Au-delà du programme principal" : "Beyond the main program"} className="bg-secondary/60">
+      <Section id="side-events" eyebrow={fr ? "Pré-conférence, événements parallèles et expositions" : "Pre-conference, side events and exhibitions"} title={fr ? "Au-delà du programme principal" : "Beyond the main program"} className="border-t border-border/60">
         <div className="grid items-start gap-6 lg:grid-cols-4">
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:row-span-2">
             <img src={sideImg} alt={fr ? "Délégués autour d'une table lors d'une session parallèle de la 2e ACTCD" : "Delegates around a table at a 2nd ACTCD side session"} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105 lg:h-full" />

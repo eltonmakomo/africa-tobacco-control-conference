@@ -7,7 +7,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { CountUp } from "@/components/site/CountUp";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
-import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, EXPECTED_OUTCOMES, EXPECTED_OUTCOMES_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, OUTPUTS, OUTPUTS_FR, PAST_EDITIONS, PAST_EDITIONS_FR, RESOLUTIONS_2024, RESOLUTIONS_2024_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
+import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, PAST_EDITIONS, PAST_EDITIONS_FR, RESOLUTIONS_2024, RESOLUTIONS_2024_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/about")({
@@ -28,14 +28,12 @@ function About() {
   const tracks = fr ? TRACKS_FR : TRACKS;
   const crossCutting = fr ? CROSS_CUTTING_FR : CROSS_CUTTING;
   const objectives = fr ? OBJECTIVES_FR : OBJECTIVES;
-  const outcomes = fr ? EXPECTED_OUTCOMES_FR : EXPECTED_OUTCOMES;
-  const outputs = fr ? OUTPUTS_FR : OUTPUTS;
   const editions = fr ? PAST_EDITIONS_FR : PAST_EDITIONS;
   const resolutions = fr ? RESOLUTIONS_2024_FR : RESOLUTIONS_2024;
 
   return (
     <>
-      <PageHero image={heroImg} imgClassName="object-[center_30%]" eyebrow={fr ? "À propos" : "About"} title={fr ? "Consolider les acquis africains de la lutte antitabac" : "Securing Africa's tobacco control gains"} intro={fr ? EVENT_FR.theme : EVENT.theme} />
+      <PageHero image={heroImg} imgClassName="object-[center_85%]" title={fr ? "À propos de la Conférence" : "About the conference"} />
       <Section id="about" eyebrow={fr ? "À propos de l'ACTCD" : "About ACTCD"} title={fr ? "Les progrès sont réels. Le risque aussi." : "Progress is real. So is the risk."}>
         <div className="max-w-4xl space-y-5 text-lg leading-relaxed text-foreground/80">
             {fr ? (
@@ -63,7 +61,7 @@ function About() {
           </div>
         </div>
       </Section>
-      <Section id="theme" eyebrow={fr ? "Thème et justification" : "Theme and rationale"} title={fr ? "La souveraineté sanitaire" : "Health sovereignty"} className="bg-secondary/60">
+      <Section id="theme" eyebrow={fr ? "Thème et justification" : "Theme and rationale"} title={fr ? "La souveraineté sanitaire" : "Health sovereignty"} className="border-t border-border/60">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <p className="text-lg leading-relaxed text-foreground/80">
             {fr
@@ -96,12 +94,8 @@ function About() {
             </li>
           ))}
         </ol>
-        <h3 className="mt-14 text-2xl font-semibold">{fr ? "Résultats attendus" : "Expected outcomes"}</h3>
-        <ul className="mt-6 grid gap-3 md:grid-cols-2">{outcomes.map((o) => <li key={o} className="flex gap-3 text-foreground/80"><span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />{o}</li>)}</ul>
-        <h3 className="mt-12 text-2xl font-semibold">{fr ? "Produits clés" : "Key outputs"}</h3>
-        <div className="mt-5 flex flex-wrap gap-3">{outputs.map((o) => <span key={o} className="rounded-full bg-secondary px-5 py-2.5 font-medium shadow-card transition hover:-translate-y-0.5 hover:shadow-card-lg">{o}</span>)}</div>
       </Section>
-      <Section id="structure" eyebrow={fr ? "Structure de la Conférence" : "Conference structure"} title={fr ? "Le dialogue de haut niveau rencontre la rigueur scientifique" : "High-level dialogue meets rigorous science"} className="bg-secondary/60">
+      <Section id="structure" eyebrow={fr ? "Structure de la Conférence" : "Conference structure"} title={fr ? "Le dialogue de haut niveau rencontre la rigueur scientifique" : "High-level dialogue meets rigorous science"} className="border-t border-border/60">
         <div className="grid items-start gap-6 lg:grid-cols-5">
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:shadow-card-lg lg:col-span-3">
             {tracks.map((t) => (
@@ -143,7 +137,7 @@ function About() {
           <ul className="mt-6 grid gap-3 md:grid-cols-2">{resolutions.map((r) => <li key={r} className="flex gap-3 text-forest-foreground/85"><span className="mt-2 size-2 shrink-0 rounded-full bg-forest-foreground" />{r}</li>)}</ul>
         </div>
       </Section>
-      <Section id="organizers" eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="bg-secondary/60">
+      <Section id="organizers" eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="border-t border-border/60">
         <PartnerLogos columns="sm:grid-cols-2 lg:grid-cols-3" height="h-14" />
         <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
       </Section>
