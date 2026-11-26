@@ -1,4 +1,4 @@
-import heroImg from "@/assets/dialogue.jpg";
+import heroImg from "@/assets/nairobi.jpg";
 import themeImg from "@/assets/delegates-banner.jpg";
 import objectivesImg from "@/assets/about-objectives.jpg";
 import s1 from "@/assets/speaker-1.jpg";
@@ -61,7 +61,7 @@ function About() {
 
   return (
     <>
-      <PageHero title={fr ? "À propos de la Conférence" : "About the conference"} image={heroImg} imgClassName="object-[center_85%]" />
+      <PageHero title={fr ? "À propos de la Conférence" : "About the conference"} image={heroImg} imgClassName="object-[center_40%]" />
 
       <Section id="about">
         <div className="grid gap-14 lg:grid-cols-2">
