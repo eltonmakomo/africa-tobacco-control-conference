@@ -26,7 +26,7 @@ function PastEditions() {
 
   return (
     <>
-      <PageHero image={heroImg} imgClassName="object-top" title={fr ? "Éditions passées" : "Past editions"} />
+      <PageHero image={heroImg} imgClassName="object-[center_12%]" title={fr ? "Éditions passées" : "Past editions"} />
       <Section title={fr ? "2021 et 2024" : "2021 and 2024"}>
         <div className="grid gap-6 md:grid-cols-2">
           {editions.map((e) => (
