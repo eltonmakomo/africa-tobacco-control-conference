@@ -33,3 +33,5 @@
 - [x] Spinning pattern restored on the footer and the Join sections (home + About)
 - [x] Replace every photo that shows the "2nd Africa Conference on Tobacco..." backdrop with a clean photo with no text on it
 - [x] Home banner: swap in a clean Drive photo with no text, no faces behind the title, no cut heads
+- [ ] Home banner: use the user's uploaded photo (Africa_tobacco_day_2c_19_of_46.jpg) — must be cropped clean of bottle text and the cut head
+- [ ] About banner: use the user's uploaded photo (Breakout Session 3) — no cut heads or faces, no slide text
