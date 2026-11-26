@@ -31,7 +31,7 @@ function About() {
   return (
     <>
       <PageHero image={heroImg} imgClassName="object-[center_85%]" title={fr ? "À propos de la Conférence" : "About the conference"} />
-      <Section id="about" eyebrow={fr ? "À propos de l'ACTCD" : "About ACTCD"} title={fr ? "Les progrès sont réels. Le risque aussi." : "Progress is real. So is the risk."}>
+      <Section id="about" title={fr ? "À propos de l'ACTCD" : "About ACTCD"}>
         <div className="space-y-5 text-lg leading-relaxed text-foreground/80">
             {fr ? (
               <>
