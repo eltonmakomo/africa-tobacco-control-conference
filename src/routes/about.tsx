@@ -1,9 +1,15 @@
 import heroImg from "@/assets/dialogue.jpg";
 import themeImg from "@/assets/delegates-banner.jpg";
 import objectivesImg from "@/assets/about-objectives.jpg";
-import { CalendarDays, Globe, Languages, MapPin } from "lucide-react";
+import s1 from "@/assets/speaker-1.jpg";
+import s2 from "@/assets/speaker-2.jpg";
+import s3 from "@/assets/speaker-3.jpg";
+import s4 from "@/assets/speaker-4.jpg";
+import { ArrowRight, CalendarDays, Globe, Languages, MapPin, X } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { Section } from "@/components/site/Bits";
+import { Countdown } from "@/components/site/Countdown";
 import { CountUp } from "@/components/site/CountUp";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
 import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
@@ -21,12 +27,30 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
+type Speaker = { name: string; role: string; city: string; bio: string; img: string };
+
+const SPEAKERS: Speaker[] = [
+  { name: "Dr. Awa Diallo", role: "Public health physician", city: "Dakar, Senegal", bio: "Leads national tobacco control programming and works with health ministries on cessation services, treatment access and public awareness.", img: s1 },
+  { name: "Kwame Mensah", role: "Health economics researcher", city: "Accra, Ghana", bio: "Studies the fiscal and economic impact of tobacco use and the revenue potential of tobacco excise reform in African budgets.", img: s2 },
+  { name: "Zainab Bello", role: "Civil society programme lead", city: "Abuja, Nigeria", bio: "Coordinates community coalitions working on illicit trade, advertising restrictions and protecting public policy from commercial influence.", img: s3 },
+  { name: "Thabo Nkosi", role: "Youth advocate", city: "Johannesburg, South Africa", bio: "Organises youth-led campaigns on vaping prevention and smoke-free environments across southern Africa.", img: s4 },
+];
+
+const SPEAKERS_FR: Speaker[] = [
+  { name: "Dr Awa Diallo", role: "Médecin de santé publique", city: "Dakar, Sénégal", bio: "Dirige les programmes nationaux de lutte antitabac et travaille avec les ministères de la santé sur les services de sevrage, l'accès aux traitements et la sensibilisation du public.", img: s1 },
+  { name: "Kwame Mensah", role: "Chercheur en économie de la santé", city: "Accra, Ghana", bio: "Étudie l'impact fiscal et économique du tabagisme et le potentiel de recettes d'une réforme des accises sur le tabac dans les budgets africains.", img: s2 },
+  { name: "Zainab Bello", role: "Responsable de programme société civile", city: "Abuja, Nigeria", bio: "Coordonne des coalitions communautaires travaillant sur le commerce illicite, les restrictions publicitaires et la protection des politiques publiques contre les influences commerciales.", img: s3 },
+  { name: "Thabo Nkosi", role: "Militant jeunesse", city: "Johannesburg, Afrique du Sud", bio: "Organise des campagnes menées par les jeunes sur la prévention du vapotage et les environnements sans tabac en Afrique australe.", img: s4 },
+];
+
 function About() {
   const { fr } = useLang();
   const stats = fr ? KEY_STATS_FR : KEY_STATS;
   const tracks = fr ? TRACKS_FR : TRACKS;
   const crossCutting = fr ? CROSS_CUTTING_FR : CROSS_CUTTING;
   const objectives = fr ? OBJECTIVES_FR : OBJECTIVES;
+  const speakers = fr ? SPEAKERS_FR : SPEAKERS;
+  const [open, setOpen] = useState<Speaker | null>(null);
 
   const ev = fr ? EVENT_FR : EVENT;
   const details = [
@@ -121,6 +145,23 @@ function About() {
         </ul>
       </Section>
 
+      <Section id="speakers" title={fr ? "Intervenants vedettes" : "Featured Speakers"} className="border-t border-border/60">
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {speakers.map((s) => (
+            <li key={s.name}>
+              <button onClick={() => setOpen(s)} className="group w-full overflow-hidden rounded-3xl border border-border bg-card text-left shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+                <img src={s.img} alt={s.name} loading="lazy" className="aspect-[4/5] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+                <div className="p-5">
+                  <p className="font-semibold text-forest">{s.name}</p>
+                  <p className="text-sm text-muted-foreground">{s.role}</p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-primary">{s.city}</p>
+                </div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       <Section id="objectives" className="border-t border-border/60" eyebrow={fr ? "Objectif général et objectifs" : "Goal and objectives"} title={fr ? "Renforcer le leadership, les données et les capacités durables de l'Afrique" : "Strengthen African leadership, evidence and sustainable capacity"}>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <p className="text-foreground/75">
@@ -142,10 +183,46 @@ function About() {
           ))}
         </ol>
       </Section>
+      <section className="px-5 md:px-10">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-forest p-10 text-forest-foreground shadow-elegant md:p-16">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-5xl">{fr ? "Rejoignez-nous à l'ACTCD" : "Join us for the ACTCD"}</h2>
+            <p className="mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+          </div>
+          <div className="mx-auto mt-8 max-w-md"><Countdown /></div>
+          <div className="mt-8 flex justify-center">
+            <a
+              href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Demande d'inscription — ACTCD 2027" : "Registration enquiry — ACTCD 2027")}`}
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition hover:opacity-90"
+            >
+              {fr ? "Exprimer mon intérêt" : "Register your interest"}
+              <ArrowRight className="size-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Section id="organizers" eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="border-t border-border/60">
         <PartnerLogos columns="sm:grid-cols-2 lg:grid-cols-3" height="h-14" />
         <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
       </Section>
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-forest/60 p-5" onClick={() => setOpen(null)} role="dialog" aria-modal="true">
+          <div className="w-full max-w-lg overflow-hidden rounded-3xl bg-card shadow-elegant" onClick={(e) => e.stopPropagation()}>
+            <div className="relative">
+              <img src={open.img} alt={open.name} className="aspect-[4/3] w-full object-cover object-top" />
+              <button onClick={() => setOpen(null)} aria-label={fr ? "Fermer" : "Close"} className="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-background/90 text-foreground transition hover:bg-background"><X className="size-4" /></button>
+            </div>
+            <div className="p-7">
+              <p className="text-xl font-bold text-forest">{open.name}</p>
+              <p className="text-sm font-semibold text-primary">{open.role}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{open.city}</p>
+              <p className="mt-4 leading-relaxed text-foreground/80">{open.bio}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

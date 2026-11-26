@@ -10,6 +10,9 @@
 - [x] Footer swirl pattern animated like the page banners
 - [ ] WHOVA registration link, contacts, social handles, Mailchimp — blocked: not supplied
 - [x] Match the menu to the architecture document: Media added, Participate dropped on request
+- [x] Rebuild the Media page in the format of africathinktanksummit.org/en/media-corner
+- [x] About page: add back Featured speakers and a Join us section
+- [x] Fix the Media page photo being cropped through faces on phone screens
 - [x] Unique photo per slot (no repeats)
 - [x] Add more imagery inside text-heavy sections (About, Program, Call for Abstracts, Knowledge Hub, Media, FAQ, Participate)
 - [x] Add missing accreditation supporting-document fields and validate required attachments.

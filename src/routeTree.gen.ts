@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CallForAbstractsRouteImport } from './routes/call-for-abstracts'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
+import { Route as MediaRouteImport } from './routes/media'
 import { Route as PastEditionsRouteImport } from './routes/past-editions'
 import { Route as ProgramRouteImport } from './routes/program'
 
@@ -36,6 +37,11 @@ const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
   path: '/knowledge-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PastEditionsRoute = PastEditionsRouteImport.update({
   id: '/past-editions',
   path: '/past-editions',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/call-for-abstracts'
     | '/knowledge-hub'
+    | '/media'
     | '/past-editions'
     | '/program'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/call-for-abstracts'
     | '/knowledge-hub'
+    | '/media'
     | '/past-editions'
     | '/program'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/call-for-abstracts'
     | '/knowledge-hub'
+    | '/media'
     | '/past-editions'
     | '/program'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CallForAbstractsRoute: typeof CallForAbstractsRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
+  MediaRoute: typeof MediaRoute
   PastEditionsRoute: typeof PastEditionsRoute
   ProgramRoute: typeof ProgramRoute
 }
@@ -138,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KnowledgeHubRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/past-editions': {
       id: '/past-editions'
       path: '/past-editions'
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CallForAbstractsRoute: CallForAbstractsRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
+  MediaRoute: MediaRoute,
   PastEditionsRoute: PastEditionsRoute,
   ProgramRoute: ProgramRoute,
 }
