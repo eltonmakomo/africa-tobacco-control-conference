@@ -43,4 +43,7 @@
 - [x] Move banner titles up close to the header on every page banner
 - [x] Program preconference section: keep the photo, leave only Exhibitions + E-library cards
 - [x] Banner photos: lift the FACES toward the header (user meant faces, not the banner text) — text lift reverted
-- [ ] Push banner faces as high as possible without clipping, on every page banner (user: "move faces up close to the header")
+- [x] Push banner faces as high as possible without clipping, on every page banner (user: "move faces up close to the header")
+- [x] Call for Abstracts banner: user's photo Africa_tobacco_21_of_56.jpg
+- [x] Knowledge Hub banner: user's photo Africa_tobacco_46_of_56.jpg
+- [x] Home banner: narrow the heading column so no text sits on the woman's hair
