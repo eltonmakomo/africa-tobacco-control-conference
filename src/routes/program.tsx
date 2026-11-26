@@ -48,7 +48,7 @@ function Program() {
         eyebrow={fr ? "Programme" : "Program"}
         title={fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}
       />
-      <Section id="agenda" eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Structure des trois journées" : "Structure of the three days"}>
+      <Section id="agenda" title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"}>
         <div role="tablist" className="inline-flex rounded-full bg-secondary p-1">
           {days.map((d, i) => (
             <button key={d.day} role="tab" aria-selected={active === i} onClick={() => setActive(i)} className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${active === i ? "bg-primary text-primary-foreground shadow" : "text-foreground/70"}`}>
