@@ -193,7 +193,7 @@ function Home() {
       </section>
 
       {/* Speakers */}
-      <Section eyebrow={fr ? "Intervenants vedettes" : "Featured speakers"} title={fr ? "Les voix qui mènent la réponse africaine" : "Voices leading Africa's response"}>
+      <Section title={fr ? "Intervenants vedettes" : "Featured Speakers"}>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {speakers.map((s) => (
             <Dialog key={s.name}>
