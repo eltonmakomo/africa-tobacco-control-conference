@@ -5,13 +5,12 @@ import s1 from "@/assets/speaker-1.jpg";
 import s2 from "@/assets/speaker-2.jpg";
 import s3 from "@/assets/speaker-3.jpg";
 import s4 from "@/assets/speaker-4.jpg";
-import { ArrowRight, CalendarDays, Globe, Languages, MapPin, X } from "lucide-react";
-import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight, CalendarDays, Globe, Languages, MapPin, ShieldCheck, X } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Section } from "@/components/site/Bits";
 import { Countdown } from "@/components/site/Countdown";
 import { CountUp } from "@/components/site/CountUp";
-import { PartnerLogos } from "@/components/site/PartnerLogos";
 import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
 
@@ -203,9 +202,22 @@ function About() {
         </div>
       </section>
 
-      <Section id="organizers" eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="border-t border-border/60">
-        <PartnerLogos columns="sm:grid-cols-2 lg:grid-cols-3" height="h-14" />
-        <p className="mt-8 max-w-3xl rounded-2xl border-l-4 border-accent bg-card p-6 font-medium shadow-card transition hover:shadow-card-lg">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
+      <Section id="organizers" center eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="border-t border-border/60 bg-cream/40">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-border bg-card shadow-card">
+          <div className="h-1.5 bg-gradient-brand" />
+          <div className="px-8 py-12 text-center md:px-14 md:py-16">
+            <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-accent/15 text-primary">
+              <ShieldCheck className="size-7" />
+            </span>
+            <p className="mt-7 text-xl leading-relaxed font-medium text-foreground/85 md:text-2xl">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
+            <div className="mt-9 border-t border-border pt-7">
+              <Link to="/legal" hash="article-5-3" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3">
+                {fr ? "Lire la déclaration Article 5.3" : "Read the Article 5.3 statement"}
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
       </Section>
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-forest/60 p-5" onClick={() => setOpen(null)} role="dialog" aria-modal="true">

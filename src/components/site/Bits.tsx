@@ -15,12 +15,12 @@ export function PageHero({ eyebrow, title, children, image, imgClassName = "" }:
   );
 }
 
-export function Section({ id, eyebrow, title, children, className = "" }: { id?: string; eyebrow?: string; title?: ReactNode; children: ReactNode; className?: string }) {
+export function Section({ id, eyebrow, title, children, className = "", center = false }: { id?: string; eyebrow?: string; title?: ReactNode; children: ReactNode; className?: string; center?: boolean }) {
   return (
     <section id={id} className={`scroll-mt-24 py-16 md:py-24 ${className}`}>
       <div className="mx-auto max-w-7xl px-5 md:px-10">
-        {eyebrow && <p className="eyebrow text-primary">{eyebrow}</p>}
-        {title && <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-tight md:text-5xl">{title}</h2>}
+        {eyebrow && <p className={`eyebrow text-primary ${center ? "text-center" : ""}`}>{eyebrow}</p>}
+        {title && <h2 className={`mt-3 max-w-3xl text-3xl font-bold leading-tight md:text-5xl ${center ? "mx-auto text-center" : ""}`}>{title}</h2>}
         <div className={title ? "mt-10 md:mt-14" : ""}>{children}</div>
       </div>
     </section>
