@@ -104,9 +104,6 @@ function Program() {
             <div key={x} className="rounded-2xl bg-card p-6 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
           ))}
         </div>
-        <p className="mt-6 text-foreground/75">
-          {fr ? <>Les organisateurs intéressés par un événement parallèle ou une exposition font leur demande via la section <a href="/participate#exhibit" className="font-semibold text-primary underline">Participer</a>.</> : <>Organizers interested in a side event or an exhibition apply through the <a href="/participate#exhibit" className="font-semibold text-primary underline">Participate</a> section.</>}
-        </p>
       </Section>
     </>
   );

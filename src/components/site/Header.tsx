@@ -8,18 +8,16 @@ const NAV_EN = [
   { to: "/about", label: "About" },
   { to: "/program", label: "Program" },
   { to: "/call-for-abstracts", label: "Call for Abstracts" },
-  { to: "/participate", label: "Participate" },
+  { to: "/past-editions", label: "Past Editions" },
   { to: "/knowledge-hub", label: "Knowledge Hub" },
-  { to: "/media", label: "Media" },
 ] as const;
 
 const NAV_FR = [
   { to: "/about", label: "À propos" },
   { to: "/program", label: "Programme" },
   { to: "/call-for-abstracts", label: "Appel à résumés" },
-  { to: "/participate", label: "Participer" },
+  { to: "/past-editions", label: "Éditions passées" },
   { to: "/knowledge-hub", label: "Connaissances" },
-  { to: "/media", label: "Médias" },
 ] as const;
 
 export function Header() {
@@ -62,9 +60,6 @@ export function Header() {
               FR
             </button>
           </div>
-          <Link to="/participate" hash="registration" className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-gold transition hover:-translate-y-0.5 sm:inline-flex">
-            {fr ? "S'inscrire" : "Register"}
-          </Link>
           <button className="rounded-full p-2 lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
             {open ? <X /> : <Menu />}
           </button>
@@ -93,9 +88,6 @@ export function Header() {
               FR
             </button>
           </div>
-          <Link to="/participate" hash="registration" onClick={() => setOpen(false)} className="mt-3 block rounded-full bg-accent px-5 py-3 text-center font-semibold text-accent-foreground">
-            {fr ? "S'inscrire" : "Register"}
-          </Link>
         </nav>
       )}
     </header>

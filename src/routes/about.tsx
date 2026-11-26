@@ -2,21 +2,20 @@ import heroImg from "@/assets/dialogue.jpg";
 import themeImg from "@/assets/delegates-banner.jpg";
 import objectivesImg from "@/assets/about-objectives.jpg";
 import structureImg from "@/assets/about-structure.jpg";
-import edition2024Img from "@/assets/edition-2024.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { CountUp } from "@/components/site/CountUp";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
-import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, PAST_EDITIONS, PAST_EDITIONS_FR, RESOLUTIONS_2024, RESOLUTIONS_2024_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
+import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About ACTCD 2027 · Theme, Objectives and Structure" },
-      { name: "description", content: "Why Africa needs decisive tobacco control: the theme, goal, objectives, structure and past editions of the Africa Conference on Tobacco Control and Development." },
+      { name: "description", content: "Why Africa needs decisive tobacco control: the theme, goal, objectives, structure of the Africa Conference on Tobacco Control and Development." },
       { property: "og:title", content: "About ACTCD 2027" },
-      { property: "og:description", content: "Theme, rationale, objectives, structure and past editions of ACTCD." },
+      { property: "og:description", content: "Theme, rationale, objectives, and structure of ACTCD." },
     ],
   }),
   component: About,
@@ -28,8 +27,6 @@ function About() {
   const tracks = fr ? TRACKS_FR : TRACKS;
   const crossCutting = fr ? CROSS_CUTTING_FR : CROSS_CUTTING;
   const objectives = fr ? OBJECTIVES_FR : OBJECTIVES;
-  const editions = fr ? PAST_EDITIONS_FR : PAST_EDITIONS;
-  const resolutions = fr ? RESOLUTIONS_2024_FR : RESOLUTIONS_2024;
 
   return (
     <>
@@ -112,29 +109,6 @@ function About() {
         <div className="mt-6 flex flex-wrap items-center gap-2">
           <span className="mr-2 text-sm text-muted-foreground">{fr ? "Thèmes transversaux :" : "Cross-cutting themes:"}</span>
           {crossCutting.map((c) => <span key={c} className="rounded-full bg-accent/20 px-3 py-1 text-sm font-medium">{c}</span>)}
-        </div>
-      </Section>
-      <Section id="past" eyebrow={fr ? "Éditions passées" : "Past editions"} title={fr ? "Dans la continuité de 2021 et 2024" : "Building on 2021 and 2024"}>
-        <div className="relative grid gap-6 md:grid-cols-3">
-          {editions.map((e, i) => (
-            <div key={e.year} className={`overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg ${i === 2 ? "bg-gradient-brand text-primary-foreground" : "border border-border bg-card"}`}>
-              {i === 1 && <img src={edition2024Img} alt={fr ? "Délégués à la 2e ACTCD, Accra 2024" : "Delegates at the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[16/9] w-full object-cover" />}
-              <div className="p-8">
-              <div className="text-5xl font-bold">{e.year}</div><p className="mt-3 font-semibold">{e.title}</p>
-              <p className={`text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.dates}</p>
-              <p className="mt-4 font-medium italic">"{e.theme}"</p>
-              <p className={`mt-3 text-sm ${i === 2 ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{e.detail}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-sm text-muted-foreground">
-          {fr ? <>Les rapports et communiqués des deux éditions sont disponibles dans le <a href="/knowledge-hub" className="font-semibold text-primary underline">Centre de connaissances</a>.</> : <>Reports and communiqués from both editions are available in the <a href="/knowledge-hub" className="font-semibold text-primary underline">Knowledge Hub</a>.</>}
-        </p>
-        <div className="mt-12 rounded-3xl bg-forest p-8 text-forest-foreground shadow-card transition hover:shadow-card-lg md:p-10">
-          <p className="eyebrow text-forest-foreground/90">{fr ? "Communiqué d'Accra 2024" : "2024 Accra Communiqué"}</p>
-          <h3 className="mt-3 text-2xl font-semibold">{fr ? "Ce que les participants ont résolu en 2024" : "What participants resolved in 2024"}</h3>
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">{resolutions.map((r) => <li key={r} className="flex gap-3 text-forest-foreground/85"><span className="mt-2 size-2 shrink-0 rounded-full bg-forest-foreground" />{r}</li>)}</ul>
         </div>
       </Section>
       <Section id="organizers" eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="border-t border-border/60">

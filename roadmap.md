@@ -1,6 +1,6 @@
 # ACTCD 2027 microsite
 - [x] Apply brand guidelines (Poppins, #277f3e green, #dfa726 gold, logo rules)
-- [x] Build pages: Home, About, Program, Call for Abstracts, Participate, Knowledge Hub, Media, FAQ, Legal
+- [x] Pages: Home, About, Program, Call for Abstracts, Past Editions, Knowledge Hub (generated pages removed)
 - [x] Real 2024 photos (from Google Drive)
 - [x] Numbers cards translucent (frosted glass over Nairobi photo)
 - [x] Soft shadow on all cards and non-button panels

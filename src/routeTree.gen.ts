@@ -12,11 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CallForAbstractsRouteImport } from './routes/call-for-abstracts'
-import { Route as FaqRouteImport } from './routes/faq'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
-import { Route as LegalRouteImport } from './routes/legal'
-import { Route as MediaRouteImport } from './routes/media'
-import { Route as ParticipateRouteImport } from './routes/participate'
+import { Route as PastEditionsRouteImport } from './routes/past-editions'
 import { Route as ProgramRouteImport } from './routes/program'
 
 const IndexRoute = IndexRouteImport.update({
@@ -34,29 +31,14 @@ const CallForAbstractsRoute = CallForAbstractsRouteImport.update({
   path: '/call-for-abstracts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
   id: '/knowledge-hub',
   path: '/knowledge-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LegalRoute = LegalRouteImport.update({
-  id: '/legal',
-  path: '/legal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MediaRoute = MediaRouteImport.update({
-  id: '/media',
-  path: '/media',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ParticipateRoute = ParticipateRouteImport.update({
-  id: '/participate',
-  path: '/participate',
+const PastEditionsRoute = PastEditionsRouteImport.update({
+  id: '/past-editions',
+  path: '/past-editions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgramRoute = ProgramRouteImport.update({
@@ -69,22 +51,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
-  '/faq': typeof FaqRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
-  '/legal': typeof LegalRoute
-  '/media': typeof MediaRoute
-  '/participate': typeof ParticipateRoute
+  '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
-  '/faq': typeof FaqRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
-  '/legal': typeof LegalRoute
-  '/media': typeof MediaRoute
-  '/participate': typeof ParticipateRoute
+  '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
 }
 export interface FileRoutesById {
@@ -92,11 +68,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
-  '/faq': typeof FaqRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
-  '/legal': typeof LegalRoute
-  '/media': typeof MediaRoute
-  '/participate': typeof ParticipateRoute
+  '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
 }
 export interface FileRouteTypes {
@@ -105,33 +78,24 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/call-for-abstracts'
-    | '/faq'
     | '/knowledge-hub'
-    | '/legal'
-    | '/media'
-    | '/participate'
+    | '/past-editions'
     | '/program'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/call-for-abstracts'
-    | '/faq'
     | '/knowledge-hub'
-    | '/legal'
-    | '/media'
-    | '/participate'
+    | '/past-editions'
     | '/program'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/call-for-abstracts'
-    | '/faq'
     | '/knowledge-hub'
-    | '/legal'
-    | '/media'
-    | '/participate'
+    | '/past-editions'
     | '/program'
   fileRoutesById: FileRoutesById
 }
@@ -139,11 +103,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CallForAbstractsRoute: typeof CallForAbstractsRoute
-  FaqRoute: typeof FaqRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
-  LegalRoute: typeof LegalRoute
-  MediaRoute: typeof MediaRoute
-  ParticipateRoute: typeof ParticipateRoute
+  PastEditionsRoute: typeof PastEditionsRoute
   ProgramRoute: typeof ProgramRoute
 }
 
@@ -170,13 +131,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CallForAbstractsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/knowledge-hub': {
       id: '/knowledge-hub'
       path: '/knowledge-hub'
@@ -184,25 +138,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KnowledgeHubRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/legal': {
-      id: '/legal'
-      path: '/legal'
-      fullPath: '/legal'
-      preLoaderRoute: typeof LegalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/media': {
-      id: '/media'
-      path: '/media'
-      fullPath: '/media'
-      preLoaderRoute: typeof MediaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/participate': {
-      id: '/participate'
-      path: '/participate'
-      fullPath: '/participate'
-      preLoaderRoute: typeof ParticipateRouteImport
+    '/past-editions': {
+      id: '/past-editions'
+      path: '/past-editions'
+      fullPath: '/past-editions'
+      preLoaderRoute: typeof PastEditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/program': {
@@ -219,11 +159,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CallForAbstractsRoute: CallForAbstractsRoute,
-  FaqRoute: FaqRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
-  LegalRoute: LegalRoute,
-  MediaRoute: MediaRoute,
-  ParticipateRoute: ParticipateRoute,
+  PastEditionsRoute: PastEditionsRoute,
   ProgramRoute: ProgramRoute,
 }
 export const routeTree = rootRouteImport
