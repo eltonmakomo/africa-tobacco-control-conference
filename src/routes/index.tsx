@@ -271,6 +271,7 @@ function Home() {
       {/* Join us */}
       <section className="px-5 md:px-10">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-forest p-10 text-forest-foreground shadow-elegant md:p-16">
+          <div className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full bg-swirl opacity-40 animate-spin-slow" />
           <div className="relative">
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>

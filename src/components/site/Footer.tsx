@@ -11,6 +11,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-forest text-forest-foreground">
+      <div className="pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full bg-swirl opacity-30 animate-spin-slow" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-12 md:px-10 md:py-24">
         <div className="md:col-span-4">
           <div className="inline-block rounded-2xl bg-primary px-4 py-3"><Logo variant="reverse" className="h-16" /></div>
