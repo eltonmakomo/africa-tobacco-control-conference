@@ -37,3 +37,4 @@
 - [x] About banner: use the user's uploaded photo (Breakout Session 3) — no cut heads or faces, no slide text
 - [x] Home banner: fill the remaining screen height and narrow the text to show more of the photo
 - [x] Program: agenda section title is "Agenda of the conference" only, label removed
+- [x] Banners: the small tag names the page (About, Program, Media, Past editions…), big title carries the theme/descriptive line

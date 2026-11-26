@@ -111,9 +111,9 @@ function Media() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-2">
           <div>
             <span className="inline-block rounded-md bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
-              {fr ? "Centre de presse" : "Press center"}
+              {fr ? "Médias" : "Media"}
             </span>
-            <h1 className="mt-5 text-4xl font-bold text-accent md:text-5xl">{fr ? "Médias" : "Media"}</h1>
+            <h1 className="mt-5 text-4xl font-bold text-accent md:text-5xl">{fr ? "Centre de presse" : "Press center"}</h1>
             <p className="mt-5 max-w-xl text-forest-foreground/85">
               {fr
                 ? "Un centre de presse dédié aux journalistes, partenaires médiatiques et professionnels de la communication qui couvrent la 3e Conférence africaine sur la lutte antitabac et le développement. Accréditation, ressources presse et soumission de vos contenus."
