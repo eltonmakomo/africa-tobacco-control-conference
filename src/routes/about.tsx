@@ -17,6 +17,8 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "About ACTCD 2027 · Theme, Objectives and Structure" },
       { name: "description", content: "Why Africa needs decisive tobacco control: the theme, goal, objectives, structure of the Africa Conference on Tobacco Control and Development." },
       { property: "og:title", content: "About ACTCD 2027" },
@@ -61,7 +63,7 @@ function About() {
 
   return (
     <>
-      <PageHero eyebrow={fr ? "À propos de la Conférence" : "About the conference"} title={fr ? EVENT_FR.theme : EVENT.theme} image={heroImg} imgClassName="object-[center_30%]" />
+      <PageHero eyebrow={fr ? "À propos de la Conférence" : "About the conference"} title={fr ? EVENT_FR.theme : EVENT.theme} image={heroImg} imgClassName="object-center" />
 
       <Section id="about">
         <div className="grid gap-14 lg:grid-cols-2">

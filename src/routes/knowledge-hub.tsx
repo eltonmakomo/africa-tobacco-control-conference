@@ -17,6 +17,8 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/knowledge-hub")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Knowledge Hub · ACTCD Reports, Communiqués and Resources" },
       { name: "description", content: "The 2027 concept note, reports from the 2021 and 2024 editions, the 2024 communiqué and agenda, and the post-assessment report — in English and French." },
       { property: "og:title", content: "ACTCD Knowledge Hub" },

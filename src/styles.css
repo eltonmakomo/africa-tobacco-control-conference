@@ -4,6 +4,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@media (width < 640px) {
+  .banner-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top;
+  }
+}
+
 @theme {
   --text-lg: 1.0625rem; --text-lg--line-height: 1.6;
   --text-xl: 1.125rem; --text-xl--line-height: 1.5;

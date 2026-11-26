@@ -9,6 +9,8 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "FAQs · ACTCD 2027" },
       { name: "description", content: "Answers to common questions about dates, format, languages, abstracts and partnerships at ACTCD 2027." },
       { property: "og:title", content: "ACTCD 2027 FAQs" },

@@ -10,6 +10,8 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/program")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Program · ACTCD 2027 Nairobi" },
       { name: "description", content: "Three days of plenaries, five tracks of parallel sessions, e-Posters, side events and exhibitions at ACTCD 2027." },
       { property: "og:title", content: "ACTCD 2027 Program" },

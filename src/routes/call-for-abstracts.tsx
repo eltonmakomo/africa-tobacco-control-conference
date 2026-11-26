@@ -8,6 +8,8 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/call-for-abstracts")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Call for Abstracts · ACTCD 2027" },
       { name: "description", content: "Submit research, implementation experiences, policy analyses and innovations reflecting African-generated evidence to ACTCD 2027." },
       { property: "og:title", content: "ACTCD 2027 Call for Abstracts" },
@@ -26,6 +28,7 @@ function CFA() {
     <>
       <PageHero
         image={heroImg}
+        imgClassName="object-[center_20%]"
         eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"}
         title={fr ? "Les données africaines, au cœur des politiques" : "African evidence, at the centre of policy"}
       >

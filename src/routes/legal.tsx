@@ -6,6 +6,8 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/legal")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Privacy, Legal Notice and Article 5.3 · ACTCD 2027" },
       { name: "description", content: "Privacy policy, legal notice and WHO FCTC Article 5.3 statement for the ACTCD 2027 microsite." },
       { property: "og:title", content: "ACTCD 2027 Legal" },

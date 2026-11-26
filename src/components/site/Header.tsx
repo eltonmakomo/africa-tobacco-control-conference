@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "./Logo";
 import { useLang } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
 
 export const NAV_EN = [
   { to: "/about", label: "About" },
@@ -33,7 +34,7 @@ export function Header() {
         <Link to="/" aria-label="ACTCD 2027 home" className="shrink-0">
           <Logo className="h-12 md:h-14" />
         </Link>
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Main">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -62,13 +63,18 @@ export function Header() {
               FR
             </button>
           </div>
-          <button className="rounded-full p-2 lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
+          <Button asChild className="rounded-full bg-accent px-5 font-semibold text-accent-foreground shadow-none hover:bg-accent/90">
+            <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}>
+              {fr ? "S’inscrire" : "Register"}
+            </a>
+          </Button>
+          <button className="rounded-full p-2 xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
             {open ? <X /> : <Menu />}
           </button>
         </div>
       </div>
       {open && (
-        <nav className="border-t border-border bg-card px-5 py-4 lg:hidden" aria-label="Mobile">
+        <nav className="border-t border-border bg-card px-5 py-4 xl:hidden" aria-label="Mobile">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block rounded-lg px-3 py-3 font-medium hover:bg-secondary">
               {n.label}

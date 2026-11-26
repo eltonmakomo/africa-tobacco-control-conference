@@ -1,4 +1,6 @@
 # ACTCD 2027 microsite
+- [x] Reposition banner photos and check heads and faces across screen sizes (the uploaded home photo already has one head cut at its source edge)
+- [x] Restore the Register button beside the header language switch
 - [x] Apply brand guidelines (Poppins, #277f3e green, #dfa726 gold, logo rules)
 - [x] Pages: Home, About, Program, Call for Abstracts, Past Editions, Knowledge Hub (generated pages removed)
 - [x] Real 2024 photos (from Google Drive)
