@@ -32,7 +32,7 @@ function About() {
     <>
       <PageHero image={heroImg} imgClassName="object-[center_85%]" title={fr ? "À propos de la Conférence" : "About the conference"} />
       <Section id="about" eyebrow={fr ? "À propos de l'ACTCD" : "About ACTCD"} title={fr ? "Les progrès sont réels. Le risque aussi." : "Progress is real. So is the risk."}>
-        <div className="max-w-4xl space-y-5 text-lg leading-relaxed text-foreground/80">
+        <div className="space-y-5 text-lg leading-relaxed text-foreground/80">
             {fr ? (
               <>
                 <p>Deux décennies après l'entrée en vigueur de la Convention-cadre de l'OMS pour la lutte antitabac, l'Afrique a réalisé de réels progrès : 44 des 47 pays de la Région africaine de l'OMS ont ratifié la Convention. L'environnement continue d'évoluer avec les nouveaux produits de la nicotine, l'ingérence de l'industrie, le commerce illicite et des financements limités.</p>
