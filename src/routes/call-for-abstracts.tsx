@@ -1,4 +1,4 @@
-import heroImg from "@/assets/elephants-herd.jpg";
+import heroImg from "@/assets/africa-tobacco-21-of-56.jpg.asset.json";
 import guidelinesImg from "@/assets/speaker-lectern.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -27,8 +27,8 @@ function CFA() {
   return (
     <>
       <PageHero
-        image={heroImg}
-        imgClassName="object-[center_20%]"
+        image={heroImg.url}
+        imgClassName="object-[center_16%]"
         eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"}
         title={fr ? "Les données africaines, au cœur des politiques" : "African evidence, at the centre of policy"}
       >

@@ -8,7 +8,7 @@ import comEn from "@/assets/docs/Communique_Final_1330hrs_ACTD.docx.asset.json";
 import comFr from "@/assets/docs/Communique_Final_1330hrs_ACTD_french.docx.asset.json";
 import rep21 from "@/assets/docs/Conference_Report_Final_Version_14_Feb_2022_1st_ACTD_ONLINE.docx.asset.json";
 import post from "@/assets/docs/2nd_ACTD_Post-Assessment_Report_rev1.docx.asset.json";
-import heroImg from "@/assets/hall-session.jpg";
+import heroImg from "@/assets/africa-tobacco-46-of-56.jpg.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { Download, FileText } from "lucide-react";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -57,8 +57,8 @@ function Hub() {
   return (
     <>
       <PageHero
-        image={heroImg}
-        imgClassName="object-center"
+        image={heroImg.url}
+        imgClassName="object-[center_0%]"
         eyebrow={fr ? "Centre de connaissances" : "Knowledge Hub"}
         title={fr ? "Données, résultats et archives" : "Evidence, outcomes and records"}
       />

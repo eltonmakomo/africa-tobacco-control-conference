@@ -63,7 +63,7 @@ function About() {
 
   return (
     <>
-      <PageHero eyebrow={fr ? "À propos de la Conférence" : "About the conference"} title={fr ? EVENT_FR.theme : EVENT.theme} image={heroImg} imgClassName="object-[center_40%]" />
+      <PageHero eyebrow={fr ? "À propos de la Conférence" : "About the conference"} title={fr ? EVENT_FR.theme : EVENT.theme} image={heroImg} imgClassName="object-[center_74%]" />
 
       <Section id="about">
         <div className="grid gap-14 lg:grid-cols-2">
