@@ -1,5 +1,6 @@
 import heroImg from "@/assets/lounge-talk.jpg";
 import agendaImg from "@/assets/program-agenda.jpg";
+import sideImg from "@/assets/reception-guest.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -46,6 +47,7 @@ function Program() {
     <>
       <PageHero
         image={heroImg}
+        imgClassName="object-[center_20%]"
         eyebrow={fr ? "Programme" : "Program"}
         title={fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}
       />
@@ -96,9 +98,13 @@ function Program() {
         <p className="mt-6 text-sm text-muted-foreground">{fr ? "Thèmes transversaux : " : "Cross-cutting themes: "}{crossCutting.join(", ")}.</p>
       </Section>
       <Section id="side-events" title={fr ? "Expositions et bibliothèque électronique" : "Exhibitions and E-library"} className="border-t border-border/60">
-        <div className="grid gap-6 md:grid-cols-2">
+        <figure className="group relative aspect-[21/9] overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+          <img src={sideImg} alt={fr ? "Un invité au réception de clôture de la 2e ACTCD" : "A guest at the closing reception of the 2nd ACTCD"} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+        </figure>
+        <div className="mt-6 flex flex-wrap gap-6">
           {sideEvents.map((x) => (
-            <div key={x} className="rounded-2xl bg-card p-6 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
+            <div key={x} className="rounded-2xl bg-card px-8 py-7 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
           ))}
         </div>
       </Section>

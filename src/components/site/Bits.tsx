@@ -6,7 +6,7 @@ export function PageHero({ eyebrow, title, children, image, imgClassName = "obje
       {image && <img src={image} alt="" aria-hidden className={`banner-photo absolute inset-0 -z-20 size-full object-cover ${imgClassName}`} />}
       {image && <div className="absolute inset-0 -z-10 bg-gradient-hero" />}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
-      <div className={`relative mx-auto flex min-h-[560px] max-w-7xl flex-col px-5 md:px-10 ${image ? "justify-start pt-12 pb-24 max-sm:min-h-0 max-sm:pt-8 max-sm:pb-10 md:pt-16 md:pb-32" : "justify-center py-20 md:py-28"}`}>
+      <div className={`relative mx-auto flex min-h-[560px] max-w-7xl flex-col justify-center px-5 py-20 md:px-10 md:py-28 ${image ? "max-sm:min-h-0 max-sm:py-10" : ""}`}>
         {eyebrow && <p className="eyebrow text-forest-foreground/90 animate-rise">{eyebrow}</p>}
         <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-[1.05] md:text-6xl animate-rise">{title}</h1>
         {children}
