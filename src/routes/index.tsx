@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarDays, Download, MapPin } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import hero from "@/assets/hero-future.jpg";
-import plenary from "@/assets/session-room.jpg";
+import plenary from "@/assets/plenary.jpg";
 import numbersBg from "@/assets/numbers-nairobi.jpg";
 import sp1 from "@/assets/speaker-1.jpg";
 import sp2 from "@/assets/speaker-2.jpg";

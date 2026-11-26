@@ -1,4 +1,4 @@
-import heroImg from "@/assets/plenary.jpg";
+import heroImg from "@/assets/session-room.jpg";
 import agendaImg from "@/assets/program-agenda.jpg";
 import sideImg from "@/assets/program-side.jpg";
 import { createFileRoute } from "@tanstack/react-router";
@@ -44,8 +44,7 @@ function Program() {
       <PageHero
         image={heroImg}
         eyebrow={fr ? "Programme" : "Program"}
-        title={fr ? "Deux jours. Cinq pistes. Un Appel à l'action." : "Two days. Five tracks. One Call to Action."}
-        intro={fr ? "La Conférence associe un dialogue politique de haut niveau à un programme scientifique rigoureux, et se clôt par un Appel à l'action continental sur la lutte antitabac et la souveraineté sanitaire." : "The Conference combines high-level political dialogue with a rigorous scientific program, closing with a Continental Call to Action on Tobacco Control and Health Sovereignty."}
+        title={fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}
       />
       <Section id="agenda" eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Structure des deux journées" : "Structure of the two days"}>
         <div role="tablist" className="inline-flex rounded-full bg-secondary p-1">
