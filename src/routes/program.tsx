@@ -1,6 +1,5 @@
 import heroImg from "@/assets/lounge-talk.jpg";
 import agendaImg from "@/assets/program-agenda.jpg";
-import sideImg from "@/assets/reception-guest.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -40,8 +39,8 @@ function Program() {
   const tracks = fr ? TRACKS_FR : TRACKS;
   const crossCutting = fr ? CROSS_CUTTING_FR : CROSS_CUTTING;
   const sideEvents = fr
-    ? ["Réunions pré-conférence et événements parallèles", "Dialogues ministériels et de haut niveau", "Symposiums sur invitation et sessions spéciales", "Espace d'exposition : innovations, résultats de recherche et bonnes pratiques"]
-    : ["Pre-conference and side meetings", "Ministerial and high-level dialogues", "Invited symposia and special sessions", "Exhibition area: innovations, research findings and best practices"];
+    ? ["Espace d'exposition : innovations, résultats de recherche et bonnes pratiques", "Bibliothèque électronique"]
+    : ["Exhibition area: innovations, research findings and best practices", "E-library"];
 
   return (
     <>
@@ -96,12 +95,8 @@ function Program() {
         </div>
         <p className="mt-6 text-sm text-muted-foreground">{fr ? "Thèmes transversaux : " : "Cross-cutting themes: "}{crossCutting.join(", ")}.</p>
       </Section>
-      <Section id="side-events" eyebrow={fr ? "Pré-conférence, événements parallèles et expositions" : "Pre-conference, side events and exhibitions"} title={fr ? "Au-delà du programme principal" : "Beyond the main program"} className="border-t border-border/60">
-        <div className="grid items-start gap-6 lg:grid-cols-4">
-          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:row-span-2">
-            <img src={sideImg} alt={fr ? "Un invité au réception de clôture de la 2e ACTCD" : "A guest at the closing reception of the 2nd ACTCD"} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105 lg:h-full" />
-            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
-          </figure>
+      <Section id="side-events" title={fr ? "Expositions et bibliothèque électronique" : "Exhibitions and E-library"} className="border-t border-border/60">
+        <div className="grid gap-6 md:grid-cols-2">
           {sideEvents.map((x) => (
             <div key={x} className="rounded-2xl bg-card p-6 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
           ))}
