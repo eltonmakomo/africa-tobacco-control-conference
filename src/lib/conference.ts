@@ -9,7 +9,7 @@ export const EVENT = {
   edition: "3rd Africa Conference on Tobacco Control and Development",
   short: "ACTCD 2027",
   theme: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty",
-  dates: "22–23 April 2027",
+  dates: "22–24 April 2027",
   location: "Nairobi, Kenya",
   format: "Hybrid · English and French",
   startISO: "2027-04-22T08:00:00+03:00",
@@ -27,7 +27,7 @@ export const CROSS_CUTTING = ["Youth", "Gender", "Equity", "Tobacco industry int
 
 export const NUMBERS = [
   { figure: "3rd", label: "edition", detail: "Building on 2021 and 2024" },
-  { figure: "2", label: "days", detail: "22–23 April 2027" },
+  { figure: "3", label: "days", detail: "22–24 April 2027" },
   { figure: "5", label: "tracks", detail: "Plus cross-cutting themes" },
   { figure: "~300", label: "on-site", detail: "Up to 500 including virtual" },
   { figure: "2", label: "languages", detail: "English and French" },
@@ -61,7 +61,7 @@ export const PARTNERS = [
 
 export const KEY_DATES = [
   { milestone: "Call for abstracts opens", date: "October / November 2026" },
-  { milestone: "Conference dates", date: "22–23 April 2027" },
+  { milestone: "Conference dates", date: "22–24 April 2027" },
 ];
 
 export const ARTICLE_53 =
@@ -88,7 +88,7 @@ export const KEY_STATS = [
 export const PAST_EDITIONS = [
   { year: "2021", title: "1st edition · Virtual", dates: "26–28 October 2021", theme: "A Tobacco Free Africa. An Urgent Call for Joint Action.", detail: "Held on the WHOVA platform with 586 registered participants and about 280 attending each day, across plenaries and parallel workshops on sustainability, local evidence, multisectoral support and partnerships." },
   { year: "2024", title: "2nd edition · Accra, Ghana", dates: "13–14 November 2024 · Labadi Beach Hotel", theme: "Breaking Barriers, Building Futures: Advancing the Tobacco Control Ecosystem in Africa", detail: "Convened by ACBF with the Centre for Tobacco Control in Africa and Youth in Action, hosted by Ghana's Ministry of Health. 96% of surveyed participants, from 23 countries, rated the theme relevant to Africa's development challenges." },
-  { year: "2027", title: "3rd edition · Nairobi, Kenya", dates: "22–23 April 2027", theme: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty", detail: "Convened by ACBF with Kenya's Ministry of Health, the African Union Commission, Africa CDC and partners." },
+  { year: "2027", title: "3rd edition · Nairobi, Kenya", dates: "22–24 April 2027", theme: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty", detail: "Convened by ACBF with Kenya's Ministry of Health, the African Union Commission, Africa CDC and partners." },
 ];
 
 export const RESOLUTIONS_2024 = [
@@ -156,7 +156,7 @@ export const HOME_IMPACT = [
 export const EVENT_FR = {
   edition: "3e Conférence africaine sur la lutte antitabac et le développement",
   theme: "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire",
-  dates: "22–23 avril 2027",
+  dates: "22–24 avril 2027",
   location: "Nairobi, Kenya",
   format: "Hybride · Anglais et français",
 };
@@ -199,7 +199,7 @@ export const KEY_STATS_FR = [
 export const PAST_EDITIONS_FR = [
   { year: "2021", title: "1re édition · Virtuelle", dates: "26–28 octobre 2021", theme: "Une Afrique sans tabac. Un appel urgent à l'action conjointe.", detail: "Organisée sur la plateforme WHOVA avec 586 participants inscrits et environ 280 présents chaque jour, entre plénières et ateliers parallèles sur la durabilité, les données locales, le soutien multisectoriel et les partenariats." },
   { year: "2024", title: "2e édition · Accra, Ghana", dates: "13–14 novembre 2024 · Labadi Beach Hotel", theme: "Briser les barrières, bâtir l'avenir : faire progresser l'écosystème de la lutte antitabac en Afrique", detail: "Convoquée par l'ACBF avec le Centre for Tobacco Control in Africa et Youth in Action, accueillie par le ministère de la Santé du Ghana. 96 % des participants sondés, issus de 23 pays, ont jugé le thème pertinent pour les défis de développement de l'Afrique." },
-  { year: "2027", title: "3e édition · Nairobi, Kenya", dates: "22–23 avril 2027", theme: "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire", detail: "Convoquée par l'ACBF avec le ministère de la Santé du Kenya, la Commission de l'Union africaine, Africa CDC et des partenaires." },
+  { year: "2027", title: "3e édition · Nairobi, Kenya", dates: "22–24 avril 2027", theme: "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire", detail: "Convoquée par l'ACBF avec le ministère de la Santé du Kenya, la Commission de l'Union africaine, Africa CDC et des partenaires." },
 ];
 
 export const RESOLUTIONS_2024_FR = [
@@ -215,7 +215,7 @@ export const RESOLUTIONS_2024_FR = [
 
 export const KEY_DATES_FR = [
   { milestone: "Ouverture de l'appel à résumés", date: "Octobre / novembre 2026" },
-  { milestone: "Dates de la Conférence", date: "22–23 avril 2027" },
+  { milestone: "Dates de la Conférence", date: "22–24 avril 2027" },
 ];
 
 export const ARTICLE_53_FR =

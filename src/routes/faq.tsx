@@ -19,7 +19,7 @@ export const Route = createFileRoute("/faq")({
 });
 
 const QA_EN: [string, string][] = [
-  ["When and where is the Conference?", "22–23 April 2027 in Nairobi, Kenya, held in person with an option for virtual attendance."],
+  ["When and where is the Conference?", "22–24 April 2027 in Nairobi, Kenya, held in person with an option for virtual attendance."],
   ["Which languages are used?", "English and French, with simultaneous interpretation."],
   ["How do I register?", "Registration for in-person and virtual participation opens on the Participate page and is managed through Whova."],
   ["When does the call for abstracts open?", "October or November 2026."],
@@ -28,7 +28,7 @@ const QA_EN: [string, string][] = [
 ];
 
 const QA_FR: [string, string][] = [
-  ["Quand et où se tient la Conférence ?", "Les 22–23 avril 2027 à Nairobi, au Kenya, en présentiel avec une option de participation en ligne."],
+  ["Quand et où se tient la Conférence ?", "Les 22–24 avril 2027 à Nairobi, au Kenya, en présentiel avec une option de participation en ligne."],
   ["Quelles langues sont utilisées ?", "L'anglais et le français, avec interprétation simultanée."],
   ["Comment m'inscrire ?", "L'inscription pour une participation en personne ou en ligne ouvre sur la page Participer et est gérée via Whova."],
   ["Quand l'appel à résumés ouvre-t-il ?", "En octobre ou novembre 2026."],

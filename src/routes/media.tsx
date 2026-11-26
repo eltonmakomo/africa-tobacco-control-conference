@@ -25,14 +25,14 @@ export const Route = createFileRoute("/media")({
 });
 
 const NEWS_EN = [
-  { type: "Press release", date: "12 November 2026", title: "Nairobi to host the 3rd Africa Conference on Tobacco Control and Development", excerpt: "ACBF and Kenya's Ministry of Health announce the third edition, bringing policymakers, researchers and youth leaders together on 22–23 April 2027.", img: newsImg },
+  { type: "Press release", date: "12 November 2026", title: "Nairobi to host the 3rd Africa Conference on Tobacco Control and Development", excerpt: "ACBF and Kenya's Ministry of Health announce the third edition, bringing policymakers, researchers and youth leaders together on 22–24 April 2027.", img: newsImg },
   { type: "News", date: "5 November 2026", title: "Call for abstracts opens across five conference tracks", excerpt: "Researchers and practitioners are invited to share African evidence on governance, emerging products, surveillance, health systems and taxation.", img: news2Img },
   { type: "Press release", date: "28 October 2026", title: "Conveners reaffirm commitment to WHO FCTC Article 5.3", excerpt: "The Conference will accept no support from the tobacco industry or those acting to further its interests." },
   { type: "News", date: "20 October 2026", title: "Youth voices to take centre stage in Nairobi", excerpt: "A dedicated youth engagement stream will spotlight young leaders protecting Africa's future from tobacco and nicotine." },
 ];
 
 const NEWS_FR = [
-  { type: "Communiqué de presse", date: "12 novembre 2026", title: "Nairobi accueillera la 3e Conférence africaine sur la lutte antitabac et le développement", excerpt: "L'ACBF et le ministère de la Santé du Kenya annoncent la troisième édition, qui réunira décideurs, chercheurs et jeunes leaders les 22–23 avril 2027.", img: newsImg },
+  { type: "Communiqué de presse", date: "12 novembre 2026", title: "Nairobi accueillera la 3e Conférence africaine sur la lutte antitabac et le développement", excerpt: "L'ACBF et le ministère de la Santé du Kenya annoncent la troisième édition, qui réunira décideurs, chercheurs et jeunes leaders les 22–24 avril 2027.", img: newsImg },
   { type: "Actualité", date: "5 novembre 2026", title: "Ouverture de l'appel à résumés sur cinq pistes", excerpt: "Chercheurs et praticiens sont invités à partager les données africaines sur la gouvernance, les nouveaux produits, la surveillance, les systèmes de santé et la fiscalité.", img: news2Img },
   { type: "Communiqué de presse", date: "28 octobre 2026", title: "Les organisateurs réaffirment leur engagement envers l'article 5.3 de la CCLAT", excerpt: "La Conférence n'acceptera aucun soutien de l'industrie du tabac ni de ceux qui agissent dans son intérêt." },
   { type: "Actualité", date: "20 octobre 2026", title: "Les voix des jeunes à l'honneur à Nairobi", excerpt: "Un volet dédié à l'engagement des jeunes mettra en lumière les jeunes leaders qui protègent l'avenir de l'Afrique face au tabac et à la nicotine." },

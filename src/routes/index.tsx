@@ -23,8 +23,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "ACTCD 2027 · Africa Conference on Tobacco Control and Development" },
-      { name: "description", content: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty. 22–23 April 2027, Nairobi, Kenya — hybrid, English and French." },
-      { property: "og:title", content: "ACTCD 2027 · Nairobi, 22–23 April 2027" },
+      { name: "description", content: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty. 22–24 April 2027, Nairobi, Kenya — hybrid, English and French." },
+      { property: "og:title", content: "ACTCD 2027 · Nairobi, 22–24 April 2027" },
       { property: "og:description", content: "The 3rd Africa Conference on Tobacco Control and Development. Register, submit an abstract or download the concept note." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -105,12 +105,14 @@ function Home() {
 
   const agenda = fr
     ? [
-        { day: "Jour 1", date: "Jeudi 22 avril 2027", items: [["Matin", "Cérémonie d'ouverture et plénière de haut niveau"], ["Midi", `Piste 1 · ${tracks[0]!.short}`], ["Après-midi", `Piste 2 · ${tracks[1]!.short}`], ["Après-midi", `Piste 3 · ${tracks[2]!.short}`], ["Soirée", "Cocktail de réseautage"]] },
-        { day: "Jour 2", date: "Vendredi 23 avril 2027", items: [["Matin", `Piste 4 · ${tracks[3]!.short}`], ["Midi", `Piste 5 · ${tracks[4]!.short}`], ["Après-midi", "Dialogues jeunesse et partenaires"], ["Après-midi", "Communiqué et Appel à l'action continental"], ["Clôture", "Cérémonie de clôture"]] },
+        { day: "Jour 1", date: "Jeudi 22 avril 2027", items: [["Matin", "Cérémonie d'ouverture et plénière de haut niveau"], ["Midi", `Piste 1 · ${tracks[0]!.short}`], ["Après-midi", `Piste 2 · ${tracks[1]!.short}`], ["Soirée", "Cocktail de réseautage"]] },
+        { day: "Jour 2", date: "Vendredi 23 avril 2027", items: [["Matin", `Piste 3 · ${tracks[2]!.short}`], ["Midi", `Piste 4 · ${tracks[3]!.short}`], ["Après-midi", `Piste 5 · ${tracks[4]!.short}`]] },
+        { day: "Jour 3", date: "Samedi 24 avril 2027", items: [["Matin", "Dialogues jeunesse et partenaires"], ["Midi", "Communiqué et Appel à l'action continental"], ["Clôture", "Cérémonie de clôture"]] },
       ]
     : [
-        { day: "Day 1", date: "Thursday 22 April 2027", items: [["Morning", "Opening ceremony and high-level plenary"], ["Midday", `Track 1 · ${tracks[0]!.short}`], ["Afternoon", `Track 2 · ${tracks[1]!.short}`], ["Afternoon", `Track 3 · ${tracks[2]!.short}`], ["Evening", "Networking cocktail"]] },
-        { day: "Day 2", date: "Friday 23 April 2027", items: [["Morning", `Track 4 · ${tracks[3]!.short}`], ["Midday", `Track 5 · ${tracks[4]!.short}`], ["Afternoon", "Youth and partner dialogues"], ["Afternoon", "Communiqué and Continental Call to Action"], ["Close", "Closing ceremony"]] },
+        { day: "Day 1", date: "Thursday 22 April 2027", items: [["Morning", "Opening ceremony and high-level plenary"], ["Midday", `Track 1 · ${tracks[0]!.short}`], ["Afternoon", `Track 2 · ${tracks[1]!.short}`], ["Evening", "Networking cocktail"]] },
+        { day: "Day 2", date: "Friday 23 April 2027", items: [["Morning", `Track 3 · ${tracks[2]!.short}`], ["Midday", `Track 4 · ${tracks[3]!.short}`], ["Afternoon", `Track 5 · ${tracks[4]!.short}`]] },
+        { day: "Day 3", date: "Saturday 24 April 2027", items: [["Morning", "Youth and partner dialogues"], ["Midday", "Communiqué and Continental Call to Action"], ["Close", "Closing ceremony"]] },
       ];
 
   return (
@@ -225,7 +227,7 @@ function Home() {
       </Section>
 
       {/* Agenda */}
-      <Section eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Deux jours à Nairobi" : "Two days in Nairobi"} className="bg-secondary/60">
+      <Section eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"} className="bg-secondary/60">
         <div className="grid gap-6 lg:grid-cols-2">
           {agenda.map((d) => (
             <div key={d.day} className="rounded-3xl bg-card p-8 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">

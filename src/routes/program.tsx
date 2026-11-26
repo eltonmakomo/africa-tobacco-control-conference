@@ -11,7 +11,7 @@ export const Route = createFileRoute("/program")({
   head: () => ({
     meta: [
       { title: "Program · ACTCD 2027 Nairobi" },
-      { name: "description", content: "Two days of plenaries, five tracks of parallel sessions, e-Posters, side events and exhibitions at ACTCD 2027." },
+      { name: "description", content: "Three days of plenaries, five tracks of parallel sessions, e-Posters, side events and exhibitions at ACTCD 2027." },
       { property: "og:title", content: "ACTCD 2027 Program" },
       { property: "og:description", content: "Plenaries, five conference tracks, side events and exhibitions." },
     ],
@@ -20,13 +20,15 @@ export const Route = createFileRoute("/program")({
 });
 
 const DAYS_EN = [
-  { day: "Day 1", date: "22 April 2027", items: ["Registration", "Official opening", "Opening Plenary — framing the strategic priorities", "Keynote addresses", "Parallel sessions under the five tracks", "e-Poster sessions"] },
-  { day: "Day 2", date: "23 April 2027", items: ["Daily plenary (panel of up to four speakers)", "Parallel sessions under the five tracks", "e-Poster sessions", "Closing Plenary", "Adoption of the Continental Call to Action", "Closing ceremony"] },
+  { day: "Day 1", date: "22 April 2027", items: ["Registration", "Official opening", "Opening Plenary — framing the strategic priorities", "Keynote addresses"] },
+  { day: "Day 2", date: "23 April 2027", items: ["Daily plenary (panel of up to four speakers)", "Parallel sessions under the five tracks", "e-Poster sessions"] },
+  { day: "Day 3", date: "24 April 2027", items: ["Parallel sessions under the five tracks", "e-Poster sessions", "Closing Plenary", "Adoption of the Continental Call to Action", "Closing ceremony"] },
 ];
 
 const DAYS_FR = [
-  { day: "Jour 1", date: "22 avril 2027", items: ["Inscription", "Ouverture officielle", "Plénière d'ouverture — définition des priorités stratégiques", "Discours liminaires", "Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques"] },
-  { day: "Jour 2", date: "23 avril 2027", items: ["Plénière quotidienne (panel de jusqu'à quatre intervenants)", "Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques", "Plénière de clôture", "Adoption de l'Appel à l'action continental", "Cérémonie de clôture"] },
+  { day: "Jour 1", date: "22 avril 2027", items: ["Inscription", "Ouverture officielle", "Plénière d'ouverture — définition des priorités stratégiques", "Discours liminaires"] },
+  { day: "Jour 2", date: "23 avril 2027", items: ["Plénière quotidienne (panel de jusqu'à quatre intervenants)", "Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques"] },
+  { day: "Jour 3", date: "24 avril 2027", items: ["Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques", "Plénière de clôture", "Adoption de l'Appel à l'action continental", "Cérémonie de clôture"] },
 ];
 
 function Program() {
@@ -46,7 +48,7 @@ function Program() {
         eyebrow={fr ? "Programme" : "Program"}
         title={fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}
       />
-      <Section id="agenda" eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Structure des deux journées" : "Structure of the two days"}>
+      <Section id="agenda" eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Structure des trois journées" : "Structure of the three days"}>
         <div role="tablist" className="inline-flex rounded-full bg-secondary p-1">
           {days.map((d, i) => (
             <button key={d.day} role="tab" aria-selected={active === i} onClick={() => setActive(i)} className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${active === i ? "bg-primary text-primary-foreground shadow" : "text-foreground/70"}`}>
