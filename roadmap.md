@@ -29,3 +29,4 @@
 - [x] Remove the spinning pattern from banners
 - [x] Remove the "Expected outcomes" and "Key outputs" blocks from About
 - [x] Set the About banner title to "About the conference" and remove banner captions
+- [x] About: drop the partner logos from "Who convenes ACTCD", keep the Article 5.3 text as a centered panel
