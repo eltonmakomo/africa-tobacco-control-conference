@@ -9,8 +9,7 @@ import sp2 from "@/assets/speaker-2.jpg";
 import sp3 from "@/assets/speaker-3.jpg";
 import sp4 from "@/assets/speaker-4.jpg";
 import conceptNote from "@/assets/docs/3rd_ACTD_Concept_Note_-_Abridged.docx.asset.json";
-import mohLogo from "@/assets/partners/mohkenya.png.asset.json";
-import treasuryLogo from "@/assets/partners/treasury-kenya.png.asset.json";
+import gokLogo from "@/assets/partners/government-of-kenya.png.asset.json";
 import acbfLogo from "@/assets/partners/acbf.png.asset.json";
 import { Section } from "@/components/site/Bits";
 import { CountUp } from "@/components/site/CountUp";
@@ -154,8 +153,7 @@ function Home() {
       <section className="border-b border-border bg-card">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-5 py-8 md:flex-row md:gap-16">
           <p className="eyebrow text-muted-foreground md:mr-4">{fr ? "Organisée par" : "Hosted by"}</p>
-          <img src={mohLogo.url} alt={fr ? "Ministère de la Santé, Kenya" : "Ministry of Health, Kenya"} className="h-14 w-auto max-w-full object-contain" />
-          <img src={treasuryLogo.url} alt={fr ? "Trésor national et planification économique, Kenya" : "The National Treasury and Economic Planning, Kenya"} className="h-14 w-auto max-w-full object-contain" />
+          <img src={gokLogo.url} alt={fr ? "Gouvernement du Kenya" : "Government of Kenya"} className="h-14 w-auto max-w-full object-contain" />
           <img src={acbfLogo.url} alt="The African Capacity Building Foundation (ACBF)" className="h-14 w-auto max-w-full object-contain" />
         </div>
       </section>
