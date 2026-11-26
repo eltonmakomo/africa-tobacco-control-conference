@@ -36,14 +36,14 @@ export const Route = createFileRoute("/")({
 const SPEAKERS_EN = [
   { img: sp1, name: "Dr. Amina Wanjiru", role: "Public health leader", org: "Nairobi, Kenya", bio: "A public health physician with two decades of experience leading national tobacco control and NCD prevention programmes, with a focus on protecting young people from emerging nicotine products." },
   { img: sp2, name: "Prof. Kwame Mensah", role: "Health economist", org: "Accra, Ghana", bio: "An economist whose research on tobacco taxation and domestic resource mobilisation has informed excise reforms in several African countries." },
-  { img: sp3, name: "Dr. Fatou Ndiaye", role: "Tobacco control researcher", org: "Dakar, Senegal", bio: "A researcher working on surveillance of tobacco use and industry interference, and a champion of African-generated evidence for policy." },
+  { img: sp3, name: "Dr. Awa Diallo", role: "Tobacco control researcher", org: "Dakar, Senegal", bio: "A researcher working on surveillance of tobacco use and industry interference, and a champion of African-generated evidence for policy." },
   { img: sp4, name: "Hon. Joseph Otieno", role: "Policy and governance", org: "Nairobi, Kenya", bio: "A legislator and governance advocate who has championed WHO FCTC Article 5.3 safeguards and multisectoral coordination." },
 ];
 
 const SPEAKERS_FR = [
   { img: sp1, name: "Dr. Amina Wanjiru", role: "Responsable de santé publique", org: "Nairobi, Kenya", bio: "Médecin de santé publique forte de deux décennies d'expérience à la tête de programmes nationaux de lutte antitabac et de prévention des MNT, avec un accent sur la protection des jeunes face aux nouveaux produits de la nicotine." },
   { img: sp2, name: "Prof. Kwame Mensah", role: "Économiste de la santé", org: "Accra, Ghana", bio: "Économiste dont les recherches sur la fiscalité du tabac et la mobilisation des ressources intérieures ont éclairé des réformes des accises dans plusieurs pays africains." },
-  { img: sp3, name: "Dr. Fatou Ndiaye", role: "Chercheuse en lutte antitabac", org: "Dakar, Sénégal", bio: "Chercheuse travaillant sur la surveillance du tabagisme et de l'ingérence de l'industrie, et défenseure des données produites en Afrique pour éclairer les politiques." },
+  { img: sp3, name: "Dr. Awa Diallo", role: "Chercheuse en lutte antitabac", org: "Dakar, Sénégal", bio: "Chercheuse travaillant sur la surveillance du tabagisme et de l'ingérence de l'industrie, et défenseure des données produites en Afrique pour éclairer les politiques." },
   { img: sp4, name: "Hon. Joseph Otieno", role: "Politique et gouvernance", org: "Nairobi, Kenya", bio: "Législateur et défenseur de la bonne gouvernance qui a porté les garde-fous de l'article 5.3 de la CCLAT de l'OMS et la coordination multisectorielle." },
 ];
 
