@@ -1,4 +1,4 @@
-import heroImg from "@/assets/delegates-phone.jpg";
+import heroImg from "@/assets/elephants-herd.jpg";
 import guidelinesImg from "@/assets/speaker-lectern.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";

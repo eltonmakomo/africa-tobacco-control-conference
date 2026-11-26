@@ -1,4 +1,4 @@
-import heroImg from "@/assets/session-speaker.jpg";
+import heroImg from "@/assets/nairobi.jpg";
 import sideImg from "@/assets/evening-guest.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
