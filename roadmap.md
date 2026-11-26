@@ -19,6 +19,7 @@
 - [x] Home redesign + Kenya National Treasury logo from the web
 - [x] Full French version (EN/FR switch in header, all pages + accreditation form translated)
 - [x] Agenda cards: three in one row on the home page
+- [x] Home page: put the speaker profile cards back
 - [x] Remove the "Agenda at a glance" label above the agenda section
 - [x] "Past editions" as the section title, tag removed
 - [x] Countdown back in the home banner
