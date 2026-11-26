@@ -23,8 +23,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "ACTCD 2027 · Africa Conference on Tobacco Control and Development" },
-      { name: "description", content: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty. 22–24 April 2027, Nairobi, Kenya — hybrid, English and French." },
-      { property: "og:title", content: "ACTCD 2027 · Nairobi, 22–24 April 2027" },
+      { name: "description", content: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty. 21–23 April 2027, Nairobi, Kenya — hybrid, English and French." },
+      { property: "og:title", content: "ACTCD 2027 · Nairobi, 21–23 April 2027" },
       { property: "og:description", content: "The 3rd Africa Conference on Tobacco Control and Development. Register, submit an abstract or download the concept note." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -105,14 +105,14 @@ function Home() {
 
   const agenda = fr
     ? [
-        { day: "Jour 1", date: "Jeudi 22 avril 2027", items: [["Matin", "Cérémonie d'ouverture et plénière de haut niveau"], ["Midi", `Piste 1 · ${tracks[0]!.short}`], ["Après-midi", `Piste 2 · ${tracks[1]!.short}`], ["Soirée", "Cocktail de réseautage"]] },
-        { day: "Jour 2", date: "Vendredi 23 avril 2027", items: [["Matin", `Piste 3 · ${tracks[2]!.short}`], ["Midi", `Piste 4 · ${tracks[3]!.short}`], ["Après-midi", `Piste 5 · ${tracks[4]!.short}`]] },
-        { day: "Jour 3", date: "Samedi 24 avril 2027", items: [["Matin", "Dialogues jeunesse et partenaires"], ["Midi", "Communiqué et Appel à l'action continental"], ["Clôture", "Cérémonie de clôture"]] },
+        { day: "Jour 1", date: "Mercredi 21 avril 2027", items: [["Matin", "Cérémonie d'ouverture et plénière de haut niveau"], ["Midi", `Piste 1 · ${tracks[0]!.short}`], ["Après-midi", `Piste 2 · ${tracks[1]!.short}`], ["Soirée", "Cocktail de réseautage"]] },
+        { day: "Jour 2", date: "Jeudi 22 avril 2027", items: [["Matin", `Piste 3 · ${tracks[2]!.short}`], ["Midi", `Piste 4 · ${tracks[3]!.short}`], ["Après-midi", `Piste 5 · ${tracks[4]!.short}`]] },
+        { day: "Jour 3", date: "Vendredi 23 avril 2027", items: [["Matin", "Dialogues jeunesse et partenaires"], ["Midi", "Communiqué et Appel à l'action continental"], ["Clôture", "Cérémonie de clôture"]] },
       ]
     : [
-        { day: "Day 1", date: "Thursday 22 April 2027", items: [["Morning", "Opening ceremony and high-level plenary"], ["Midday", `Track 1 · ${tracks[0]!.short}`], ["Afternoon", `Track 2 · ${tracks[1]!.short}`], ["Evening", "Networking cocktail"]] },
-        { day: "Day 2", date: "Friday 23 April 2027", items: [["Morning", `Track 3 · ${tracks[2]!.short}`], ["Midday", `Track 4 · ${tracks[3]!.short}`], ["Afternoon", `Track 5 · ${tracks[4]!.short}`]] },
-        { day: "Day 3", date: "Saturday 24 April 2027", items: [["Morning", "Youth and partner dialogues"], ["Midday", "Communiqué and Continental Call to Action"], ["Close", "Closing ceremony"]] },
+        { day: "Day 1", date: "Wednesday 21 April 2027", items: [["Morning", "Opening ceremony and high-level plenary"], ["Midday", `Track 1 · ${tracks[0]!.short}`], ["Afternoon", `Track 2 · ${tracks[1]!.short}`], ["Evening", "Networking cocktail"]] },
+        { day: "Day 2", date: "Thursday 22 April 2027", items: [["Morning", `Track 3 · ${tracks[2]!.short}`], ["Midday", `Track 4 · ${tracks[3]!.short}`], ["Afternoon", `Track 5 · ${tracks[4]!.short}`]] },
+        { day: "Day 3", date: "Friday 23 April 2027", items: [["Morning", "Youth and partner dialogues"], ["Midday", "Communiqué and Continental Call to Action"], ["Close", "Closing ceremony"]] },
       ];
 
   return (
@@ -148,11 +148,11 @@ function Home() {
 
       {/* Host logos */}
       <section className="border-b border-border bg-card">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-8 md:flex-row md:justify-center md:gap-16">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-5 py-8 md:flex-row md:gap-16">
           <p className="eyebrow text-muted-foreground md:mr-4">{fr ? "Organisée par" : "Hosted by"}</p>
-          <img src={mohLogo.url} alt={fr ? "Ministère de la Santé, Kenya" : "Ministry of Health, Kenya"} className="h-14 w-auto object-contain" />
-          <img src={treasuryLogo.url} alt={fr ? "Trésor national et planification économique, Kenya" : "The National Treasury and Economic Planning, Kenya"} className="h-14 w-auto object-contain" />
-          <img src={acbfLogo.url} alt="The African Capacity Building Foundation (ACBF)" className="h-14 w-auto object-contain" />
+          <img src={mohLogo.url} alt={fr ? "Ministère de la Santé, Kenya" : "Ministry of Health, Kenya"} className="h-14 w-auto max-w-full object-contain" />
+          <img src={treasuryLogo.url} alt={fr ? "Trésor national et planification économique, Kenya" : "The National Treasury and Economic Planning, Kenya"} className="h-14 w-auto max-w-full object-contain" />
+          <img src={acbfLogo.url} alt="The African Capacity Building Foundation (ACBF)" className="h-14 w-auto max-w-full object-contain" />
         </div>
       </section>
 
@@ -227,19 +227,19 @@ function Home() {
       </Section>
 
       {/* Agenda */}
-      <Section eyebrow={fr ? "Aperçu du programme" : "Agenda at a glance"} title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"} className="bg-secondary/60">
-        <div className="grid gap-6 lg:grid-cols-2">
+      <Section title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"} className="bg-secondary/60">
+        <div className="grid gap-5 md:grid-cols-3">
           {agenda.map((d) => (
-            <div key={d.day} className="rounded-3xl bg-card p-8 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-              <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-2xl font-bold text-gradient-brand">{d.day}</h3>
-                <p className="text-sm text-muted-foreground">{d.date}</p>
+            <div key={d.day} className="rounded-3xl bg-card p-5 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg sm:p-6 lg:p-7">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <h3 className="text-xl font-bold text-gradient-brand lg:text-2xl">{d.day}</h3>
+                <p className="text-xs text-muted-foreground sm:text-sm">{d.date}</p>
               </div>
-              <ul className="mt-6 divide-y divide-border">
+              <ul className="mt-4 divide-y divide-border sm:mt-6">
                 {d.items.map(([time, label], i) => (
-                  <li key={i} className="flex gap-5 py-3">
-                    <span className="w-24 shrink-0 text-sm font-semibold text-primary">{time}</span>
-                    <span className="text-foreground/85">{label}</span>
+                  <li key={i} className="flex gap-3 py-3 lg:gap-5">
+                    <span className="w-16 shrink-0 text-xs font-semibold text-primary sm:w-20 sm:text-sm lg:w-24">{time}</span>
+                    <span className="text-sm text-foreground/85 lg:text-base">{label}</span>
                   </li>
                 ))}
               </ul>
@@ -252,7 +252,7 @@ function Home() {
       </Section>
 
       {/* Past editions */}
-      <Section eyebrow={fr ? "Éditions passées" : "Past editions"} title={fr ? "Six années de dynamique" : "Building on six years of momentum"}>
+      <Section title={fr ? "Éditions passées" : "Past editions"}>
         <div className="grid gap-5 md:grid-cols-3">
           {editions.map((e) => (
             <div key={e.year} className="relative overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">

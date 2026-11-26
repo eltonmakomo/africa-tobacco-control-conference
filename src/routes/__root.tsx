@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ACTCD 2027 — Africa Conference on Tobacco Control and Development" },
-      { name: "description", content: "3rd Africa Conference on Tobacco Control and Development, 22–24 April 2027, Nairobi, Kenya." },
+      { name: "description", content: "3rd Africa Conference on Tobacco Control and Development, 21–23 April 2027, Nairobi, Kenya." },
       { name: "author", content: "The African Capacity Building Foundation" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

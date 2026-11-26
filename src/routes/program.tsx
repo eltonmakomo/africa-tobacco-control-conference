@@ -20,15 +20,15 @@ export const Route = createFileRoute("/program")({
 });
 
 const DAYS_EN = [
-  { day: "Day 1", date: "22 April 2027", items: ["Registration", "Official opening", "Opening Plenary — framing the strategic priorities", "Keynote addresses"] },
-  { day: "Day 2", date: "23 April 2027", items: ["Daily plenary (panel of up to four speakers)", "Parallel sessions under the five tracks", "e-Poster sessions"] },
-  { day: "Day 3", date: "24 April 2027", items: ["Parallel sessions under the five tracks", "e-Poster sessions", "Closing Plenary", "Adoption of the Continental Call to Action", "Closing ceremony"] },
+  { day: "Day 1", date: "21 April 2027", items: ["Registration", "Official opening", "Opening Plenary — framing the strategic priorities", "Keynote addresses"] },
+  { day: "Day 2", date: "22 April 2027", items: ["Daily plenary (panel of up to four speakers)", "Parallel sessions under the five tracks", "e-Poster sessions"] },
+  { day: "Day 3", date: "23 April 2027", items: ["Parallel sessions under the five tracks", "e-Poster sessions", "Closing Plenary", "Adoption of the Continental Call to Action", "Closing ceremony"] },
 ];
 
 const DAYS_FR = [
-  { day: "Jour 1", date: "22 avril 2027", items: ["Inscription", "Ouverture officielle", "Plénière d'ouverture — définition des priorités stratégiques", "Discours liminaires"] },
-  { day: "Jour 2", date: "23 avril 2027", items: ["Plénière quotidienne (panel de jusqu'à quatre intervenants)", "Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques"] },
-  { day: "Jour 3", date: "24 avril 2027", items: ["Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques", "Plénière de clôture", "Adoption de l'Appel à l'action continental", "Cérémonie de clôture"] },
+  { day: "Jour 1", date: "21 avril 2027", items: ["Inscription", "Ouverture officielle", "Plénière d'ouverture — définition des priorités stratégiques", "Discours liminaires"] },
+  { day: "Jour 2", date: "22 avril 2027", items: ["Plénière quotidienne (panel de jusqu'à quatre intervenants)", "Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques"] },
+  { day: "Jour 3", date: "23 avril 2027", items: ["Sessions parallèles selon les cinq pistes", "Sessions d'affiches électroniques", "Plénière de clôture", "Adoption de l'Appel à l'action continental", "Cérémonie de clôture"] },
 ];
 
 function Program() {

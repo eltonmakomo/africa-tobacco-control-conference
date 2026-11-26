@@ -40,6 +40,6 @@ describe("Page copy", () => {
   });
 
   it("keeps only confirmed dates in the abstracts timeline", () => {
-    expect(KEY_DATES.map((k) => k.date)).toEqual(["October / November 2026", "22–24 April 2027"]);
+    expect(KEY_DATES.map((k) => k.date)).toEqual(["October / November 2026", "21–23 April 2027"]);
   });
 });
