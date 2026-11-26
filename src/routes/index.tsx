@@ -122,10 +122,9 @@ function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-forest/30 md:hidden" />
         <div className="mx-auto flex min-h-[min(82vh,760px)] max-w-7xl flex-col justify-center px-5 py-20 md:px-10 md:py-28">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
-            <h1 className="mt-5 text-4xl font-bold leading-[1.05] md:text-6xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique" : "Protecting Africa's Future"}</h1>
-            <p className="mt-4 text-xl font-medium text-forest-foreground/90 md:text-2xl animate-rise">{fr ? "Faire progresser la lutte antitabac et la souveraineté sanitaire" : "Advancing Tobacco Control and Health Sovereignty"}</p>
+            <h1 className="mt-5 text-3xl font-bold leading-[1.12] md:text-5xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}</h1>
             <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-foreground/85">
               <span className="flex items-center gap-2"><CalendarDays className="size-4" />{ev.dates}</span>
               <span className="flex items-center gap-2"><MapPin className="size-4" />{ev.location} · {fr ? "Hybride" : "Hybrid"}</span>
