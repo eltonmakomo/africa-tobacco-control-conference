@@ -8,7 +8,7 @@ import s4 from "@/assets/speaker-4.jpg";
 import { ArrowRight, CalendarDays, Globe, Languages, MapPin, ShieldCheck, X } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Section } from "@/components/site/Bits";
+import { PageHero, Section } from "@/components/site/Bits";
 import { Countdown } from "@/components/site/Countdown";
 import { CountUp } from "@/components/site/CountUp";
 import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
@@ -61,17 +61,7 @@ function About() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
-        <img src={heroImg} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_85%]" />
-        <div className="absolute inset-0 -z-10 bg-forest/80" />
-        <div className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
-          <span className="inline-block rounded-md bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
-            {fr ? "3e édition · 2027" : "3rd edition · 2027"}
-          </span>
-          <h1 className="mt-5 text-4xl font-bold md:text-5xl">{fr ? "À propos de la Conférence" : "About the conference"}</h1>
-          <p className="mt-5 max-w-2xl text-xl font-semibold leading-snug text-accent md:text-3xl">{ev.theme}</p>
-        </div>
-      </section>
+      <PageHero title={fr ? "À propos de la Conférence" : "About the conference"} image={heroImg} imgClassName="object-[center_85%]" />
 
       <Section id="about">
         <div className="grid gap-14 lg:grid-cols-2">
