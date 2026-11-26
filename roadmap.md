@@ -42,4 +42,4 @@
 - [x] Banners: the small tag names the page (About, Program, Media, Past editions…), big title carries the theme/descriptive line
 - [x] Move banner titles up close to the header on every page banner
 - [x] Program preconference section: keep the photo, leave only Exhibitions + E-library cards
-- [ ] Banner photos: lift the FACES toward the header (user meant faces, not the banner text) — revert the text lift
+- [x] Banner photos: lift the FACES toward the header (user meant faces, not the banner text) — text lift reverted
