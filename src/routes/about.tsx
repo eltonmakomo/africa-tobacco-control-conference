@@ -1,4 +1,4 @@
-import heroImg from "@/assets/about-evening.jpg";
+import heroImg from "@/assets/about-banner.jpg";
 import themeImg from "@/assets/panel-session.jpg";
 import objectivesImg from "@/assets/delegate-notes.jpg";
 import s1 from "@/assets/speaker-1.jpg";
