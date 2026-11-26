@@ -1,5 +1,5 @@
 import heroImg from "@/assets/delegates-phone.jpg";
-import guidelinesImg from "@/assets/cfa-guidelines.jpg";
+import guidelinesImg from "@/assets/speaker-lectern.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
 import { KEY_DATES, KEY_DATES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";

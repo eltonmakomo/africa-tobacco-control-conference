@@ -1,4 +1,4 @@
-import heroImg from "@/assets/edition-2024.jpg";
+import heroImg from "@/assets/lounge-friends.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero, Section } from "@/components/site/Bits";

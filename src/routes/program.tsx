@@ -1,6 +1,6 @@
-import heroImg from "@/assets/session-room.jpg";
+import heroImg from "@/assets/lounge-talk.jpg";
 import agendaImg from "@/assets/program-agenda.jpg";
-import sideImg from "@/assets/program-side.jpg";
+import sideImg from "@/assets/reception-guest.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -97,7 +97,7 @@ function Program() {
       <Section id="side-events" eyebrow={fr ? "Pré-conférence, événements parallèles et expositions" : "Pre-conference, side events and exhibitions"} title={fr ? "Au-delà du programme principal" : "Beyond the main program"} className="border-t border-border/60">
         <div className="grid items-start gap-6 lg:grid-cols-4">
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:row-span-2">
-            <img src={sideImg} alt={fr ? "Délégués autour d'une table lors d'une session parallèle de la 2e ACTCD" : "Delegates around a table at a 2nd ACTCD side session"} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105 lg:h-full" />
+            <img src={sideImg} alt={fr ? "Un invité au réception de clôture de la 2e ACTCD" : "A guest at the closing reception of the 2nd ACTCD"} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105 lg:h-full" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
           {sideEvents.map((x) => (

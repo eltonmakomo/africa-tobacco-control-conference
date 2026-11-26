@@ -1,6 +1,6 @@
-import heroImg from "@/assets/nairobi.jpg";
-import themeImg from "@/assets/delegates-banner.jpg";
-import objectivesImg from "@/assets/about-objectives.jpg";
+import heroImg from "@/assets/about-evening.jpg";
+import themeImg from "@/assets/panel-session.jpg";
+import objectivesImg from "@/assets/delegate-notes.jpg";
 import s1 from "@/assets/speaker-1.jpg";
 import s2 from "@/assets/speaker-2.jpg";
 import s3 from "@/assets/speaker-3.jpg";
@@ -61,7 +61,7 @@ function About() {
 
   return (
     <>
-      <PageHero title={fr ? "À propos de la Conférence" : "About the conference"} image={heroImg} imgClassName="object-[center_40%]" />
+      <PageHero title={fr ? "À propos de la Conférence" : "About the conference"} image={heroImg} imgClassName="object-[center_30%]" />
 
       <Section id="about">
         <div className="grid gap-14 lg:grid-cols-2">
@@ -80,7 +80,7 @@ function About() {
               ))}
             </ul>
             <figure className="relative mt-6 overflow-hidden rounded-2xl">
-              <img src={themeImg} alt={fr ? "Délégués en plénière à la 2e ACTCD, Accra 2024" : "Delegates in plenary at the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[16/10] w-full object-cover" />
+              <img src={themeImg} alt={fr ? "Panélistes lors d'une session de la 2e ACTCD, Accra 2024" : "Panellists at a session of the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[16/10] w-full object-cover" />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest/80 to-transparent p-5 text-forest-foreground">
                 <span className="text-xs font-semibold uppercase tracking-wider text-accent">ACTCD 2027</span>
                 <p className="font-semibold">{ev.location}</p>
@@ -159,7 +159,7 @@ function About() {
               : "The overall goal is to strengthen African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future and advancing health sovereignty."}
           </p>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-            <img src={objectivesImg} alt={fr ? "Un délégué devant la toile de fond de la 2e ACTCD, Accra 2024" : "A delegate at the 2nd ACTCD backdrop, Accra 2024"} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={objectivesImg} alt={fr ? "Un délégué prenant des notes pendant une session de la 2e ACTCD, Accra 2024" : "A delegate taking notes during a session of the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>

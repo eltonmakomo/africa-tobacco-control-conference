@@ -1,5 +1,5 @@
-import heroImg from "@/assets/faq-side.jpg";
-import sideImg from "@/assets/panelist-seated.jpg";
+import heroImg from "@/assets/session-speaker.jpg";
+import sideImg from "@/assets/evening-guest.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -51,7 +51,7 @@ function FAQ() {
             ))}
           </Accordion>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:col-span-2">
-            <img src={sideImg} alt={fr ? "Un panéliste à la 2e ACTCD, Accra 2024" : "A panellist at the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+            <img src={sideImg} alt={fr ? "Un invité à la réception de clôture de la 2e ACTCD, Accra 2024" : "A guest at the closing reception of the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>

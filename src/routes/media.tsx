@@ -1,5 +1,5 @@
-import heroImg from "@/assets/media-news.jpg";
-import featureImg from "@/assets/panel-speaker.jpg";
+import heroImg from "@/assets/media-hall.jpg";
+import featureImg from "@/assets/reception-duo.jpg";
 import brand from "@/assets/docs/ACTD_Branded_Materials_v19_2nd_ACTD.pdf.asset.json";
 import concept from "@/assets/docs/3rd_ACTD_Concept_Note_-_Abridged.docx.asset.json";
 import rep24 from "@/assets/docs/ACTDC_Report_2024.pdf.asset.json";
@@ -145,7 +145,7 @@ function Media() {
           <figure className="relative overflow-hidden rounded-3xl">
             <img
               src={heroImg}
-              alt={fr ? "Journalistes devant un mur de partenaires de la Conférence" : "Journalists in front of a Conference partner wall"}
+              alt={fr ? "Une intervenante s'adressant aux participants de la 2e ACTCD" : "A speaker addressing participants at the 2nd ACTCD"}
               className="aspect-[4/3] w-full object-cover object-top"
             />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
@@ -213,7 +213,7 @@ function Media() {
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <img
               src={featureImg}
-              alt={fr ? "Un intervenant au micro pendant une séance de la Conférence" : "A speaker at the microphone during a Conference session"}
+              alt={fr ? "Deux invités à la réception de clôture de la 2e ACTCD" : "Two guests at the closing reception of the 2nd ACTCD"}
               loading="lazy"
               className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105"
             />

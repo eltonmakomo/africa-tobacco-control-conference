@@ -31,3 +31,5 @@
 - [x] Set the About banner title to "About the conference" and remove banner captions
 - [x] About: drop the partner logos from "Who convenes ACTCD", keep the Article 5.3 text as a centered panel
 - [x] Spinning pattern restored on the footer and the Join sections (home + About)
+- [x] Replace every photo that shows the "2nd Africa Conference on Tobacco..." backdrop with a clean photo with no text on it
+- [x] Home banner: swap in a clean Drive photo with no text, no faces behind the title, no cut heads
