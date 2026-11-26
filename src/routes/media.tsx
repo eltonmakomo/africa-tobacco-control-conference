@@ -110,15 +110,9 @@ function Media() {
       <section className="bg-forest text-forest-foreground">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-2">
           <div>
-            <span className="inline-block rounded-md bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
               {fr ? "Médias" : "Media"}
-            </span>
-            <h1 className="mt-5 text-4xl font-bold text-accent md:text-5xl">{fr ? "Centre de presse" : "Press center"}</h1>
-            <p className="mt-5 max-w-xl text-forest-foreground/85">
-              {fr
-                ? "Un centre de presse dédié aux journalistes, partenaires médiatiques et professionnels de la communication qui couvrent la 3e Conférence africaine sur la lutte antitabac et le développement. Accréditation, ressources presse et soumission de vos contenus."
-                : "A dedicated press center for journalists, media partners and communications professionals covering the 3rd Africa Conference on Tobacco Control and Development. Access accreditation, press resources and submit your coverage."}
-            </p>
+            </h1>
 
             <dl className="mt-8 grid max-w-xl gap-4 sm:grid-cols-2">
               {impact.map((i) => (

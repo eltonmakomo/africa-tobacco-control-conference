@@ -44,7 +44,7 @@ function FAQ() {
 
   return (
     <>
-      <PageHero image={heroImg} imgClassName="object-[center_12%]" eyebrow={fr ? "FAQ" : "FAQs"} title={fr ? "Questions fréquentes" : "Frequently asked questions"} />
+      <PageHero image={heroImg} imgClassName="object-[center_12%]" title={fr ? "FAQ" : "FAQs"} />
       <Section>
         <div className="grid items-start gap-10 lg:grid-cols-5">
           <Accordion type="single" collapsible className="lg:col-span-3">

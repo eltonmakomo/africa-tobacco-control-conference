@@ -32,3 +32,4 @@ use the editor.
 - Conference facts (tracks, dates, numbers, conveners) live in src/lib/conference.ts so every page reads one source.
 - Accreditation document validation lives in a browser-safe shared schema with tests; never report a request received until a delivery service confirms it.
 - Banner photos use top-aligned desktop crops and their full natural aspect ratio above text on phones, so narrow screens do not clip faces.
+- Inside-page banners use the shared PageHero title without an eyebrow or descriptive caption, keeping photo positioning independent of heading content.

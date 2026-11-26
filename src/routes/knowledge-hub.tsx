@@ -19,6 +19,8 @@ export const Route = createFileRoute("/knowledge-hub")({
     meta: [
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: heroImg.url },
+      { name: "twitter:image", content: heroImg.url },
       { title: "Knowledge Hub · ACTCD Reports, Communiqués and Resources" },
       { name: "description", content: "The 2027 concept note, reports from the 2021 and 2024 editions, the 2024 communiqué and agenda, and the post-assessment report — in English and French." },
       { property: "og:title", content: "ACTCD Knowledge Hub" },
@@ -59,8 +61,7 @@ function Hub() {
       <PageHero
         image={heroImg.url}
         imgClassName="object-[center_0%]"
-        eyebrow={fr ? "Centre de connaissances" : "Knowledge Hub"}
-        title={fr ? "Données, résultats et archives" : "Evidence, outcomes and records"}
+        title={fr ? "Centre de connaissances" : "Knowledge Hub"}
       />
       <Section eyebrow="Documents" title={fr ? "Note conceptuelle, rapports et communiqués" : "Concept note, reports and communiqués"}>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

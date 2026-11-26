@@ -10,6 +10,8 @@ export const Route = createFileRoute("/call-for-abstracts")({
     meta: [
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: heroImg.url },
+      { name: "twitter:image", content: heroImg.url },
       { title: "Call for Abstracts · ACTCD 2027" },
       { name: "description", content: "Submit research, implementation experiences, policy analyses and innovations reflecting African-generated evidence to ACTCD 2027." },
       { property: "og:title", content: "ACTCD 2027 Call for Abstracts" },
@@ -29,8 +31,7 @@ function CFA() {
       <PageHero
         image={heroImg.url}
         imgClassName="object-[center_16%]"
-        eyebrow={fr ? "Appel à résumés" : "Call for Abstracts"}
-        title={fr ? "Les données africaines, au cœur des politiques" : "African evidence, at the centre of policy"}
+        title={fr ? "Appel à résumés" : "Call for Abstracts"}
       >
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <button disabled className="cursor-not-allowed rounded-full bg-forest-foreground/80 px-7 py-4 font-semibold text-primary/70">

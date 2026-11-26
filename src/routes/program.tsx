@@ -48,8 +48,7 @@ function Program() {
       <PageHero
         image={heroImg}
         imgClassName="object-[center_42%]"
-        eyebrow={fr ? "Programme" : "Program"}
-        title={fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}
+        title={fr ? "Programme" : "Program"}
       />
       <Section id="agenda" title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"}>
         <div role="tablist" className="inline-flex rounded-full bg-secondary p-1">
