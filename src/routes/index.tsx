@@ -47,7 +47,7 @@ const SPEAKERS_FR = [
   { img: sp4, name: "Hon. Joseph Otieno", role: "Politique et gouvernance", org: "Nairobi, Kenya", bio: "Législateur et défenseur de la bonne gouvernance qui a porté les garde-fous de l'article 5.3 de la CCLAT de l'OMS et la coordination multisectorielle." },
 ];
 
-function Countdown() {
+function Countdown({ compact = false }: { compact?: boolean }) {
   const { fr } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const [now, setNow] = useState<number | null>(null);
@@ -84,10 +84,10 @@ function Countdown() {
     [Math.floor((diff % 6e4) / 1e3), labels[3]!],
   ];
   return (
-    <div ref={ref} className="grid grid-cols-4 gap-3 text-center">
+    <div ref={ref} className={`grid grid-cols-4 text-center ${compact ? "gap-2" : "gap-3"}`}>
       {units.map(([v, l]) => (
-        <div key={l} className="glass rounded-2xl px-3 py-4">
-          <div className="text-3xl font-bold tabular-nums md:text-4xl">{now === null ? "—" : Math.floor(v * progress)}</div>
+        <div key={l} className={`glass rounded-2xl ${compact ? "px-2 py-3" : "px-3 py-4"}`}>
+          <div className={`font-bold tabular-nums ${compact ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>{now === null ? "—" : Math.floor(v * progress)}</div>
           <div className="eyebrow mt-1 text-[0.65rem] text-forest-foreground/75">{l}</div>
         </div>
       ))}
@@ -121,6 +121,7 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
         <img src={hero} alt={fr ? "De jeunes Africains courent dans un champ au-dessus de Nairobi au coucher du soleil" : "Young Africans running through an open field above Nairobi at sunset"} width={1920} height={1088} className="absolute inset-0 -z-20 size-full object-cover object-[70%_center]" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent" />
+        <div className="absolute inset-0 -z-10 bg-forest/30 md:hidden" />
         <div className="mx-auto flex min-h-[min(82vh,760px)] max-w-7xl flex-col justify-center px-5 py-24">
           <div className="max-w-2xl">
             <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
@@ -140,6 +141,9 @@ function Home() {
               <a href={conceptNote.url} download className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/70 px-6 py-3.5 font-semibold transition hover:bg-forest-foreground/15">
                 <Download className="size-4" /> {fr ? "Télécharger la note conceptuelle" : "Download Concept Note"}
               </a>
+            </div>
+            <div className="mt-10 max-w-lg">
+              <Countdown compact />
             </div>
           </div>
         </div>
@@ -270,8 +274,8 @@ function Home() {
       <section className="px-5">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-forest p-10 text-forest-foreground shadow-elegant md:p-16">
           <div className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full bg-swirl opacity-40 animate-spin-slow" />
-          <div className="relative grid items-center gap-10 lg:grid-cols-2">
-            <div>
+          <div className="relative">
+            <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>
               <h2 className="mt-3 text-3xl font-bold md:text-5xl">{fr ? "Rejoignez-nous à l'ACTCD" : "Join us for the ACTCD"}</h2>
               <p className="mt-4 max-w-md text-forest-foreground/85">{fr ? "Prenez part à la conversation continentale sur la lutte antitabac et la souveraineté sanitaire — en personne ou en ligne." : "Be part of the continental conversation on tobacco control and health sovereignty — in person or online."}</p>
@@ -279,7 +283,6 @@ function Home() {
                 {fr ? "S'inscrire" : "Register Here"} <ArrowRight className="size-4" />
               </Link>
             </div>
-            <Countdown />
           </div>
         </div>
       </section>

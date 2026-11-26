@@ -37,8 +37,7 @@ function About() {
     <>
       <PageHero image={heroImg} imgClassName="object-[center_30%]" eyebrow={fr ? "À propos" : "About"} title={fr ? "Consolider les acquis africains de la lutte antitabac" : "Securing Africa's tobacco control gains"} intro={fr ? EVENT_FR.theme : EVENT.theme} />
       <Section id="about" eyebrow={fr ? "À propos de l'ACTCD" : "About ACTCD"} title={fr ? "Les progrès sont réels. Le risque aussi." : "Progress is real. So is the risk."}>
-        <div className="grid gap-10 lg:grid-cols-3">
-          <div className="space-y-5 text-lg leading-relaxed text-foreground/80 lg:col-span-2">
+        <div className="max-w-4xl space-y-5 text-lg leading-relaxed text-foreground/80">
             {fr ? (
               <>
                 <p>Deux décennies après l'entrée en vigueur de la Convention-cadre de l'OMS pour la lutte antitabac, l'Afrique a réalisé de réels progrès : 44 des 47 pays de la Région africaine de l'OMS ont ratifié la Convention. L'environnement continue d'évoluer avec les nouveaux produits de la nicotine, l'ingérence de l'industrie, le commerce illicite et des financements limités.</p>
@@ -50,8 +49,9 @@ function About() {
                 <p>Africa holds the world's youngest population, with more than 60% of its people under the age of 25. Rapid urbanization, uneven policy implementation and aggressive industry marketing create conditions for a rise in tobacco use without decisive action. The African Capacity Building Foundation convenes the Conference as the African Union's specialized agency for capacity development, building on the first edition in 2021 and the second in Accra, Ghana, in 2024.</p>
               </>
             )}
-          </div>
-          <div className="grid grid-cols-2 gap-4">
+        </div>
+        <div className="mt-12 rounded-[2rem] bg-secondary/70 p-5 shadow-card sm:p-7">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map(({ figure: f, label: l }) => (
               <div key={f} className="group relative overflow-hidden rounded-3xl bg-forest p-6 text-forest-foreground shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
                 <div className="pointer-events-none absolute -right-10 -top-10 size-28 rounded-full bg-gold/25 blur-2xl transition group-hover:bg-gold/35" />

@@ -17,3 +17,5 @@
 - [x] Agenda cards: three in one row on the home page
 - [x] Remove the "Agenda at a glance" label above the agenda section
 - [x] "Past editions" as the section title, tag removed
+- [x] Countdown back in the home banner
+- [x] Rework the About statistic cards so their placement reads better
