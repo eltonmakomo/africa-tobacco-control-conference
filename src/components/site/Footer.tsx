@@ -6,8 +6,8 @@ import { useLang } from "@/lib/i18n";
 export function Footer() {
   const { fr } = useLang();
   const explore: [string, string][] = fr
-    ? [["/about", "À propos"], ["/program", "Programme"], ["/call-for-abstracts", "Appel à résumés"], ["/past-editions", "Éditions passées"], ["/knowledge-hub", "Connaissances"]]
-    : [["/about", "About"], ["/program", "Program"], ["/call-for-abstracts", "Call for Abstracts"], ["/past-editions", "Past Editions"], ["/knowledge-hub", "Knowledge Hub"]];
+    ? [["/about", "À propos"], ["/program", "Programme"], ["/call-for-abstracts", "Appel à résumés"], ["/knowledge-hub", "Connaissances"], ["/media", "Médias"], ["/past-editions", "Éditions passées"]]
+    : [["/about", "About"], ["/program", "Program"], ["/call-for-abstracts", "Call for Abstracts"], ["/knowledge-hub", "Knowledge Hub"], ["/media", "Media"], ["/past-editions", "Past Editions"]];
 
   return (
     <footer className="relative overflow-hidden bg-forest text-forest-foreground">

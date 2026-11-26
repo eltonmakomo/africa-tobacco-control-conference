@@ -4,20 +4,22 @@ import { useState } from "react";
 import { Logo } from "./Logo";
 import { useLang } from "@/lib/i18n";
 
-const NAV_EN = [
+export const NAV_EN = [
   { to: "/about", label: "About" },
   { to: "/program", label: "Program" },
   { to: "/call-for-abstracts", label: "Call for Abstracts" },
-  { to: "/past-editions", label: "Past Editions" },
   { to: "/knowledge-hub", label: "Knowledge Hub" },
+  { to: "/media", label: "Media" },
+  { to: "/past-editions", label: "Past Editions" },
 ] as const;
 
-const NAV_FR = [
+export const NAV_FR = [
   { to: "/about", label: "À propos" },
   { to: "/program", label: "Programme" },
   { to: "/call-for-abstracts", label: "Appel à résumés" },
-  { to: "/past-editions", label: "Éditions passées" },
   { to: "/knowledge-hub", label: "Connaissances" },
+  { to: "/media", label: "Médias" },
+  { to: "/past-editions", label: "Éditions passées" },
 ] as const;
 
 export function Header() {

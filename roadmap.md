@@ -9,6 +9,7 @@
 - [x] Minimize gold/orange on green backgrounds (hero + green panels) — white instead
 - [x] Footer swirl pattern animated like the page banners
 - [ ] WHOVA registration link, contacts, social handles, Mailchimp — blocked: not supplied
+- [x] Match the menu to the architecture document: Media added, Participate dropped on request
 - [x] Unique photo per slot (no repeats)
 - [x] Add more imagery inside text-heavy sections (About, Program, Call for Abstracts, Knowledge Hub, Media, FAQ, Participate)
 - [x] Add missing accreditation supporting-document fields and validate required attachments.
