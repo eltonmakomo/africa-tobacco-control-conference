@@ -145,10 +145,10 @@ export const PARTNERSHIP_PACKAGES = [
 
 // Home page impact figures, as supplied by the organisers.
 export const HOME_IMPACT = [
-  { figure: "350+", label: "participants" },
-  { figure: "30+", label: "countries represented" },
-  { figure: "20+", label: "media houses" },
   { figure: "3rd", label: "edition" },
+  { figure: "+250", label: "participants" },
+  { figure: "+30", label: "countries represented" },
+  { figure: "+20", label: "media houses" },
 ];
 
 // ============ French versions of the shared content above ============
@@ -261,8 +261,8 @@ export const PARTNERSHIP_PACKAGES_FR = [
 ];
 
 export const HOME_IMPACT_FR = [
-  { figure: "350+", label: "participants" },
-  { figure: "30+", label: "pays représentés" },
-  { figure: "20+", label: "maisons de presse" },
   { figure: "3e", label: "édition" },
+  { figure: "+250", label: "participants" },
+  { figure: "+30", label: "pays représentés" },
+  { figure: "+20", label: "maisons de presse" },
 ];
