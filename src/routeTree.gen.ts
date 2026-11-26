@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CallForAbstractsRouteImport } from './routes/call-for-abstracts'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
+import { Route as LegalRouteImport } from './routes/legal'
 import { Route as MediaRouteImport } from './routes/media'
 import { Route as PastEditionsRouteImport } from './routes/past-editions'
 import { Route as ProgramRouteImport } from './routes/program'
@@ -32,9 +34,19 @@ const CallForAbstractsRoute = CallForAbstractsRouteImport.update({
   path: '/call-for-abstracts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
   id: '/knowledge-hub',
   path: '/knowledge-hub',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalRoute = LegalRouteImport.update({
+  id: '/legal',
+  path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MediaRoute = MediaRouteImport.update({
@@ -57,7 +69,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
+  '/faq': typeof FaqRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/legal': typeof LegalRoute
   '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
@@ -66,7 +80,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
+  '/faq': typeof FaqRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/legal': typeof LegalRoute
   '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
@@ -76,7 +92,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/call-for-abstracts': typeof CallForAbstractsRoute
+  '/faq': typeof FaqRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/legal': typeof LegalRoute
   '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
@@ -87,7 +105,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/call-for-abstracts'
+    | '/faq'
     | '/knowledge-hub'
+    | '/legal'
     | '/media'
     | '/past-editions'
     | '/program'
@@ -96,7 +116,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/call-for-abstracts'
+    | '/faq'
     | '/knowledge-hub'
+    | '/legal'
     | '/media'
     | '/past-editions'
     | '/program'
@@ -105,7 +127,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/call-for-abstracts'
+    | '/faq'
     | '/knowledge-hub'
+    | '/legal'
     | '/media'
     | '/past-editions'
     | '/program'
@@ -115,7 +139,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CallForAbstractsRoute: typeof CallForAbstractsRoute
+  FaqRoute: typeof FaqRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
+  LegalRoute: typeof LegalRoute
   MediaRoute: typeof MediaRoute
   PastEditionsRoute: typeof PastEditionsRoute
   ProgramRoute: typeof ProgramRoute
@@ -144,11 +170,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CallForAbstractsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/knowledge-hub': {
       id: '/knowledge-hub'
       path: '/knowledge-hub'
       fullPath: '/knowledge-hub'
       preLoaderRoute: typeof KnowledgeHubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal': {
+      id: '/legal'
+      path: '/legal'
+      fullPath: '/legal'
+      preLoaderRoute: typeof LegalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/media': {
@@ -179,7 +219,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CallForAbstractsRoute: CallForAbstractsRoute,
+  FaqRoute: FaqRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
+  LegalRoute: LegalRoute,
   MediaRoute: MediaRoute,
   PastEditionsRoute: PastEditionsRoute,
   ProgramRoute: ProgramRoute,
