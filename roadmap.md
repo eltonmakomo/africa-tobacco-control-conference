@@ -35,3 +35,4 @@
 - [x] Home banner: swap in a clean Drive photo with no text, no faces behind the title, no cut heads
 - [x] Home banner: use the user's uploaded photo (Africa_tobacco_day_2c_19_of_46.jpg) — must be cropped clean of bottle text and the cut head
 - [x] About banner: use the user's uploaded photo (Breakout Session 3) — no cut heads or faces, no slide text
+- [x] Home banner: fill the remaining screen height and narrow the text to show more of the photo

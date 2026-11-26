@@ -121,8 +121,8 @@ function Home() {
         <img src={hero} alt={fr ? "Participants à la 2e ACTCD à Accra" : "Participants at the 2nd ACTCD in Accra"} width={1920} height={1088} className="absolute inset-0 -z-20 size-full object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-forest/30 md:hidden" />
-        <div className="mx-auto flex min-h-[min(82vh,760px)] max-w-7xl flex-col justify-center px-5 py-20 md:px-10 md:py-28">
-          <div className="max-w-3xl">
+        <div className="mx-auto flex min-h-[calc(100svh-79px)] max-w-7xl flex-col justify-center px-5 py-12 md:min-h-[calc(100svh-87px)] md:px-10 md:py-16">
+          <div className="max-w-xl">
             <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
             <h1 className="mt-5 text-3xl font-bold leading-[1.12] md:text-5xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}</h1>
             <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-foreground/85">
