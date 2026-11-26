@@ -188,7 +188,7 @@ function About() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>
             <h2 className="mt-3 text-3xl font-bold md:text-5xl">{fr ? "Rejoignez-nous à l'ACTCD" : "Join us for the ACTCD"}</h2>
-            <p className="mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+            <p className="mx-auto mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
           </div>
           <div className="mx-auto mt-8 max-w-md"><Countdown /></div>
           <div className="mt-8 flex justify-center">

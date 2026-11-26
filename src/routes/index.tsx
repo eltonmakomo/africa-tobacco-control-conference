@@ -275,7 +275,15 @@ function Home() {
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>
               <h2 className="mt-3 text-3xl font-bold md:text-5xl">{fr ? "Rejoignez-nous à l'ACTCD" : "Join us for the ACTCD"}</h2>
-              <p className="mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+              <p className="mx-auto mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <a
+                href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition hover:opacity-90"
+              >
+                {fr ? "S'inscrire ici" : "Register Here"}
+              </a>
             </div>
           </div>
         </div>
