@@ -48,3 +48,4 @@
 - [x] Knowledge Hub banner: user's photo Africa_tobacco_46_of_56.jpg
 - [x] Home banner: narrow the heading column so no text sits on the woman's hair
 - [x] Restore simple inside banners: page-name titles only, no captions, retaining the latest photos and face-safe positioning
+- [x] Home banner: the two call-to-action buttons back inline on one row, countdown moved to the right of the banner

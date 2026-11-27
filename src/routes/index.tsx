@@ -121,24 +121,26 @@ function Home() {
         <img src={hero} alt={fr ? "Participants à la 2e ACTCD à Accra" : "Participants at the 2nd ACTCD in Accra"} width={1920} height={1280} className="banner-photo absolute inset-0 -z-20 size-full object-cover object-[center_100%]" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-forest/30 md:hidden" />
-        <div className="mx-auto flex min-h-[calc(100svh-79px)] max-w-7xl flex-col justify-center px-5 py-12 max-sm:min-h-0 max-sm:py-10 md:min-h-[calc(100svh-87px)] md:px-10 md:py-16">
-          <div className="max-w-sm">
-            <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
-            <h1 className="mt-5 text-3xl font-bold leading-[1.12] md:text-5xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}</h1>
-            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-foreground/85">
-              <span className="flex items-center gap-2"><CalendarDays className="size-4" />{ev.dates}</span>
-              <span className="flex items-center gap-2"><MapPin className="size-4" />{ev.location} · {fr ? "Hybride" : "Hybrid"}</span>
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+        <div className="mx-auto flex min-h-[calc(100svh-79px)] max-w-7xl flex-col justify-end px-5 py-12 max-sm:min-h-0 max-sm:py-10 lg:justify-center lg:min-h-[calc(100svh-87px)] md:px-10 md:py-16">
+          <div className="grid items-center gap-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-10 lg:gap-12">
+            <div>
+              <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
+              <h1 className="mt-5 max-w-[19rem] max-sm:max-w-none text-3xl font-bold leading-[1.12] lg:max-w-sm md:text-5xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}</h1>
+              <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-foreground/85">
+                <span className="flex items-center gap-2"><CalendarDays className="size-4" />{ev.dates}</span>
+                <span className="flex items-center gap-2"><MapPin className="size-4" />{ev.location} · {fr ? "Hybride" : "Hybrid"}</span>
+              </p>
+            </div>
+            <div className="order-3 w-full sm:order-none sm:w-auto sm:justify-self-end sm:self-end">
+              <Countdown compact />
+            </div>
+            <div className="order-2 mt-9 flex flex-wrap items-center gap-3 sm:order-none sm:col-span-2 sm:mt-0">
               <Link to="/call-for-abstracts" className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/70 px-6 py-3.5 font-semibold transition hover:bg-forest-foreground/15">
                 {fr ? "Soumettre un résumé" : "Submit Abstract"}
               </Link>
               <a href={conceptNote.url} download className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/70 px-6 py-3.5 font-semibold transition hover:bg-forest-foreground/15">
                 <Download className="size-4" /> {fr ? "Télécharger la note conceptuelle" : "Download Concept Note"}
               </a>
-            </div>
-            <div className="mt-10 max-w-lg">
-              <Countdown compact />
             </div>
           </div>
         </div>

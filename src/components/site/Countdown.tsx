@@ -41,9 +41,9 @@ export function Countdown({ compact = false }: { compact?: boolean }) {
   return (
     <div ref={ref} className={`grid grid-cols-4 text-center ${compact ? "gap-2" : "gap-3"}`}>
       {units.map(([v, l]) => (
-        <div key={l} className={`glass rounded-2xl ${compact ? "px-2 py-3" : "px-3 py-4"}`}>
-          <div className={`font-bold tabular-nums ${compact ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>{now === null ? "—" : Math.floor(v * progress)}</div>
-          <div className="eyebrow mt-1 text-[0.65rem] text-forest-foreground/75">{l}</div>
+        <div key={l} className={`glass rounded-2xl ${compact ? "px-1.5 py-2.5 md:px-2 md:py-3" : "px-3 py-4"}`}>
+          <div className={`font-bold tabular-nums ${compact ? "text-xl md:text-3xl" : "text-3xl md:text-4xl"}`}>{now === null ? "—" : Math.floor(v * progress)}</div>
+          <div className={`eyebrow mt-1 text-forest-foreground/75 ${compact ? "text-[0.6rem] md:text-[0.65rem]" : "text-[0.65rem]"}`}>{l}</div>
         </div>
       ))}
     </div>
