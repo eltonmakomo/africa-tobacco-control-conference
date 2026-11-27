@@ -1,6 +1,6 @@
 import heroImg from "@/assets/breakout-session-10.jpg.asset.json";
 import themeImg from "@/assets/panel-session.jpg";
-import objectivesImg from "@/assets/delegate-notes.jpg";
+import objectivesImg from "@/assets/africa-tobacco-day-2e-44-of-50.jpg.asset.json";
 import { ArrowRight, CalendarDays, Globe, Languages, MapPin, ShieldCheck } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -107,7 +107,7 @@ function About() {
               : "The overall goal is to strengthen African leadership, evidence and sustainable capacity for tobacco control as a contribution to protecting Africa's future and advancing health sovereignty."}
           </p>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-            <img src={objectivesImg} alt={fr ? "Un délégué prenant des notes pendant une session de la 2e ACTCD, Accra 2024" : "A delegate taking notes during a session of the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={objectivesImg.url} alt={fr ? "Une déléguée présentant au pupitre lors de la 2e ACTCD, Accra 2024" : "A delegate presenting at the podium during the 2nd ACTCD, Accra 2024"} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
         </div>
