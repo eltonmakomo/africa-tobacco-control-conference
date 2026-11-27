@@ -1,4 +1,5 @@
 # ACTCD 2027 microsite
+- [x] Refresh the four uploaded photo links and verify they load in this preview without changing their crops.
 - [x] Reposition banner photos and check heads and faces across screen sizes (the uploaded home photo already has one head cut at its source edge)
 - [x] Restore the Register button beside the header language switch
 - [x] Apply brand guidelines (Poppins, #277f3e green, #dfa726 gold, logo rules)

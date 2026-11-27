@@ -10,8 +10,6 @@ export const Route = createFileRoute("/call-for-abstracts")({
     meta: [
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: heroImg.url },
-      { name: "twitter:image", content: heroImg.url },
       { title: "Call for Abstracts · ACTCD 2027" },
       { name: "description", content: "Submit research, implementation experiences, policy analyses and innovations reflecting African-generated evidence to ACTCD 2027." },
       { property: "og:title", content: "ACTCD 2027 Call for Abstracts" },
