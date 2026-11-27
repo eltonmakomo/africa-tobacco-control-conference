@@ -1,5 +1,5 @@
 import heroImg from "@/assets/media-banner.jpg";
-import featureImg from "@/assets/reception-duo.jpg";
+import featureImg from "@/assets/africa-tobacco-day-2e-18-of-50.jpg.asset.json";
 import brand from "@/assets/docs/ACTD_Branded_Materials_v19_2nd_ACTD.pdf.asset.json";
 import concept from "@/assets/docs/3rd_ACTD_Concept_Note_-_Abridged.docx.asset.json";
 import rep24 from "@/assets/docs/ACTDC_Report_2024.pdf.asset.json";
@@ -196,10 +196,10 @@ function Media() {
           </div>
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <img
-              src={featureImg}
-              alt={fr ? "Deux invités à la réception de clôture de la 2e ACTCD" : "Two guests at the closing reception of the 2nd ACTCD"}
+              src={featureImg.url}
+              alt={fr ? "Photo de groupe des délégués lors de la 2e ACTCD, Accra 2024" : "Group photo of delegates at the 2nd ACTCD, Accra 2024"}
               loading="lazy"
-              className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105"
+              className="aspect-[1920/1224] w-full object-cover transition duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
           </figure>
