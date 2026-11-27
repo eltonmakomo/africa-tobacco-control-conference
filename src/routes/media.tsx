@@ -109,7 +109,7 @@ function Media() {
     <>
       <PageHero
         image={heroImg}
-        imgClassName="object-[center_35%] max-xl:object-[center_50%] max-lg:object-[center_75%] max-md:object-[center_100%]"
+        imgClassName="object-center"
         minH="min-h-[780px]"
         title={fr ? "Médias" : "Media"}
       >
