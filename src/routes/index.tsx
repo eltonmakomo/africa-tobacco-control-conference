@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarDays, Download, MapPin } from "lucide-react";
+import { ArrowRight, CalendarDays, Download, Languages, MapPin, Monitor } from "lucide-react";
 import { Countdown } from "@/components/site/Countdown";
 import hero from "@/assets/home-banner.jpg";
 import plenary from "@/assets/plenary.jpg";
@@ -8,7 +8,6 @@ import conceptNote from "@/assets/docs/3rd_ACTD_Concept_Note_-_Abridged.docx.ass
 import gokLogo from "@/assets/partners/government-of-kenya.png.asset.json";
 import acbfLogo from "@/assets/partners/acbf.png.asset.json";
 import { SpeakerGrid } from "@/components/site/SpeakerGrid";
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Bits";
 import { CountUp } from "@/components/site/CountUp";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
@@ -229,23 +228,39 @@ function Home() {
 
       {/* Join us */}
       <section aria-labelledby="join-heading" className="px-5 py-16 md:px-10 md:py-24">
-        <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-forest px-6 py-14 text-center text-forest-foreground shadow-card-lg md:px-16 md:py-20">
-          <div aria-hidden="true" className="pointer-events-none absolute -left-24 -bottom-24 -z-10 size-80 rounded-full bg-primary/40 blur-3xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 -z-10 size-72 rounded-full bg-accent/25 blur-3xl" />
-          <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-gradient-brand" />
-          <h2 id="join-heading" className="mx-auto max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
-            {fr ? "Rejoignez-nous à l'" : "Join us for the "}<span className="text-accent">ACTCD</span>
-          </h2>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm font-medium md:text-base">
-            <span className="inline-flex items-center gap-2 rounded-full bg-forest-foreground/10 px-4 py-2"><CalendarDays aria-hidden="true" className="size-4 text-accent" />{ev.dates}</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-forest-foreground/10 px-4 py-2"><MapPin aria-hidden="true" className="size-4 text-accent" />{ev.location}</span>
-          </div>
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-forest-foreground/85 md:text-lg">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
-          <Button asChild size="lg" className="group mt-8 h-auto gap-3 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-gold hover:bg-accent/90 focus-visible:ring-forest-foreground">
-            <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}>
-              {fr ? "S'inscrire ici" : "Register Here"}<ArrowRight aria-hidden="true" className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
+        <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-linear-to-br from-forest via-forest to-primary px-6 py-12 text-forest-foreground shadow-card-lg md:px-14 md:py-16">
+          <svg aria-hidden="true" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" className="pointer-events-none absolute inset-0 -z-10 size-full text-forest-foreground/10" fill="none" stroke="currentColor" strokeWidth="1.2">
+            {Array.from({ length: 14 }).map((_, i) => (
+              <path key={i} d={`M${420 + i * 8} ${-20} C ${380 + i * 22} ${120 + i * 6}, ${560 + i * 14} ${200 - i * 4}, ${500 + i * 20} ${520}`} />
+            ))}
+            {Array.from({ length: 6 }).map((_, i) => (
+              <ellipse key={`e${i}`} cx="700" cy="110" rx={40 + i * 34} ry={26 + i * 24} transform="rotate(-18 700 110)" />
+            ))}
+          </svg>
+          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 -z-10 size-96 rounded-full bg-accent/20 blur-3xl" />
+          <div className="max-w-2xl">
+            <p className="inline-flex items-center gap-2.5 rounded-full border border-forest-foreground/20 bg-forest-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] md:text-sm">
+              <span aria-hidden="true" className="size-2.5 rounded-full bg-accent ring-4 ring-accent/25" />
+              {fr ? "Conférence à venir · Hybride" : "Upcoming conference · Hybrid"}
+            </p>
+            <h2 id="join-heading" className="mt-6 leading-none">
+              <span className="block text-2xl font-semibold md:text-3xl">{fr ? "Rejoignez-nous à l'" : "Join us for the"}</span>
+              <span className="mt-2 block text-6xl font-extrabold tracking-tight text-accent md:text-8xl">ACTCD</span>
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium md:text-base">
+              <span className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/20 bg-forest-foreground/10 px-4 py-2"><CalendarDays aria-hidden="true" className="size-4 text-accent" />{ev.dates}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/20 bg-forest-foreground/10 px-4 py-2"><MapPin aria-hidden="true" className="size-4 text-accent" />{ev.location}</span>
+            </div>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-foreground/85 md:text-lg">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm font-medium md:text-base">
+              <span className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/20 bg-forest-foreground/10 px-4 py-2"><Monitor aria-hidden="true" className="size-4 text-accent" />{fr ? "Présentiel + virtuel" : "In person + Virtual"}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/20 bg-forest-foreground/10 px-4 py-2"><Languages aria-hidden="true" className="size-4 text-accent" />English · Français</span>
+            </div>
+            <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`} className="group mt-9 inline-flex items-center gap-4 rounded-full bg-linear-to-r from-accent to-accent/80 py-3 pl-8 pr-3 text-base font-semibold text-accent-foreground shadow-gold transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-foreground md:text-lg">
+              {fr ? "S'inscrire ici" : "Register Here"}
+              <span className="grid size-10 place-items-center rounded-full bg-accent-foreground/10"><ArrowRight aria-hidden="true" className="size-5 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" /></span>
             </a>
-          </Button>
+          </div>
         </div>
       </section>
 
