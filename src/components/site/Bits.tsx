@@ -1,13 +1,14 @@
 import type { ReactNode } from "react";
 
-export function PageHero({ title, children, image, imgClassName = "object-top" }: { title: ReactNode; children?: ReactNode; image?: string; imgClassName?: string }) {
+export function PageHero({ title, children, image, imgClassName = "object-top", align = "left" }: { title: ReactNode; children?: ReactNode; image?: string; imgClassName?: string; align?: "left" | "right" }) {
+  const right = align === "right";
   return (
     <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
       {image && <img src={image} alt="" aria-hidden className={`banner-photo absolute inset-0 -z-20 size-full object-cover ${imgClassName}`} />}
-      {image && <div className="absolute inset-0 -z-10 bg-gradient-hero" />}
+      {image && <div className={`absolute inset-0 -z-10 ${right ? "bg-gradient-hero-r" : "bg-gradient-hero"}`} />}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
       <div className={`relative mx-auto flex min-h-[560px] max-w-7xl flex-col justify-center px-5 py-20 md:px-10 md:py-28 ${image ? "max-sm:min-h-0 max-sm:py-10" : ""}`}>
-        <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl animate-rise">{title}</h1>
+        <h1 className={`max-w-4xl text-4xl font-bold leading-tight md:text-5xl animate-rise ${right ? "sm:ml-auto sm:text-right" : ""}`}>{title}</h1>
         {children}
       </div>
     </section>

@@ -49,3 +49,4 @@
 - [x] Home banner: narrow the heading column so no text sits on the woman's hair
 - [x] Restore simple inside banners: page-name titles only, no captions, retaining the latest photos and face-safe positioning
 - [x] Home banner: the two call-to-action buttons back inline on one row, countdown moved to the right of the banner
+- [x] Media page: banner like the other pages, using its own photo, positioned with no cut faces, keeping the figures and buttons inside it

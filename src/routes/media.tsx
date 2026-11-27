@@ -7,7 +7,7 @@ import com24 from "@/assets/docs/Communique_Final_1330hrs_ACTD.docx.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Download, Mail, Globe } from "lucide-react";
 import { useState, type FormEvent, type InputHTMLAttributes, type SelectHTMLAttributes } from "react";
-import { Section } from "@/components/site/Bits";
+import { PageHero, Section } from "@/components/site/Bits";
 import { ARTICLE_53, ARTICLE_53_FR, HOME_IMPACT, HOME_IMPACT_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
 
@@ -107,45 +107,35 @@ function Media() {
 
   return (
     <>
-      <section className="bg-forest text-forest-foreground">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-2">
-          <div>
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-              {fr ? "Médias" : "Media"}
-            </h1>
+      <PageHero
+        image={heroImg}
+        imgClassName="object-[center_50%]"
+        align="right"
+        title={fr ? "Médias" : "Media"}
+      >
+        <div className="mt-8 w-full sm:ml-auto sm:max-w-[72%] lg:max-w-2xl">
+          <dl className="grid gap-4 sm:grid-cols-3">
+            {impact.map((i) => (
+              <div key={i.label} className="glass-forest rounded-2xl p-5">
+                <dd className="text-3xl font-bold text-accent">{i.figure}</dd>
+                <dt className="mt-1 text-sm text-forest-foreground/85">{i.label}</dt>
+              </div>
+            ))}
+          </dl>
 
-            <dl className="mt-8 grid max-w-xl gap-4 sm:grid-cols-2">
-              {impact.map((i) => (
-                <div key={i.label} className="glass-forest rounded-2xl p-5">
-                  <dd className="text-3xl font-bold text-accent">{i.figure}</dd>
-                  <dt className="mt-1 text-sm text-forest-foreground/85">{i.label}</dt>
-                </div>
-              ))}
-            </dl>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#accreditation" className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90">
-                {fr ? "Demander une accréditation" : "Apply for accreditation"}
-              </a>
-              <a href="#feature" className="rounded-full border border-accent/50 px-6 py-3 text-sm font-semibold text-forest-foreground transition hover:bg-accent/10">
-                {fr ? "Demander un reportage" : "Request a feature"}
-              </a>
-              <a href="#submit-coverage" className="rounded-full border border-forest-foreground/25 px-6 py-3 text-sm font-semibold text-forest-foreground transition hover:bg-forest-foreground/10">
-                {fr ? "Soumettre votre couverture" : "Submit your coverage"}
-              </a>
-            </div>
+          <div className="mt-8 flex flex-wrap gap-3 sm:justify-end">
+            <a href="#accreditation" className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90">
+              {fr ? "Demander une accréditation" : "Apply for accreditation"}
+            </a>
+            <a href="#feature" className="rounded-full border border-accent/50 px-6 py-3 text-sm font-semibold text-forest-foreground transition hover:bg-accent/10">
+              {fr ? "Demander un reportage" : "Request a feature"}
+            </a>
+            <a href="#submit-coverage" className="rounded-full border border-forest-foreground/25 px-6 py-3 text-sm font-semibold text-forest-foreground transition hover:bg-forest-foreground/10">
+              {fr ? "Soumettre votre couverture" : "Submit your coverage"}
+            </a>
           </div>
-
-          <figure className="relative overflow-hidden rounded-3xl">
-            <img
-              src={heroImg}
-              alt={fr ? "Une intervenante s'adressant aux participants de la 2e ACTCD" : "A speaker addressing participants at the 2nd ACTCD"}
-              className="aspect-[4/3] w-full object-cover object-top"
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
-          </figure>
         </div>
-      </section>
+      </PageHero>
 
       <Section id="accreditation" eyebrow={fr ? "Accréditation" : "Accreditation"} title={fr ? "Accréditation des médias" : "Media accreditation"}>
         <p className="max-w-3xl text-foreground/80">
