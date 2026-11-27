@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ShieldCheck } from "lucide-react";
 import { Logo } from "./Logo";
 import { ARTICLE_53, ARTICLE_53_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
@@ -10,8 +11,22 @@ export function Footer() {
     : [["/about", "About"], ["/program", "Program"], ["/speakers", "Speakers"], ["/knowledge-hub", "Resource Center"], ["/media", "Media"], ["/past-editions", "Past Editions"]];
 
   return (
-    <footer className="relative overflow-hidden bg-forest text-forest-foreground">
-      <div className="pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full bg-swirl opacity-30 animate-spin-slow" />
+    <>
+      <aside aria-label={fr ? "Déclaration Article 5.3" : "Article 5.3 statement"} className="relative overflow-hidden border-t border-border/60 bg-cream">
+        <div className="pointer-events-none absolute -left-32 -bottom-32 size-[26rem] rounded-full bg-swirl opacity-25" />
+        <div className="pointer-events-none absolute -right-28 -top-28 size-[22rem] rounded-full bg-swirl opacity-20" />
+        <div className="h-1.5 w-full bg-gradient-brand" />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-5 px-5 py-12 text-center md:px-10 md:py-16">
+          <span className="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <ShieldCheck className="size-5" />
+          </span>
+          <p className="max-w-3xl text-lg leading-relaxed font-medium text-foreground/85 md:text-xl md:leading-relaxed">
+            {fr ? ARTICLE_53_FR : ARTICLE_53}
+          </p>
+        </div>
+      </aside>
+      <footer className="relative overflow-hidden bg-forest text-forest-foreground">
+        <div className="pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full bg-swirl opacity-30 animate-spin-slow" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-12 md:px-10 md:py-24">
         <div className="md:col-span-4">
           <div className="inline-block rounded-2xl bg-primary px-4 py-3"><Logo variant="reverse" className="h-16" /></div>
@@ -46,10 +61,10 @@ export function Footer() {
       </div>
       <div className="relative border-t border-forest-foreground/15">
         <div className="mx-auto max-w-7xl px-5 py-6 md:px-10">
-          <p className="text-xs font-medium text-forest-foreground/80">{fr ? ARTICLE_53_FR : ARTICLE_53}</p>
-          <p className="mt-3 text-xs text-forest-foreground/50">© 2027 The African Capacity Building Foundation</p>
+          <p className="text-xs text-forest-foreground/50">© 2027 The African Capacity Building Foundation</p>
         </div>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }
