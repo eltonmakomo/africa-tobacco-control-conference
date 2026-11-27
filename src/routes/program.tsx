@@ -50,7 +50,7 @@ function Program() {
         imgClassName="object-[center_42%]"
         title={fr ? "Programme" : "Program"}
       />
-      <Section id="agenda" title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"}>
+      <Section id="agenda" title={fr ? "Ordre du jour" : "Agenda"}>
         <div role="tablist" className="inline-flex rounded-full bg-secondary p-1">
           {days.map((d, i) => (
             <button key={d.day} role="tab" aria-selected={active === i} onClick={() => setActive(i)} className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${active === i ? "bg-primary text-primary-foreground shadow" : "text-foreground/70"}`}>
@@ -97,14 +97,16 @@ function Program() {
         <p className="mt-6 text-sm text-muted-foreground">{fr ? "Thèmes transversaux : " : "Cross-cutting themes: "}{crossCutting.join(", ")}.</p>
       </Section>
       <Section id="side-events" title={fr ? "Expositions et bibliothèque électronique" : "Exhibitions and E-library"} className="border-t border-border/60">
-        <figure className="group relative aspect-[21/9] overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-          <img src={sideImg.url} alt={fr ? "Trois délégués dans la salle de conférence de la 2e ACTCD" : "Three delegates in the conference hall at the 2nd ACTCD"} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
-        </figure>
-        <div className="mt-6 flex flex-wrap gap-6">
-          {sideEvents.map((x) => (
-            <div key={x} className="rounded-2xl bg-card px-8 py-7 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
-          ))}
+        <div className="grid items-center gap-8 lg:grid-cols-[5fr_7fr]">
+          <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
+            <img src={sideImg.url} alt={fr ? "Trois délégués dans la salle de conférence de la 2e ACTCD" : "Three delegates in the conference hall at the 2nd ACTCD"} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
+          </figure>
+          <div className="space-y-4">
+            {sideEvents.map((x) => (
+              <div key={x} className="rounded-2xl bg-card px-8 py-7 font-medium shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">{x}</div>
+            ))}
+          </div>
         </div>
       </Section>
     </>

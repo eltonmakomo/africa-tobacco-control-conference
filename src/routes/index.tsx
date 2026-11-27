@@ -227,7 +227,7 @@ function Home() {
       </Section>
 
       {/* Agenda */}
-      <Section title={fr ? "Ordre du jour de la Conférence" : "Agenda of the conference"} className="border-t border-border/60">
+      <Section title={fr ? "Ordre du jour" : "Agenda"} className="border-t border-border/60">
         <div className="grid gap-5 lg:grid-cols-3">
           {agenda.map((d) => (
             <div key={d.day} className="rounded-3xl bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-lg lg:p-7">

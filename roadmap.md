@@ -54,3 +54,5 @@
 - [x] Home partners section: remove the label, heading reads "Our Partners"
 - [x] Forms: cream panel replaced with the brand green at 15% opacity (the reference site's low-opacity dark-green panels); labels 14:1, helper text 6:1
 - [x] Countdown: cards and DAY/HOUR/MINUTE/SECOND labels bigger on the home banner
+- [x] Agenda section heading reads just "Agenda" / "Ordre du jour" (Program + Home)
+- [x] Exhibitions and E-library: photo on the left, smaller; cards on the right
