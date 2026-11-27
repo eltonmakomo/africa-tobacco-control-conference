@@ -9,7 +9,7 @@ export const NAV_EN = [
   { to: "/about", label: "About" },
   { to: "/program", label: "Program" },
   { to: "/speakers", label: "Speakers" },
-  { to: "/knowledge-hub", label: "Knowledge Hub" },
+  { to: "/knowledge-hub", label: "Resource Center" },
   { to: "/media", label: "Media" },
   { to: "/past-editions", label: "Past Editions" },
 ] as const;
@@ -18,7 +18,7 @@ export const NAV_FR = [
   { to: "/about", label: "À propos" },
   { to: "/program", label: "Programme" },
   { to: "/speakers", label: "Intervenants" },
-  { to: "/knowledge-hub", label: "Connaissances" },
+  { to: "/knowledge-hub", label: "Ressources" },
   { to: "/media", label: "Médias" },
   { to: "/past-editions", label: "Éditions passées" },
 ] as const;
