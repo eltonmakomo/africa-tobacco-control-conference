@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 export const NAV_EN = [
   { to: "/about", label: "About" },
   { to: "/program", label: "Program" },
+  { to: "/speakers", label: "Speakers" },
   { to: "/knowledge-hub", label: "Knowledge Hub" },
   { to: "/media", label: "Media" },
   { to: "/past-editions", label: "Past Editions" },
@@ -16,6 +17,7 @@ export const NAV_EN = [
 export const NAV_FR = [
   { to: "/about", label: "À propos" },
   { to: "/program", label: "Programme" },
+  { to: "/speakers", label: "Intervenants" },
   { to: "/knowledge-hub", label: "Connaissances" },
   { to: "/media", label: "Médias" },
   { to: "/past-editions", label: "Éditions passées" },

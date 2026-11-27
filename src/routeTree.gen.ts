@@ -18,6 +18,7 @@ import { Route as LegalRouteImport } from './routes/legal'
 import { Route as MediaRouteImport } from './routes/media'
 import { Route as PastEditionsRouteImport } from './routes/past-editions'
 import { Route as ProgramRouteImport } from './routes/program'
+import { Route as SpeakersRouteImport } from './routes/speakers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +65,11 @@ const ProgramRoute = ProgramRouteImport.update({
   path: '/program',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SpeakersRoute = SpeakersRouteImport.update({
+  id: '/speakers',
+  path: '/speakers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
+  '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
+  '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/media': typeof MediaRoute
   '/past-editions': typeof PastEditionsRoute
   '/program': typeof ProgramRoute
+  '/speakers': typeof SpeakersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/past-editions'
     | '/program'
+    | '/speakers'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/past-editions'
     | '/program'
+    | '/speakers'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/past-editions'
     | '/program'
+    | '/speakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +157,7 @@ export interface RootRouteChildren {
   MediaRoute: typeof MediaRoute
   PastEditionsRoute: typeof PastEditionsRoute
   ProgramRoute: typeof ProgramRoute
+  SpeakersRoute: typeof SpeakersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -212,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/speakers': {
+      id: '/speakers'
+      path: '/speakers'
+      fullPath: '/speakers'
+      preLoaderRoute: typeof SpeakersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   MediaRoute: MediaRoute,
   PastEditionsRoute: PastEditionsRoute,
   ProgramRoute: ProgramRoute,
+  SpeakersRoute: SpeakersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
