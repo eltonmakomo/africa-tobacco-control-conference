@@ -40,8 +40,8 @@ function Program() {
   const tracks = fr ? TRACKS_FR : TRACKS;
   const crossCutting = fr ? CROSS_CUTTING_FR : CROSS_CUTTING;
   const sideEvents = fr
-    ? ["Espace d'exposition : innovations, résultats de recherche et bonnes pratiques", "Bibliothèque électronique"]
-    : ["Exhibition area: innovations, research findings and best practices", "E-library"];
+    ? ["Espace d'exposition : innovations, résultats de recherche et bonnes pratiques"]
+    : ["Exhibition area: innovations, research findings and best practices"];
 
   return (
     <>
@@ -96,7 +96,7 @@ function Program() {
         </div>
         <p className="mt-6 text-sm text-muted-foreground">{fr ? "Thèmes transversaux : " : "Cross-cutting themes: "}{crossCutting.join(", ")}.</p>
       </Section>
-      <Section id="side-events" title={fr ? "Expositions et bibliothèque électronique" : "Exhibitions and E-library"} className="border-t border-border/60">
+      <Section id="side-events" title={fr ? "Expositions" : "Exhibitions"} className="border-t border-border/60">
         <div className="grid items-center gap-8 lg:grid-cols-[5fr_7fr]">
           <figure className="group relative overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
             <img src={sideImg.url} alt={fr ? "Trois délégués dans la salle de conférence de la 2e ACTCD" : "Three delegates in the conference hall at the 2nd ACTCD"} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
