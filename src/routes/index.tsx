@@ -8,6 +8,7 @@ import conceptNote from "@/assets/docs/3rd_ACTD_Concept_Note_-_Abridged.docx.ass
 import gokLogo from "@/assets/partners/government-of-kenya.png.asset.json";
 import acbfLogo from "@/assets/partners/acbf.png.asset.json";
 import { SpeakerGrid } from "@/components/site/SpeakerGrid";
+import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Bits";
 import { CountUp } from "@/components/site/CountUp";
 import { PartnerLogos } from "@/components/site/PartnerLogos";
@@ -227,23 +228,26 @@ function Home() {
       </Section>
 
       {/* Join us */}
-      <section className="px-5 md:px-10">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-forest p-10 text-forest-foreground shadow-elegant md:p-16">
-          <div className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full bg-swirl opacity-40 animate-spin-slow" />
-          <div className="relative">
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>
-              <h2 className="mt-3 text-3xl font-bold md:text-5xl">{fr ? "Rejoignez-nous à l'ACTCD" : "Join us for the ACTCD"}</h2>
-              <p className="mx-auto mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+      <section aria-labelledby="join-heading" className="relative isolate overflow-hidden border-y border-forest-foreground/15 bg-forest text-forest-foreground">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 -z-10 size-[38rem] bg-swirl opacity-60 animate-spin-slow" />
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:px-10 md:py-20 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-16">
+          <div>
+            <div aria-hidden="true" className="mb-6 h-1 w-14 bg-accent" />
+            <h2 id="join-heading" className="max-w-xl text-5xl font-bold leading-tight tracking-normal md:text-7xl">
+              {fr ? "Rejoignez-nous à" : "Join us for the"}<span className="mt-1 block text-accent">ACTCD</span>
+            </h2>
+            <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-base font-medium">
+              <p className="flex items-center gap-2.5"><CalendarDays aria-hidden="true" className="size-5 shrink-0 text-accent" />{ev.dates}</p>
+              <p className="flex items-center gap-2.5 text-forest-foreground/85"><MapPin aria-hidden="true" className="size-5 shrink-0 text-accent" />{ev.location}</p>
             </div>
-            <div className="mt-8 flex justify-center">
-              <a
-                href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition hover:opacity-90"
-              >
-                {fr ? "S'inscrire ici" : "Register Here"}
+          </div>
+          <div className="border-t border-forest-foreground/25 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+            <p className="max-w-md text-lg leading-relaxed text-forest-foreground/90 md:text-xl">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+            <Button asChild size="lg" className="group mt-7 h-auto gap-8 rounded-md bg-accent px-7 py-4 text-base font-semibold text-accent-foreground shadow-gold hover:bg-accent/90 focus-visible:ring-forest-foreground">
+              <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}>
+                {fr ? "S'inscrire ici" : "Register Here"}<ArrowRight aria-hidden="true" className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
               </a>
-            </div>
+            </Button>
           </div>
         </div>
       </section>
