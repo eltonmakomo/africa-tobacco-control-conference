@@ -228,27 +228,24 @@ function Home() {
       </Section>
 
       {/* Join us */}
-      <section aria-labelledby="join-heading" className="relative isolate overflow-hidden border-y border-forest-foreground/15 bg-forest text-forest-foreground">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 -z-10 size-[38rem] bg-swirl opacity-60 animate-spin-slow" />
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:px-10 md:py-20 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-16">
-          <div>
-            <div aria-hidden="true" className="mb-6 h-1 w-14 bg-accent" />
-            <h2 id="join-heading" className="max-w-xl text-5xl font-bold leading-tight tracking-normal md:text-7xl">
-              {fr ? "Rejoignez-nous à" : "Join us for the"}<span className="mt-1 block text-accent">ACTCD</span>
-            </h2>
-            <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-base font-medium">
-              <p className="flex items-center gap-2.5"><CalendarDays aria-hidden="true" className="size-5 shrink-0 text-accent" />{ev.dates}</p>
-              <p className="flex items-center gap-2.5 text-forest-foreground/85"><MapPin aria-hidden="true" className="size-5 shrink-0 text-accent" />{ev.location}</p>
-            </div>
+      <section aria-labelledby="join-heading" className="px-5 py-16 md:px-10 md:py-24">
+        <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-forest px-6 py-14 text-center text-forest-foreground shadow-card-lg md:px-16 md:py-20">
+          <div aria-hidden="true" className="pointer-events-none absolute -left-24 -bottom-24 -z-10 size-80 rounded-full bg-primary/40 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 -z-10 size-72 rounded-full bg-accent/25 blur-3xl" />
+          <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-gradient-brand" />
+          <h2 id="join-heading" className="mx-auto max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
+            {fr ? "Rejoignez-nous à l'" : "Join us for the "}<span className="text-accent">ACTCD</span>
+          </h2>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm font-medium md:text-base">
+            <span className="inline-flex items-center gap-2 rounded-full bg-forest-foreground/10 px-4 py-2"><CalendarDays aria-hidden="true" className="size-4 text-accent" />{ev.dates}</span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-forest-foreground/10 px-4 py-2"><MapPin aria-hidden="true" className="size-4 text-accent" />{ev.location}</span>
           </div>
-          <div className="border-t border-forest-foreground/25 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-            <p className="max-w-md text-lg leading-relaxed text-forest-foreground/90 md:text-xl">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
-            <Button asChild size="lg" className="group mt-7 h-auto gap-8 rounded-md bg-accent px-7 py-4 text-base font-semibold text-accent-foreground shadow-gold hover:bg-accent/90 focus-visible:ring-forest-foreground">
-              <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}>
-                {fr ? "S'inscrire ici" : "Register Here"}<ArrowRight aria-hidden="true" className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
-              </a>
-            </Button>
-          </div>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-forest-foreground/85 md:text-lg">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
+          <Button asChild size="lg" className="group mt-8 h-auto gap-3 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-gold hover:bg-accent/90 focus-visible:ring-forest-foreground">
+            <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`}>
+              {fr ? "S'inscrire ici" : "Register Here"}<ArrowRight aria-hidden="true" className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
+            </a>
+          </Button>
         </div>
       </section>
 
