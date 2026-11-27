@@ -1,6 +1,6 @@
 import heroImg from "@/assets/lounge-talk.jpg";
 import agendaImg from "@/assets/program-agenda.jpg";
-import sideImg from "@/assets/reception-guest.jpg";
+import sideImg from "@/assets/africa-tobacco-03-of-56.jpg.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Bits";
@@ -98,7 +98,7 @@ function Program() {
       </Section>
       <Section id="side-events" title={fr ? "Expositions et bibliothèque électronique" : "Exhibitions and E-library"} className="border-t border-border/60">
         <figure className="group relative aspect-[21/9] overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 hover:shadow-card-lg">
-          <img src={sideImg} alt={fr ? "Un invité au réception de clôture de la 2e ACTCD" : "A guest at the closing reception of the 2nd ACTCD"} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+          <img src={sideImg.url} alt={fr ? "Trois délégués dans la salle de conférence de la 2e ACTCD" : "Three delegates in the conference hall at the 2nd ACTCD"} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
         </figure>
         <div className="mt-6 flex flex-wrap gap-6">
