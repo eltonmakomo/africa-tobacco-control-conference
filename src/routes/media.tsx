@@ -1,4 +1,4 @@
-import heroImg from "@/assets/media-hall.jpg";
+import heroImg from "@/assets/media-banner.jpg";
 import featureImg from "@/assets/reception-duo.jpg";
 import brand from "@/assets/docs/ACTD_Branded_Materials_v19_2nd_ACTD.pdf.asset.json";
 import concept from "@/assets/docs/3rd_ACTD_Concept_Note_-_Abridged.docx.asset.json";
@@ -109,21 +109,21 @@ function Media() {
     <>
       <PageHero
         image={heroImg}
-        imgClassName="object-[center_50%]"
-        align="right"
+        imgClassName="object-[center_35%] max-xl:object-[center_50%] max-lg:object-[center_75%] max-md:object-[center_100%]"
+        minH="min-h-[780px]"
         title={fr ? "Médias" : "Media"}
       >
-        <div className="mt-8 w-full sm:ml-auto sm:max-w-[72%] lg:max-w-2xl">
-          <dl className="grid gap-4 sm:grid-cols-3">
+        <div className="mt-8 w-full sm:max-w-[40%] lg:max-w-[600px]">
+          <dl className="grid gap-3 lg:grid-cols-3">
             {impact.map((i) => (
-              <div key={i.label} className="glass-forest rounded-2xl p-5">
-                <dd className="text-3xl font-bold text-accent">{i.figure}</dd>
-                <dt className="mt-1 text-sm text-forest-foreground/85">{i.label}</dt>
+              <div key={i.label} className="glass-forest rounded-2xl p-4">
+                <dd className="text-2xl font-bold text-accent">{i.figure}</dd>
+                <dt className="mt-1 text-xs text-forest-foreground/85">{i.label}</dt>
               </div>
             ))}
           </dl>
 
-          <div className="mt-8 flex flex-wrap gap-3 sm:justify-end">
+          <div className="mt-6 flex flex-wrap gap-2.5 sm:justify-start">
             <a href="#accreditation" className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90">
               {fr ? "Demander une accréditation" : "Apply for accreditation"}
             </a>
@@ -144,7 +144,7 @@ function Media() {
             : "Apply for official press access to the 3rd ACTCD. Complete the form below to request media accreditation."}
         </p>
 
-        <form onSubmit={sendAcc} className="mt-10 rounded-3xl bg-cream p-6 shadow-card md:p-10">
+        <form onSubmit={sendAcc} className="mt-10 rounded-3xl bg-primary/15 p-6 shadow-card md:p-10">
           <div className="grid gap-5 md:grid-cols-2">
             <Field label={fr ? "Nom complet *" : "Full name *"} required value={acc.name} onChange={set("name")} placeholder={fr ? "Votre nom complet" : "Enter your full name"} />
             <Field label={fr ? "Média *" : "Media outlet *"} required value={acc.outlet} onChange={set("outlet")} placeholder={fr ? "Votre média" : "Your media organization"} />
@@ -207,7 +207,7 @@ function Media() {
       </Section>
 
       <Section id="submit-coverage" eyebrow={fr ? "Vos contenus" : "Your coverage"} title={fr ? "Soumettre votre couverture" : "Submit your coverage"} className="border-t border-border/60">
-        <form onSubmit={sendCov} className="rounded-3xl bg-cream p-6 shadow-card md:p-10">
+        <form onSubmit={sendCov} className="rounded-3xl bg-primary/15 p-6 shadow-card md:p-10">
           <div className="grid gap-5 md:grid-cols-2">
             <Field label={fr ? "Nom complet *" : "Full name *"} required value={cov.name} onChange={setC("name")} placeholder={fr ? "Votre nom complet" : "Enter your full name"} />
             <Field label={fr ? "Publication / plateforme *" : "Publication / platform *"} required value={cov.pub} onChange={setC("pub")} placeholder={fr ? "Votre média" : "Your publication or platform"} />

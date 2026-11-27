@@ -292,7 +292,7 @@ function Home() {
       </section>
 
       {/* Partners */}
-      <Section eyebrow={fr ? "Nos partenaires" : "Our partners"} title={fr ? "Convoquée ensemble" : "Convened together"}>
+      <Section title={fr ? "Nos partenaires" : "Our Partners"}>
         <PartnerLogos />
       </Section>
     </>

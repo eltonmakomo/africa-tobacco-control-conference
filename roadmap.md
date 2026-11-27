@@ -50,3 +50,7 @@
 - [x] Restore simple inside banners: page-name titles only, no captions, retaining the latest photos and face-safe positioning
 - [x] Home banner: the two call-to-action buttons back inline on one row, countdown moved to the right of the banner
 - [x] Media page: banner like the other pages, using its own photo, positioned with no cut faces, keeping the figures and buttons inside it
+- [x] Media banner: title, cards and buttons on the LEFT; photo cropped so the lady sits on the right, fully visible, showing more of her body
+- [x] Home partners section: remove the label, heading reads "Our Partners"
+- [x] Forms: cream panel replaced with the brand green at 15% opacity (the reference site's low-opacity dark-green panels); labels 14:1, helper text 6:1
+- [x] Countdown: cards and DAY/HOUR/MINUTE/SECOND labels bigger on the home banner
