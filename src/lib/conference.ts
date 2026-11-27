@@ -148,7 +148,7 @@ export const HOME_IMPACT = [
   { figure: "3rd", label: "edition" },
   { figure: "+250", label: "participants" },
   { figure: "+30", label: "countries represented" },
-  { figure: "+20", label: "media houses" },
+  { figure: "+10", label: "media houses" },
 ];
 
 // ============ French versions of the shared content above ============
@@ -264,5 +264,5 @@ export const HOME_IMPACT_FR = [
   { figure: "3e", label: "édition" },
   { figure: "+250", label: "participants" },
   { figure: "+30", label: "pays représentés" },
-  { figure: "+20", label: "maisons de presse" },
+  { figure: "+10", label: "maisons de presse" },
 ];

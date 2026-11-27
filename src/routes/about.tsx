@@ -9,7 +9,6 @@ import { ArrowRight, CalendarDays, Globe, Languages, MapPin, ShieldCheck, X } fr
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Bits";
-import { Countdown } from "@/components/site/Countdown";
 import { CountUp } from "@/components/site/CountUp";
 import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
@@ -116,10 +115,10 @@ function About() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.scope}</p>
             </li>
           ))}
-          <li className="rounded-2xl border border-dashed border-accent bg-accent/10 p-6">
+          <li className="rounded-2xl border border-border bg-card p-6">
             <span className="text-xs font-semibold uppercase tracking-wider text-primary">{fr ? "Thèmes transversaux" : "Cross-cutting themes"}</span>
             <div className="mt-3 flex flex-wrap gap-2">
-              {crossCutting.map((c) => <span key={c} className="rounded-full bg-background px-3 py-1 text-sm font-medium">{c}</span>)}
+              {crossCutting.map((c) => <span key={c} className="rounded-full bg-secondary px-3 py-1 text-sm font-medium">{c}</span>)}
             </div>
           </li>
         </ul>
@@ -174,27 +173,6 @@ function About() {
           ))}
         </ol>
       </Section>
-      <section className="px-5 md:px-10">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-forest p-10 text-forest-foreground shadow-elegant md:p-16">
-          <div className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full bg-swirl opacity-40 animate-spin-slow" />
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow text-forest-foreground/85">{ev.dates} · {ev.location}</p>
-            <h2 className="mt-3 text-3xl font-bold md:text-5xl">{fr ? "Rejoignez-nous à l'ACTCD" : "Join us for the ACTCD"}</h2>
-            <p className="mx-auto mt-4 max-w-md text-forest-foreground/85">{fr ? "En présentiel à Nairobi, avec possibilité de participation virtuelle, en anglais et en français." : "In person in Nairobi, with an option for virtual attendance, in English and French."}</p>
-          </div>
-          <div className="mx-auto mt-8 max-w-md"><Countdown /></div>
-          <div className="mt-8 flex justify-center">
-            <a
-              href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Demande d'inscription — ACTCD 2027" : "Registration enquiry — ACTCD 2027")}`}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition hover:opacity-90"
-            >
-              {fr ? "Exprimer mon intérêt" : "Register your interest"}
-              <ArrowRight className="size-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
       <Section id="organizers" center eyebrow={fr ? "Organisateurs et partenaires" : "Organizers and partners"} title={fr ? "Qui convoque l'ACTCD" : "Who convenes ACTCD"} className="border-t border-border/60 bg-cream/40">
         <div className="mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-border bg-card shadow-card">
           <div className="h-1.5 bg-gradient-brand" />

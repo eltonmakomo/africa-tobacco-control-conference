@@ -1,12 +1,23 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
+import { ChevronRight } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 export function PageHero({ title, children, image, imgClassName = "object-top", minH = "min-h-[560px]" }: { title: ReactNode; children?: ReactNode; image?: string; imgClassName?: string; minH?: string }) {
+  const { fr } = useLang();
   return (
     <section className="relative isolate overflow-hidden bg-forest text-forest-foreground">
       {image && <img src={image} alt="" aria-hidden className={`banner-photo absolute inset-0 -z-20 size-full object-cover ${imgClassName}`} />}
       {image && <div className="absolute inset-0 -z-10 bg-gradient-hero" />}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-brand" />
       <div className={`relative mx-auto flex ${minH} max-w-7xl flex-col justify-center px-5 py-20 md:px-10 md:py-28 ${image ? "max-sm:min-h-0 max-sm:py-10" : ""}`}>
+        <nav aria-label={fr ? "Fil d'Ariane" : "Breadcrumb"} className="mb-4 animate-rise">
+          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-forest-foreground/80">
+            <li><Link to="/" className="transition hover:text-forest-foreground">{fr ? "Accueil" : "Home"}</Link></li>
+            <li aria-hidden><ChevronRight className="size-3.5" /></li>
+            <li aria-current="page" className="font-semibold text-forest-foreground">{title}</li>
+          </ol>
+        </nav>
         <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl animate-rise">{title}</h1>
         {children}
       </div>

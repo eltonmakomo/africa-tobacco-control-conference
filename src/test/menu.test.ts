@@ -4,8 +4,8 @@ import { NAV_EN, NAV_FR } from "@/components/site/Header";
 
 // The microsite architecture document fixes the top-level menu as
 // About | Program | Call for Abstracts | Participate | Knowledge Hub | Media.
-// The organiser later dropped Participate, and Past Editions stays as its own page.
-const DOCUMENT_ORDER = ["/about", "/program", "/call-for-abstracts", "/knowledge-hub", "/media"];
+// The organiser later dropped Participate and Call for Abstracts, and Past Editions stays as its own page.
+const DOCUMENT_ORDER = ["/about", "/program", "/knowledge-hub", "/media"];
 
 describe("Top-level menu", () => {
   it("follows the architecture document order, without Participate", () => {

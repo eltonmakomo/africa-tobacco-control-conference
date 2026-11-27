@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
       { title: "ACTCD 2027 · Africa Conference on Tobacco Control and Development" },
       { name: "description", content: "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty. 21–23 April 2027, Nairobi, Kenya — hybrid, English and French." },
       { property: "og:title", content: "ACTCD 2027 · Nairobi, 21–23 April 2027" },
-      { property: "og:description", content: "The 3rd Africa Conference on Tobacco Control and Development. Submit an abstract or download the concept note." },
+      { property: "og:description", content: "The 3rd Africa Conference on Tobacco Control and Development. Register or download the concept note." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -122,7 +122,7 @@ function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-forest/30 md:hidden" />
         <div className="mx-auto flex min-h-[calc(100svh-79px)] max-w-7xl flex-col justify-end px-5 py-12 max-sm:min-h-0 max-sm:py-10 lg:justify-center lg:min-h-[calc(100svh-87px)] md:px-10 md:py-16">
-          <div className="grid items-center gap-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-10 lg:gap-12">
+          <div className="flex flex-col gap-8">
             <div>
               <p className="eyebrow text-forest-foreground/85 animate-rise">{ev.edition}</p>
               <h1 className="mt-5 max-w-[19rem] max-sm:max-w-none text-3xl font-bold leading-[1.12] lg:max-w-sm md:text-5xl animate-rise">{fr ? "Protéger l'avenir de l'Afrique : faire progresser la lutte antitabac et la souveraineté sanitaire" : "Protecting Africa's Future: Advancing Tobacco Control and Health Sovereignty"}</h1>
@@ -131,16 +131,16 @@ function Home() {
                 <span className="flex items-center gap-2"><MapPin className="size-4" />{ev.location} · {fr ? "Hybride" : "Hybrid"}</span>
               </p>
             </div>
-            <div className="order-3 w-full sm:order-none sm:w-auto sm:justify-self-end sm:self-end">
-              <Countdown compact />
-            </div>
-            <div className="order-2 mt-9 flex flex-wrap items-center gap-3 sm:order-none sm:col-span-2 sm:mt-0">
-              <Link to="/call-for-abstracts" className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/70 px-6 py-3.5 font-semibold transition hover:bg-forest-foreground/15">
-                {fr ? "Soumettre un résumé" : "Submit Abstract"}
-              </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <a href={`mailto:comms@theacbf.org?subject=${encodeURIComponent(fr ? "Inscription — ACTCD 2027" : "Registration — ACTCD 2027")}`} className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/70 px-6 py-3.5 font-semibold transition hover:bg-forest-foreground/15">
+                {fr ? "S'inscrire" : "Register"}
+              </a>
               <a href={conceptNote.url} download className="inline-flex items-center gap-2 rounded-full border border-forest-foreground/70 px-6 py-3.5 font-semibold transition hover:bg-forest-foreground/15">
                 <Download className="size-4" /> {fr ? "Télécharger la note conceptuelle" : "Download Concept Note"}
               </a>
+            </div>
+            <div className="w-full max-w-xl">
+              <Countdown compact />
             </div>
           </div>
         </div>
