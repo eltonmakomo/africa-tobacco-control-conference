@@ -41,7 +41,7 @@ export function Footer() {
         <div className="md:col-span-3">
           <h3 className="eyebrow text-forest-foreground">Contact</h3>
           <p className="mt-4 text-sm text-forest-foreground/80">{fr ? "Unité de communication de l'ACBF" : "ACBF Communications Unit"}</p>
-          <a href="https://www.acbf-pact.org" target="_blank" rel="noreferrer" className="mt-1 block text-sm text-forest-foreground underline hover:opacity-80">acbf-pact.org</a>
+          <a href="mailto:comms@theacbf.org" className="mt-1 block text-sm text-forest-foreground/80 hover:text-forest-foreground">comms@theacbf.org</a>
         </div>
       </div>
       <div className="relative border-t border-forest-foreground/15">
