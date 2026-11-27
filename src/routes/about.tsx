@@ -9,8 +9,7 @@ import { ArrowRight, CalendarDays, Globe, Languages, MapPin, ShieldCheck, X } fr
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Bits";
-import { CountUp } from "@/components/site/CountUp";
-import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, KEY_STATS, KEY_STATS_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
+import { ARTICLE_53, ARTICLE_53_FR, CROSS_CUTTING, CROSS_CUTTING_FR, EVENT, EVENT_FR, OBJECTIVES, OBJECTIVES_FR, TRACKS, TRACKS_FR } from "@/lib/conference";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/about")({
@@ -45,7 +44,6 @@ const SPEAKERS_FR: Speaker[] = [
 
 function About() {
   const { fr } = useLang();
-  const stats = fr ? KEY_STATS_FR : KEY_STATS;
   const tracks = fr ? TRACKS_FR : TRACKS;
   const crossCutting = fr ? CROSS_CUTTING_FR : CROSS_CUTTING;
   const objectives = fr ? OBJECTIVES_FR : OBJECTIVES;
@@ -121,17 +119,6 @@ function About() {
               {crossCutting.map((c) => <span key={c} className="rounded-full bg-secondary px-3 py-1 text-sm font-medium">{c}</span>)}
             </div>
           </li>
-        </ul>
-      </Section>
-
-      <Section id="highlights" title={fr ? "Chiffres clés" : "Key highlights"} className="border-t border-border/60">
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map(({ figure: f, label: l }) => (
-            <li key={f} className="rounded-2xl bg-secondary/60 p-6">
-              <div className="text-4xl font-bold text-primary"><CountUp value={f} /></div>
-              <p className="mt-2 text-sm text-foreground/75">{l}</p>
-            </li>
-          ))}
         </ul>
       </Section>
 
